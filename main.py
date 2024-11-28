@@ -423,15 +423,7 @@ def generate_random_color():
 
 def bundle_pinned_issues_section():
     global gitblog
-    # 判断label是否存在，如果不存在创建一个
-    label_name = ':+1:置顶'
-    pinned_label = gitblog.get_label(label_name)
-
-    # 如果标签不存在，则创建一个
-    if not pinned_label:
-        pinned_label = gitblog.create_label(label_name, generate_random_color())  # 替换'颜色代码'为实际颜色
-
-    # pinned_label = gitblog.get_label(':+1:置顶')
+    pinned_label = gitblog.get_label('👍置顶')
     pinned_issues = gitblog.get_issues(labels=(pinned_label,))
 
     pinned_issues_section = '\n## 置顶 :thumbsup: \n'
