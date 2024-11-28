@@ -3,7 +3,7 @@
 <p align='center'>
     <img src="https://badgen.net/badge/labels/18"/>
     <img src="https://badgen.net/github/issues/aqvq/gitblog"/>
-    <img src="https://badgen.net/badge/last-commit/2024-11-28 13:21:55"/>
+    <img src="https://badgen.net/badge/last-commit/2024-11-28 13:23:06"/>
     <img src="https://badgen.net/github/forks/aqvq/gitblog"/>
     <img src="https://badgen.net/github/stars/aqvq/gitblog"/>
     <img src="https://badgen.net/github/watchers/aqvq/gitblog"/>
@@ -33,7 +33,7 @@ My personal blog using issues and GitHub Actions! [RSS Feed](https://raw.githubu
 
 #### [CUB转YOLO数据集](https://github.com/aqvq/aqvq/issues/4) <sup>0 :speech_balloon:</sup> 	 2024-11-28 12:16:39
 
-:label: : [YOLO](https://github.com/aqvq/gitblog/labels/YOLO), [计算机视觉](https://github.com/aqvq/gitblog/labels/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89), [目标检测](https://github.com/aqvq/gitblog/labels/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B)
+:label: : [YOLO](https://github.com/aqvq/aqvq/labels/YOLO), [计算机视觉](https://github.com/aqvq/aqvq/labels/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89), [目标检测](https://github.com/aqvq/aqvq/labels/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B)
 
 参考文章：
 [CUB_200_2011数据集转Yolo格式 - 哔哩哔哩 (bilibili.com)](https://www.bilibili.com/read/cv21940047/#:~:text=%E6%89%80%E4%BB%A5CUB%E6%95%B0%E6%8D%AE%E9%9B%
@@ -45,7 +45,7 @@ My personal blog using issues and GitHub Actions! [RSS Feed](https://raw.githubu
 
 #### [YOLOv8自制数据集说明](https://github.com/aqvq/aqvq/issues/3) <sup>0 :speech_balloon:</sup> 	 2024-11-28 12:16:00
 
-:label: : [YOLO](https://github.com/aqvq/gitblog/labels/YOLO), [计算机视觉](https://github.com/aqvq/gitblog/labels/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89), [目标检测](https://github.com/aqvq/gitblog/labels/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B)
+:label: : [YOLO](https://github.com/aqvq/aqvq/labels/YOLO), [计算机视觉](https://github.com/aqvq/aqvq/labels/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89), [目标检测](https://github.com/aqvq/aqvq/labels/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B)
 
 
 ### 格式
@@ -61,7 +61,7 @@ Ultralytics YOLO格式是一种数据集配置格式，允许您定义数据集�
 
 #### [Obsidian使用总结](https://github.com/aqvq/aqvq/issues/2) <sup>0 :speech_balloon:</sup> 	 2024-11-28 10:51:31
 
-:label: : [实用工具](https://github.com/aqvq/gitblog/labels/%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7)
+:label: : [实用工具](https://github.com/aqvq/aqvq/labels/%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7)
 
 
 ## 基本使用
@@ -77,7 +77,7 @@ Ultralytics YOLO格式是一种数据集配置格式，允许您定义数据集�
 
 #### [explore-eqa中的三个三维坐标系](https://github.com/aqvq/aqvq/issues/1) <sup>0 :speech_balloon:</sup> 	 2024-11-28 08:20:30
 
-:label: : [EQA](https://github.com/aqvq/gitblog/labels/EQA), [BLOG](https://github.com/aqvq/gitblog/labels/BLOG)
+:label: : [EQA](https://github.com/aqvq/aqvq/labels/EQA), [BLOG](https://github.com/aqvq/aqvq/labels/BLOG)
 
 在 Habitat 项目中，坐标系的转换涉及多个代码模块，主要包括相机坐标系、体素坐标系和世界坐标系之间的转换。为了帮助理解，下面用字符画绘制三个坐标系的轴向关系，并结合 Habitat 项目的代码说明它们的用法。
 
