@@ -508,7 +508,7 @@ def bundle_list_by_labels_section():
 
     list_by_labels_section = """
 ## 分类  :card_file_box: 
-<details open="closed">
+<details open="close">
     <summary>
         点击展开
     </summary>
