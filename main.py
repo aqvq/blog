@@ -30,7 +30,9 @@ TODO_ISSUES_LABELS = ["TODO"]
 FRIENDS_LABELS = ["Friends"]
 ABOUT_LABELS = ["About"]
 IGNORE_LABELS = FRIENDS_LABELS + TOP_ISSUES_LABELS + TODO_ISSUES_LABELS + ABOUT_LABELS
+
 cur_time: str
+gitblog = None
 
 FRIENDS_TABLE_HEAD = "| Name | Link | Desc | \n | ---- | ---- | ---- |\n"
 FRIENDS_TABLE_TEMPLATE = "| {name} | {link} | {desc} |\n"
@@ -294,10 +296,10 @@ def generate_rss_feed(repo, filename, me):
 
 
 def main(token, repo_name, issue_number=None, dir_name=BACKUP_DIR):
-    
+    global gitblog
     user = login(token)
     me = get_me(user)
-    repo = get_repo(user, repo_name)
+    gitblog = get_repo(user, repo_name)
     print("login successfully!!!")
 
     global cur_time
@@ -323,11 +325,11 @@ def main(token, repo_name, issue_number=None, dir_name=BACKUP_DIR):
     #     func(repo, "README.md", me)
 
     # generate rss
-    generate_rss_feed(repo, "feed.xml", me)
+    generate_rss_feed(gitblog, "feed.xml", me)
     print("rss feed updated successfully!!!")
     
     # backup issues
-    to_generate_issues = get_to_generate_issues(repo, dir_name, issue_number)
+    to_generate_issues = get_to_generate_issues(gitblog, dir_name, issue_number)
     for issue in to_generate_issues:
         save_issue(issue, me, dir_name)
     print("issues backup successfully!!!")
@@ -374,9 +376,9 @@ def update_readme_md_file(contents):
 #     user = Github(username, password)
 
 
-def get_gitblog():
-    global gitblog
-    gitblog = user.get_repo(os.environ.get('GITHUB_REPOSITORY'))
+# def get_gitblog():
+#     global gitblog
+#     gitblog = user.get_repo(os.environ.get('GITHUB_REPOSITORY'))
 
 def bundle_header_section():
     content = ""
