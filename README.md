@@ -16,6 +16,7 @@
 ## 📝Latest Blog Posts
 <!-- issueTable -->
 
+1. [eeqa中的三个三维坐标系](https://github.com/aqvq/aqvq/issues/1) [![eqa](https://img.shields.io/github/labels/aqvq/aqvq/eqa)](https://github.com/aqvq/aqvq/labels/eqa)
 <!-- issueTable -->
 
 <!--
