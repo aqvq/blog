@@ -4,8 +4,10 @@ My personal blog([About Me](https://github.com/yihong0618/gitblog/issues/282)) u
 [RSS Feed](https://raw.githubusercontent.com/aqvq/aqvq/master/feed.xml)
 
 ## 最近更新
+- [Obsidian使用总结](https://github.com/aqvq/aqvq/issues/2)--2024-11-28
 - [explore-eqa中的三个三维坐标系](https://github.com/aqvq/aqvq/issues/1)--2024-11-28
 ## BLOG
+- [Obsidian使用总结](https://github.com/aqvq/aqvq/issues/2)--2024-11-28
 - [explore-eqa中的三个三维坐标系](https://github.com/aqvq/aqvq/issues/1)--2024-11-28
 ## eqa
 - [explore-eqa中的三个三维坐标系](https://github.com/aqvq/aqvq/issues/1)--2024-11-28
