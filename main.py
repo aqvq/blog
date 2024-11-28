@@ -508,7 +508,7 @@ def bundle_list_by_labels_section():
 
     list_by_labels_section = """
 ## 分类  :card_file_box: 
-<details open="open">
+<details open="closed">
     <summary>
         点击展开
     </summary>
@@ -581,7 +581,7 @@ def bundle_cover_image_section() -> str:
 <span>{2}</span>
 </p>
 
-    """.format(
+""".format(
         c.html_url, img_url, img_desc
     )
 
