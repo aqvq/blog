@@ -415,6 +415,11 @@ def bundle_summary_section():
 
     return summary_section
 
+import random
+
+def generate_random_color():
+    # 生成随机颜色的十六进制表示
+    return "#{:06x}".format(random.randint(0, 0xFFFFFF))
 
 def bundle_pinned_issues_section():
     global gitblog
@@ -424,7 +429,7 @@ def bundle_pinned_issues_section():
 
     # 如果标签不存在，则创建一个
     if not pinned_label:
-        pinned_label = gitblog.create_label(label_name, '颜色代码')  # 替换'颜色代码'为实际颜色
+        pinned_label = gitblog.create_label(label_name, generate_random_color())  # 替换'颜色代码'为实际颜色
 
     # pinned_label = gitblog.get_label(':+1:置顶')
     pinned_issues = gitblog.get_issues(labels=(pinned_label,))
