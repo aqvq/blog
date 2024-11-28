@@ -3,17 +3,11 @@
 <p align='center'>
     <img src="https://badgen.net/badge/labels/18"/>
     <img src="https://badgen.net/github/issues/aqvq/aqvq"/>
-    <img src="https://badgen.net/badge/last-commit/2024-11-28 13:31:07"/>
+    <img src="https://badgen.net/badge/last-commit/2024-11-28 13:44:19"/>
     <img src="https://badgen.net/github/forks/aqvq/aqvq"/>
     <img src="https://badgen.net/github/stars/aqvq/aqvq"/>
     <img src="https://badgen.net/github/watchers/aqvq/aqvq"/>
     <img src="https://badgen.net/github/release/aqvq/aqvq"/>
-</p>
-
-<p align='center'>
-    <a href="https://github.com/jwenjian/visitor-count-badge">
-        <img src="https://visitor-badge.glitch.me/badge?page_id=jwenjian.gitblog"/>
-    </a>
 </p>
 
 ## [Juzaizai's BLOG](https://github.com/aqvq/aqvq)
@@ -28,10 +22,23 @@ My personal blog using issues and GitHub Actions! [RSS Feed](https://raw.githubu
 
 🌱 I’m currently learning Embodied AI
 
+
+<p align='center'>
+<a href='https://github.com/aqvq/aqvq/issues/5#issuecomment-2506161688'>
+<img src='https://github.com/user-attachments/assets/7cd896fc-0b9c-40f6-bf9e-bbc62da11e7a' width='50%' alt='
+橘猫爱吃鱼'>
+</a>
+</p>
+<p align='center'>
+<span>
+橘猫爱吃鱼</span>
+</p>
+
+    
 ## 置顶 :thumbsup: 
 ## 最新 :new: 
 
-#### [封面](https://github.com/aqvq/aqvq/issues/5) <sup>0 :speech_balloon:</sup> 	 2024-11-28 13:30:43
+#### [封面](https://github.com/aqvq/aqvq/issues/5) <sup>1 :speech_balloon:</sup> 	 2024-11-28 13:30:43
 
 :label: : [:framed_picture:封面](https://github.com/aqvq/aqvq/labels/%3Aframed_picture%3A%E5%B0%81%E9%9D%A2)
 
@@ -97,12 +104,7 @@ Ultralytics YOLO格式是一种数据集配置格式，允许您定义数据集�
 Habitat 使用右手坐标系作为世界坐标系，`X` 轴朝右，`Y` 轴朝上，`Z` 轴指向外（朝观察者）。在世界坐标系中，物体的位置和方向都是全局的。Habitat 中的坐标转换，例如 `pos_habitat_to_normal()` 和 `pos_normal_to_habitat()`，会涉及此坐标系的使用。
 
 字符画表示：
-```
-       Y (向上)
-       |
-       |
-       |
-       +
+
 
 [更多>>>](https://github.com/aqvq/aqvq/issues/1)
 
@@ -125,7 +127,7 @@ Habitat 使用右手坐标系作为世界坐标系，`X` 轴朝右，`Y` 轴朝�
 <details>
 <summary>:framed_picture:封面	<sup>1:newspaper:</sup></summary>
 
-- [封面](https://github.com/aqvq/aqvq/issues/5)  <sup>0 :speech_balloon:</sup>  	 
+- [封面](https://github.com/aqvq/aqvq/issues/5)  <sup>1 :speech_balloon:</sup>  	 
 
 
 </details>
