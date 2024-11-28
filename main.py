@@ -6,8 +6,15 @@ import re
 import markdown
 from feedgen.feed import FeedGenerator
 from github import Github
+from github.Issue import Issue
+from github.Repository import Repository
+import codecs
+from nasa_client import NasaClient
+
+import urllib
 from lxml.etree import CDATA
 from marko.ext.gfm import gfm as marko
+import time
 
 MD_HEAD = ""
 try:
@@ -23,6 +30,7 @@ TODO_ISSUES_LABELS = ["TODO"]
 FRIENDS_LABELS = ["Friends"]
 ABOUT_LABELS = ["About"]
 IGNORE_LABELS = FRIENDS_LABELS + TOP_ISSUES_LABELS + TODO_ISSUES_LABELS + ABOUT_LABELS
+cur_time: str
 
 FRIENDS_TABLE_HEAD = "| Name | Link | Desc | \n | ---- | ---- | ---- |\n"
 FRIENDS_TABLE_TEMPLATE = "| {name} | {link} | {desc} |\n"
@@ -201,6 +209,8 @@ def add_md_header(md, repo_name):
         md.write("\n")
 
 
+
+
 def add_md_label(repo, md, me):
     labels = get_repo_labels(repo)
 
@@ -284,21 +294,43 @@ def generate_rss_feed(repo, filename, me):
 
 
 def main(token, repo_name, issue_number=None, dir_name=BACKUP_DIR):
+    
     user = login(token)
     me = get_me(user)
     repo = get_repo(user, repo_name)
+    print("login successfully!!!")
+
+    global cur_time
+    # common
+    cur_time = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
+
+    # generate readme.md
+    header_section = bundle_header_section()
+    summary_section = bundle_summary_section()
+    pinned_issues_section = bundle_pinned_issues_section()
+    new_created_section = bundle_new_created_section()
+    list_by_labels_section = bundle_list_by_labels_section()
+    cover_image_section = bundle_cover_image_section()
+    projects_section = bundle_projects_section()
+    contents = [summary_section, header_section, cover_image_section, pinned_issues_section, new_created_section,
+                list_by_labels_section, projects_section]
+    update_readme_md_file(contents)
+    print('README.md updated successfully!!!')
+    
     # add to readme one by one, change order here
-    add_md_header("README.md", repo_name)
-    for func in [add_md_firends, add_md_top, add_md_recent, add_md_label, add_md_todo]:
-        func(repo, "README.md", me)
+    # add_md_header("README.md", repo_name)
+    # for func in [add_md_firends, add_md_top, add_md_recent, add_md_label, add_md_todo]:
+    #     func(repo, "README.md", me)
 
+    # generate rss
     generate_rss_feed(repo, "feed.xml", me)
+    print("rss feed updated successfully!!!")
+    
+    # backup issues
     to_generate_issues = get_to_generate_issues(repo, dir_name, issue_number)
-
-    # save md files to backup folder
     for issue in to_generate_issues:
         save_issue(issue, me, dir_name)
-
+    print("issues backup successfully!!!")
 
 def save_issue(issue, me, dir_name=BACKUP_DIR):
     md_name = os.path.join(
@@ -314,6 +346,247 @@ def save_issue(issue, me, dir_name=BACKUP_DIR):
                     f.write(c.body or "")
 
 
+def format_issue(issue: Issue):
+    return '- [%s](%s)  %s  \t \n' % (
+        issue.title, issue.html_url, sup('%s :speech_balloon:' % issue.comments))
+
+
+def sup(text: str):
+    return '<sup>%s</sup>' % text
+
+
+def sub(text: str):
+    return '<sub>%s</sub>' % text
+
+
+def update_readme_md_file(contents):
+    with codecs.open('README.md', 'w', encoding='utf-8') as f:
+        f.writelines(contents)
+        f.flush()
+        f.close()
+
+
+def login():
+    global user, username
+    github_repo_env = os.environ.get('GITHUB_REPOSITORY')
+    username = github_repo_env[0:github_repo_env.index('/')]
+    password = os.environ.get('GITHUB_TOKEN')
+    user = Github(username, password)
+
+
+def get_gitblog():
+    global gitblog
+    gitblog = user.get_repo(os.environ.get('GITHUB_REPOSITORY'))
+
+def bundle_header_section():
+    content = ""
+    try:
+        with open("header.md") as f:
+            content = f.read()
+    except FileNotFoundError:
+        print("Warning: 'header.md' not found. Using empty header.")
+    return content
+
+def bundle_summary_section():
+    global gitblog
+    global cur_time
+    global user
+    global username
+
+    total_label_count = gitblog.get_labels().totalCount
+    total_issue_count = gitblog.get_issues().totalCount
+
+    pic_of_the_day = NasaClient().get_picture_of_the_day()
+
+    summary_section = '''
+
+<p align='center'>
+    <img src="https://badgen.net/badge/labels/{1}"/>
+    <img src="https://badgen.net/github/issues/{0}/gitblog"/>
+    <img src="https://badgen.net/badge/last-commit/{2}"/>
+    <img src="https://badgen.net/github/forks/{0}/gitblog"/>
+    <img src="https://badgen.net/github/stars/{0}/gitblog"/>
+    <img src="https://badgen.net/github/watchers/{0}/gitblog"/>
+    <img src="https://badgen.net/github/release/{0}/gitblog"/>
+</p>
+
+<p align='center'>
+    <a href="https://github.com/jwenjian/visitor-count-badge">
+        <img src="https://visitor-badge.glitch.me/badge?page_id=jwenjian.gitblog"/>
+    </a>
+</p>
+
+'''.format(username, total_label_count, cur_time)
+
+    return summary_section
+
+
+def bundle_pinned_issues_section():
+    global gitblog
+
+    pinned_label = gitblog.get_label(':+1:置顶')
+    pinned_issues = gitblog.get_issues(labels=(pinned_label,))
+
+    pinned_issues_section = '\n## 置顶 :thumbsup: \n'
+
+    for issue in pinned_issues:
+        pinned_issues_section += format_issue(issue)
+
+    return pinned_issues_section
+
+
+def format_issue_with_labels(issue: Issue):
+    global user, username
+
+    labels = issue.get_labels()
+    labels_str = ''
+
+    for label in labels:
+        labels_str += '[%s](https://github.com/%s/gitblog/labels/%s), ' % (
+            label.name, username, urllib.parse.quote(label.name))
+
+    if '---' in issue.body:
+        body_summary = issue.body[:issue.body.index('---')]
+    else:
+        body_summary = issue.body[:150]
+        # 如果前150个字符中有代码块，则在 150 个字符中重新截取代码块之前的部分作为 summary
+        if '```' in body_summary:
+            body_summary = body_summary[:body_summary.index('```')]
+
+    return '''
+#### [{0}]({1}) {2} \t {3}
+
+:label: : {4}
+
+{5}
+
+[更多>>>]({1})
+
+---
+
+'''.format(issue.title, issue.html_url, sup('%s :speech_balloon:' % issue.comments), issue.created_at, labels_str[:-2],
+           body_summary)
+
+
+def bundle_new_created_section():
+    global gitblog
+
+    new_5_created_issues = gitblog.get_issues()[:5]
+
+    new_created_section = '## 最新 :new: \n'
+
+    for issue in new_5_created_issues:
+        new_created_section += format_issue_with_labels(issue)
+
+    return new_created_section
+
+
+def bundle_list_by_labels_section():
+    global gitblog
+    global user
+
+    # word cloud
+
+    list_by_labels_section = """
+<details open="open">
+    <summary>
+        ## 分类  :card_file_box: 
+    </summary>
+
+"""
+
+    all_labels = gitblog.get_labels()
+
+    for label in all_labels:
+        temp = ''
+        # 这里的count是用来计算该label下有多少issue的, 按理说应该是取issues_in_label的totalCount, 但是不知道为什么取出来的一直都是
+        # 所有的issue数量, 之后再优化.
+        count = 0
+        issues_in_label = gitblog.get_issues(labels=(label,))
+        for issue in issues_in_label:
+            temp += format_issue(issue)
+            count += 1
+
+        list_by_labels_section += '''
+<details>
+<summary>%s\t<sup>%s:newspaper:</sup></summary>
+
+%s
+
+</details>
+''' % (label.name, count, temp)
+
+    list_by_labels_section += """
+
+</details>    
+"""
+    return list_by_labels_section
+
+
+def bundle_cover_image_section() -> str:
+    global gitblog
+    cover_label = gitblog.get_label(':framed_picture:封面')
+    if cover_label is None:
+        return ''
+    cover_issues = gitblog.get_issues(labels=(cover_label,))
+    if cover_issues is None or cover_issues.totalCount == 0:
+        return ''
+    comments = cover_issues[0].get_comments()
+    if comments is None or comments.totalCount == 0:
+        return ''
+    c = comments[comments.totalCount - 1]
+    img_md = None
+    img_desc = ''
+    if '---' in c.body:
+        img_md = c.body.split('---')[0]
+        img_desc = c.body.split('---')[1]
+    else:
+        img_md = c.body
+    if img_md is None:
+        return ''
+    img_url = img_md[(img_md.index('(') + 1):img_md.index(')')]
+    print(img_url)
+    return '''
+
+<p align='center'>
+<a href='{0}'>
+<img src='{1}' width='50%' alt='{2}'>
+</a>
+</p>
+<p align='center'>
+<span>{2}</span>
+</p>
+
+    '''.format(c.html_url, img_url, img_desc)
+
+
+def bundle_projects_section() -> str:
+    global gitblog, username
+    project_label = gitblog.get_label('开源')
+    if not project_label:
+        return ''
+    issues = gitblog.get_issues(labels=(project_label,))
+    if not issues or issues.totalCount == 0:
+        return ''
+    content = ''
+    for (idx, i) in enumerate(issues):
+        content += '''
+| [{1}](https://github.com/{0}/{1}) | {2} | ![](https://badgen.net/github/stars/{0}/{1}) ![](https://badgen.net/github/forks/{0}/{1}) ![](https://badgen.net/github/watchers/{0}/{1}) |'''.format(
+            username, i.title, i.body)
+        if idx == 0:
+            content += '\n| --- | --- | --- |'
+    return '''
+# 开源项目
+
+{}
+
+'''.format(content)
+
+
+def execute():
+    pass
+
+
 if __name__ == "__main__":
     if not os.path.exists(BACKUP_DIR):
         os.mkdir(BACKUP_DIR)
@@ -325,3 +598,4 @@ if __name__ == "__main__":
     )
     options = parser.parse_args()
     main(options.github_token, options.repo_name, options.issue_number)
+
