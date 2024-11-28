@@ -1,4 +1,4 @@
-name: Generate GitBlog README
+name: Generate BLOG README
 
 on: [issues, issue_comment]
 
