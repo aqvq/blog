@@ -441,8 +441,8 @@ def format_issue_with_labels(issue: Issue):
     labels_str = ''
 
     for label in labels:
-        labels_str += '[%s](https://github.com/%s/gitblog/labels/%s), ' % (
-            label.name, username, urllib.parse.quote(label.name))
+        labels_str += '[%s](https://github.com/%s/%s/labels/%s), ' % (
+            label.name, username, username, urllib.parse.quote(label.name))
 
     if '---' in issue.body:
         body_summary = issue.body[:issue.body.index('---')]
