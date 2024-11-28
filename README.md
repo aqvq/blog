@@ -8,9 +8,9 @@
 
 ### Hello World! Hello You! 😄
 ![visitors](https://visitor-badge.glitch.me/badge?page_id=aqvq.aqvq)
-- 🔭 I’m a front-end developer
-- 📫 Email: xm@tqzgc.com
-- 🌱 I’m currently learning Data Structures and Algorithms
+- 🔭 I’m Juzaizai
+- 📫 Email: 2505940811@qq.com
+- 🌱 I’m currently learning Embodied AI
 
 
 ## 📝Latest Blog Posts
