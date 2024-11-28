@@ -1,8 +1,11 @@
-## [Juzaizai's BLOG](https://github.com/aqvq/aqvq)
-My personal blog([About Me](https://www.juzaizai.com)) using issues and GitHub Actions
-![image](https://github.com/user-attachments/assets/a168bf11-661e-4566-b042-7fc9544de528)
-[RSS Feed](https://raw.githubusercontent.com/aqvq/aqvq/main/feed.xml) 
 <image align="right" src="https://github-readme-stats.vercel.app/api?username=aqvq&show_icons=true&hide_title=true&theme=gradient" />
+## [Juzaizai's BLOG](https://github.com/aqvq/aqvq)
+My personal blog using issues and GitHub Actions [RSS Feed](https://raw.githubusercontent.com/aqvq/aqvq/main/feed.xml) 
+
+### Hello World! Hello You! 😄
+- 🔭 I’m Juzaizai
+- 📫 Email: 2505940811@qq.com
+- 🌱 I’m currently learning Embodied AI
 
 
 ## 最近更新
