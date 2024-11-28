@@ -423,7 +423,7 @@ def generate_random_color():
 
 def bundle_pinned_issues_section():
     global gitblog
-    pinned_label = gitblog.get_label('👍置顶')
+    pinned_label = gitblog.get_label(':+1:置顶')
     pinned_issues = gitblog.get_issues(labels=(pinned_label,))
 
     pinned_issues_section = '\n## 置顶 :thumbsup: \n'
