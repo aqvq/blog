@@ -366,12 +366,12 @@ def update_readme_md_file(contents):
         f.close()
 
 
-def login():
-    global user, username
-    github_repo_env = os.environ.get('GITHUB_REPOSITORY')
-    username = github_repo_env[0:github_repo_env.index('/')]
-    password = os.environ.get('GITHUB_TOKEN')
-    user = Github(username, password)
+# def login():
+#     global user, username
+#     github_repo_env = os.environ.get('GITHUB_REPOSITORY')
+#     username = github_repo_env[0:github_repo_env.index('/')]
+#     password = os.environ.get('GITHUB_TOKEN')
+#     user = Github(username, password)
 
 
 def get_gitblog():
