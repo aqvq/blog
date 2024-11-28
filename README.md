@@ -3,24 +3,13 @@
 <p align='center'>
     <img src="https://badgen.net/badge/labels/18"/>
     <img src="https://badgen.net/github/issues/aqvq/aqvq"/>
-    <img src="https://badgen.net/badge/last-commit/2024-11-28 13:44:19"/>
+    <img src="https://badgen.net/badge/last-commit/2024-11-28 13:46:01"/>
     <img src="https://badgen.net/github/forks/aqvq/aqvq"/>
     <img src="https://badgen.net/github/stars/aqvq/aqvq"/>
     <img src="https://badgen.net/github/watchers/aqvq/aqvq"/>
     <img src="https://badgen.net/github/release/aqvq/aqvq"/>
 </p>
 
-## [Juzaizai's BLOG](https://github.com/aqvq/aqvq)
-
-My personal blog using issues and GitHub Actions! [RSS Feed](https://raw.githubusercontent.com/{repo_name}/main/feed.xml) 
-
-### Hello World! Hello You! 😄  <image align="right" src="https://github-readme-stats.vercel.app/api?username=aqvq&show_icons=true&hide_title=true&theme=gradient" />
-
-🔭 I’m Juzaizai
-
-📫 Email: 2505940811@qq.com
-
-🌱 I’m currently learning Embodied AI
 
 
 <p align='center'>
@@ -34,7 +23,18 @@ My personal blog using issues and GitHub Actions! [RSS Feed](https://raw.githubu
 橘猫爱吃鱼</span>
 </p>
 
-    
+    ## [Juzaizai's BLOG](https://github.com/aqvq/aqvq)
+
+My personal blog using issues and GitHub Actions! [RSS Feed](https://raw.githubusercontent.com/{repo_name}/main/feed.xml) 
+
+### Hello World! Hello You! 😄  <image align="right" src="https://github-readme-stats.vercel.app/api?username=aqvq&show_icons=true&hide_title=true&theme=gradient" />
+
+🔭 I’m Juzaizai
+
+📫 Email: 2505940811@qq.com
+
+🌱 I’m currently learning Embodied AI
+
 ## 置顶 :thumbsup: 
 ## 最新 :new: 
 
@@ -111,9 +111,10 @@ Habitat 使用右手坐标系作为世界坐标系，`X` 轴朝右，`Y` 轴朝�
 ---
 
 
+## 分类  :card_file_box: 
 <details open="open">
     <summary>
-        ## 分类  :card_file_box: 
+        点击展开
     </summary>
 
 
