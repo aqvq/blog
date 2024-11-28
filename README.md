@@ -3,7 +3,7 @@
 <p align='center'>
     <img src="https://badgen.net/badge/labels/18"/>
     <img src="https://badgen.net/github/issues/aqvq/aqvq"/>
-    <img src="https://badgen.net/badge/last-commit/2024-11-28 13:59:39"/>
+    <img src="https://badgen.net/badge/last-commit/2024-11-28 14:02:03"/>
     <img src="https://badgen.net/github/forks/aqvq/aqvq"/>
     <img src="https://badgen.net/github/stars/aqvq/aqvq"/>
     <img src="https://badgen.net/github/watchers/aqvq/aqvq"/>
@@ -100,9 +100,9 @@ Habitat 使用右手坐标系作为世界坐标系，`X` 轴朝右，`Y` 轴朝�
 
 
 ## 分类  :card_file_box: 
-<details open="close">
+<details>
     <summary>
-        点击展开
+        Details
     </summary>
 
 
