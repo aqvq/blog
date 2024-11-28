@@ -2,12 +2,12 @@
 
 <p align='center'>
     <img src="https://badgen.net/badge/labels/18"/>
-    <img src="https://badgen.net/github/issues/aqvq/gitblog"/>
-    <img src="https://badgen.net/badge/last-commit/2024-11-28 13:23:06"/>
-    <img src="https://badgen.net/github/forks/aqvq/gitblog"/>
-    <img src="https://badgen.net/github/stars/aqvq/gitblog"/>
-    <img src="https://badgen.net/github/watchers/aqvq/gitblog"/>
-    <img src="https://badgen.net/github/release/aqvq/gitblog"/>
+    <img src="https://badgen.net/github/issues/aqvq/aqvq"/>
+    <img src="https://badgen.net/badge/last-commit/2024-11-28 13:25:49"/>
+    <img src="https://badgen.net/github/forks/aqvq/aqvq"/>
+    <img src="https://badgen.net/github/stars/aqvq/aqvq"/>
+    <img src="https://badgen.net/github/watchers/aqvq/aqvq"/>
+    <img src="https://badgen.net/github/release/aqvq/aqvq"/>
 </p>
 
 <p align='center'>
