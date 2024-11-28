@@ -458,6 +458,8 @@ def format_issue_with_labels(issue: Issue):
             urllib.parse.quote(label.name),
         )
 
+    if not issue.body:
+        return ""
     if "---" in issue.body:
         body_summary = issue.body[: issue.body.index("---")]
     else:
