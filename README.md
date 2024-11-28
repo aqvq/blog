@@ -3,7 +3,7 @@
 <p align='center'>
     <img src="https://badgen.net/badge/labels/9"/>
     <img src="https://badgen.net/github/issues/aqvq/aqvq"/>
-    <img src="https://badgen.net/badge/last-commit/2024-11-28 14:28:37"/>
+    <img src="https://badgen.net/badge/last-commit/2024-11-28 15:13:29"/>
     <img src="https://badgen.net/github/forks/aqvq/aqvq"/>
     <img src="https://badgen.net/github/stars/aqvq/aqvq"/>
     <img src="https://badgen.net/github/watchers/aqvq/aqvq"/>
@@ -46,22 +46,6 @@ My personal blog using issues and GitHub Actions! [RSS Feed](https://raw.githubu
 [CUB_200_2011数据集转Yolo格式 - 哔哩哔哩 (bilibili.com)](https://www.bilibili.com/read/cv21940047/#:~:text=%E6%89%80%E4%BB%A5CUB%E6%95%B0%E6%8D%AE%E9%9B%
 
 [更多>>>](https://github.com/aqvq/aqvq/issues/4)
-
----
-
-
-#### [YOLOv8自制数据集说明](https://github.com/aqvq/aqvq/issues/3) <sup>0 :speech_balloon:</sup> 	 2024-11-28 12:16:00
-
-:label: : [YOLO](https://github.com/aqvq/aqvq/labels/YOLO), [计算机视觉](https://github.com/aqvq/aqvq/labels/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89), [目标检测](https://github.com/aqvq/aqvq/labels/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B)
-
-
-### 格式
-
-Ultralytics YOLO格式是一种数据集配置格式，允许您定义数据集根目录、训练/验证/测试图像目录或包含图像路径的*.txt文件的相对路径，以及类名字典。下面是一个例子：
-
-
-
-[更多>>>](https://github.com/aqvq/aqvq/issues/3)
 
 ---
 
@@ -138,10 +122,9 @@ Habitat 使用右手坐标系作为世界坐标系，`X` 轴朝右，`Y` 轴朝�
 </details>
 
 <details>
-<summary>YOLO	<sup>2:newspaper:</sup></summary>
+<summary>YOLO	<sup>1:newspaper:</sup></summary>
 
 - [CUB转YOLO数据集](https://github.com/aqvq/aqvq/issues/4)  <sup>0 :speech_balloon:</sup>  	 
-- [YOLOv8自制数据集说明](https://github.com/aqvq/aqvq/issues/3)  <sup>0 :speech_balloon:</sup>  	 
 
 
 </details>
@@ -162,19 +145,17 @@ Habitat 使用右手坐标系作为世界坐标系，`X` 轴朝右，`Y` 轴朝�
 </details>
 
 <details>
-<summary>目标检测	<sup>2:newspaper:</sup></summary>
+<summary>目标检测	<sup>1:newspaper:</sup></summary>
 
 - [CUB转YOLO数据集](https://github.com/aqvq/aqvq/issues/4)  <sup>0 :speech_balloon:</sup>  	 
-- [YOLOv8自制数据集说明](https://github.com/aqvq/aqvq/issues/3)  <sup>0 :speech_balloon:</sup>  	 
 
 
 </details>
 
 <details>
-<summary>计算机视觉	<sup>2:newspaper:</sup></summary>
+<summary>计算机视觉	<sup>1:newspaper:</sup></summary>
 
 - [CUB转YOLO数据集](https://github.com/aqvq/aqvq/issues/4)  <sup>0 :speech_balloon:</sup>  	 
-- [YOLOv8自制数据集说明](https://github.com/aqvq/aqvq/issues/3)  <sup>0 :speech_balloon:</sup>  	 
 
 
 </details>
