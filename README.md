@@ -11,10 +11,18 @@ My personal blog using issues and GitHub Actions! [RSS Feed](https://raw.githubu
 🌱 I’m currently learning Embodied AI
 
 ## 最近更新
+- 2024-11-28 | [YOLOv8自制数据集说明](https://github.com/aqvq/aqvq/issues/3)
 - 2024-11-28 | [Obsidian使用总结](https://github.com/aqvq/aqvq/issues/2)
 - 2024-11-28 | [explore-eqa中的三个三维坐标系](https://github.com/aqvq/aqvq/issues/1)
 ## BLOG
+- 2024-11-28 | [explore-eqa中的三个三维坐标系](https://github.com/aqvq/aqvq/issues/1)
+## EQA
+- 2024-11-28 | [explore-eqa中的三个三维坐标系](https://github.com/aqvq/aqvq/issues/1)
+## YOLO
+- 2024-11-28 | [YOLOv8自制数据集说明](https://github.com/aqvq/aqvq/issues/3)
+## 实用工具
 - 2024-11-28 | [Obsidian使用总结](https://github.com/aqvq/aqvq/issues/2)
-- 2024-11-28 | [explore-eqa中的三个三维坐标系](https://github.com/aqvq/aqvq/issues/1)
-## eqa
-- 2024-11-28 | [explore-eqa中的三个三维坐标系](https://github.com/aqvq/aqvq/issues/1)
+## 目标检测
+- 2024-11-28 | [YOLOv8自制数据集说明](https://github.com/aqvq/aqvq/issues/3)
+## 计算机视觉
+- 2024-11-28 | [YOLOv8自制数据集说明](https://github.com/aqvq/aqvq/issues/3)
