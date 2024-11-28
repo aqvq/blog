@@ -100,7 +100,7 @@ def parse_TODO(issue):
     if not todo_undone:
         return f"[{issue.title}]({issue.html_url}) all done", []
     return (
-        f"[{issue.title}]({issue.html_url}) {len(todo_undone)} jobs to do--{len(todo_done)} jobs done",
+        f"[{issue.title}]({issue.html_url}) -- {len(todo_undone)} job(s) to do, {len(todo_done)} job(s) done",
         todo_done + todo_undone,
     )
 
@@ -123,7 +123,7 @@ def get_issues_from_label(repo, label):
 
 def add_issue_info(issue, md):
     time = format_time(issue.created_at)
-    md.write(f"- [{issue.title}]({issue.html_url}) {time}\n")
+    md.write(f"- {time} | [{issue.title}]({issue.html_url})\n")
 
 
 def add_md_todo(repo, md, me):
