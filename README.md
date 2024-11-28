@@ -3,7 +3,7 @@
 <p align='center'>
     <img src="https://badgen.net/badge/labels/18"/>
     <img src="https://badgen.net/github/issues/aqvq/aqvq"/>
-    <img src="https://badgen.net/badge/last-commit/2024-11-28 13:46:01"/>
+    <img src="https://badgen.net/badge/last-commit/2024-11-28 13:52:30"/>
     <img src="https://badgen.net/github/forks/aqvq/aqvq"/>
     <img src="https://badgen.net/github/stars/aqvq/aqvq"/>
     <img src="https://badgen.net/github/watchers/aqvq/aqvq"/>
@@ -23,7 +23,7 @@
 橘猫爱吃鱼</span>
 </p>
 
-    ## [Juzaizai's BLOG](https://github.com/aqvq/aqvq)
+## [Juzaizai's BLOG](https://github.com/aqvq/aqvq)
 
 My personal blog using issues and GitHub Actions! [RSS Feed](https://raw.githubusercontent.com/{repo_name}/main/feed.xml) 
 
@@ -112,7 +112,7 @@ Habitat 使用右手坐标系作为世界坐标系，`X` 轴朝右，`Y` 轴朝�
 
 
 ## 分类  :card_file_box: 
-<details open="open">
+<details open="closed">
     <summary>
         点击展开
     </summary>
