@@ -1,13 +1,12 @@
 ## [Juzaizai's BLOG](https://github.com/aqvq/aqvq)
 
-My personal blog using issues and GitHub Actions [RSS Feed](https://raw.githubusercontent.com/aqvq/aqvq/main/feed.xml) 
+My personal blog using issues and GitHub Actions [RSS Feed](https://raw.githubusercontent.com/aqvq/aqvq/main/feed.xml)  <image align="right" src="https://github-readme-stats.vercel.app/api?username=aqvq&show_icons=true&hide_title=true&theme=gradient" />
 
-### Hello World! Hello You! 😄 <image align="right" src="https://github-readme-stats.vercel.app/api?username=aqvq&show_icons=true&hide_title=true&theme=gradient" />
+### Hello World! Hello You! 😄
 
-- 🔭 I’m Juzaizai
-- 📫 Email: 2505940811@qq.com
-- 🌱 I’m currently learning Embodied AI
-
+🔭 I’m Juzaizai
+📫 Email: 2505940811@qq.com
+🌱 I’m currently learning Embodied AI
 
 ## 最近更新
 - [Obsidian使用总结](https://github.com/aqvq/aqvq/issues/2) 2024-11-28
