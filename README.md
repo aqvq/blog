@@ -3,7 +3,7 @@
 <p align='center'>
     <img src="https://badgen.net/badge/labels/9"/>
     <img src="https://badgen.net/github/issues/aqvq/aqvq"/>
-    <img src="https://badgen.net/badge/last-commit/2024-11-28 14:28:06"/>
+    <img src="https://badgen.net/badge/last-commit/2024-11-28 14:28:37"/>
     <img src="https://badgen.net/github/forks/aqvq/aqvq"/>
     <img src="https://badgen.net/github/stars/aqvq/aqvq"/>
     <img src="https://badgen.net/github/watchers/aqvq/aqvq"/>
@@ -116,7 +116,7 @@ Habitat 使用右手坐标系作为世界坐标系，`X` 轴朝右，`Y` 轴朝�
 <details>
 <summary>:framed_picture:封面	<sup>1:newspaper:</sup></summary>
 
-- [封面](https://github.com/aqvq/aqvq/issues/5)  <sup>1 :speech_balloon:</sup>  	 
+- [封面管理](https://github.com/aqvq/aqvq/issues/5)  <sup>1 :speech_balloon:</sup>  	 
 
 
 </details>
