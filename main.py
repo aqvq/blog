@@ -9,10 +9,12 @@ from github import Github
 from lxml.etree import CDATA
 from marko.ext.gfm import gfm as marko
 
-MD_HEAD = """## [Gitblog](https://yihong0618.github.io/gitblog/)
-My personal blog([About Me](https://github.com/yihong0618/gitblog/issues/282)) using issues and GitHub Actions (随意转载，无需署名)
+MD_HEAD = """## [Juzaizai's BLOG](https://github.com/aqvq/aqvq)
+My personal blog([About Me](https://www.juzaizai.com)) using issues and GitHub Actions
 ![image](https://github.com/user-attachments/assets/a168bf11-661e-4566-b042-7fc9544de528)
-[RSS Feed](https://raw.githubusercontent.com/{repo_name}/master/feed.xml)
+[RSS Feed](https://raw.githubusercontent.com/{repo_name}/master/feed.xml) 
+[![Juzaizai's GitHub stats](https://github-readme-stats.vercel.app/api?username=aqvq)](https://github.com/aqvq)
+
 """
 
 BACKUP_DIR = "BACKUP"
@@ -99,7 +101,7 @@ def parse_TODO(issue):
     if not todo_undone:
         return f"[{issue.title}]({issue.html_url}) all done", []
     return (
-        f"[{issue.title}]({issue.html_url})--{len(todo_undone)} jobs to do--{len(todo_done)} jobs done",
+        f"[{issue.title}]({issue.html_url}) -- {len(todo_undone)} jobs to do--{len(todo_done)} jobs done",
         todo_done + todo_undone,
     )
 
@@ -122,7 +124,7 @@ def get_issues_from_label(repo, label):
 
 def add_issue_info(issue, md):
     time = format_time(issue.created_at)
-    md.write(f"- [{issue.title}]({issue.html_url})--{time}\n")
+    md.write(f"- [{issue.title}]({issue.html_url}) -- {time}\n")
 
 
 def add_md_todo(repo, md, me):
@@ -170,7 +172,7 @@ def add_md_firends(repo, md, me):
     s = markdown.markdown(s, output_format="html", extensions=["extra"])
     with open(md, "a+", encoding="utf-8") as md:
         md.write(
-            f"## [友情链接](https://github.com/{str(me)}/gitblog/issues/{friends_issue_number})\n"
+            f"## [友情链接](https://github.com/{str(me)}/{str(me)}/issues/{friends_issue_number})\n"
         )
         md.write("<details><summary>显示</summary>\n")
         md.write(s)
@@ -264,7 +266,7 @@ def generate_rss_feed(repo, filename, me):
     )
     generator.link(href=repo.html_url)
     generator.link(
-        href=f"https://raw.githubusercontent.com/{repo.full_name}/master/{filename}",
+        href=f"https://raw.githubusercontent.com/{repo.full_name}/main/{filename}",
         rel="self",
     )
     for issue in repo.get_issues():
@@ -286,6 +288,7 @@ def main(token, repo_name, issue_number=None, dir_name=BACKUP_DIR):
     user = login(token)
     me = get_me(user)
     repo = get_repo(user, repo_name)
+    repo.get_issue(0).get_labels().
     # add to readme one by one, change order here
     add_md_header("README.md", repo_name)
     for func in [add_md_firends, add_md_top, add_md_recent, add_md_label, add_md_todo]:
