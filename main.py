@@ -278,7 +278,7 @@ def generate_rss_feed(repo, filename, me):
     )
     generator.link(href=repo.html_url)
     generator.link(
-        href=f"https://raw.githubusercontent.com/{username}/{repo.full_name}/main/{filename}",
+        href=f"https://raw.githubusercontent.com/{username}/{repo.name}/main/{filename}",
         rel="self",
     )
     for issue in repo.get_issues():
