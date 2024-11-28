@@ -1,16 +1,6 @@
 name: Generate GitBlog README
 
-on:
-  workflow_dispatch:
-  issues:
-    types: [opened, edited]
-  issue_comment:
-    types: [created, edited]
-  push:
-    branches:
-      - main
-    paths:
-      - main.py
+on: [issues, issue_comment]
 
 jobs:
   sync:
