@@ -33,6 +33,9 @@ IGNORE_LABELS = FRIENDS_LABELS + TOP_ISSUES_LABELS + TODO_ISSUES_LABELS + ABOUT_
 
 cur_time: str
 gitblog = None
+user = None
+username = "Juzaizai"
+email = "2505940811@qq.com"
 
 FRIENDS_TABLE_HEAD = "| Name | Link | Desc | \n | ---- | ---- | ---- |\n"
 FRIENDS_TABLE_TEMPLATE = "| {name} | {link} | {desc} |\n"
@@ -296,10 +299,13 @@ def generate_rss_feed(repo, filename, me):
 
 
 def main(token, repo_name, issue_number=None, dir_name=BACKUP_DIR):
-    global gitblog
+    global gitblog, user, username
     user = login(token)
     me = get_me(user)
     gitblog = get_repo(user, repo_name)
+    github_repo_env = os.environ.get('GITHUB_REPOSITORY')
+    username = github_repo_env[0:github_repo_env.index('/')]
+    print(f"username: {username}")
     print("login successfully!!!")
 
     global cur_time
@@ -366,19 +372,6 @@ def update_readme_md_file(contents):
         f.writelines(contents)
         f.flush()
         f.close()
-
-
-# def login():
-#     global user, username
-#     github_repo_env = os.environ.get('GITHUB_REPOSITORY')
-#     username = github_repo_env[0:github_repo_env.index('/')]
-#     password = os.environ.get('GITHUB_TOKEN')
-#     user = Github(username, password)
-
-
-# def get_gitblog():
-#     global gitblog
-#     gitblog = user.get_repo(os.environ.get('GITHUB_REPOSITORY'))
 
 def bundle_header_section():
     content = ""
