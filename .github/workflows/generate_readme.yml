@@ -3,12 +3,12 @@ name: Generate GitBlog README
 on:
   workflow_dispatch:
   issues:
-    types: [opened, edited, labeled, unlabeled]
+    types: [opened, edited]
   issue_comment:
     types: [created, edited]
   push:
     branches:
-      - master
+      - main
     paths:
       - main.py
 
@@ -34,15 +34,15 @@ jobs:
           source venv/bin/activate
           pip install -r requirements.txt
 
-      - name: Generate new md
+      - name: Generate new markdown
         run: |
           source venv/bin/activate
-          python main.py ${{ secrets.G_T }} ${{ github.repository }} --issue_number '${{ github.event.issue.number }}'
+          python main.py ${{ secrets.ACCESS_TOKEN }} ${{ github.repository }} --issue_number '${{ github.event.issue.number }}'
 
       - name: Push README
         run: |
           git config --local user.email "2505940811@qq.com"
-          git config --local user.name "aqvq"
+          git config --local user.name "Juzaizai"
           git add BACKUP/*.md
           git commit -a -m 'update new blog' || echo "nothing to commit"
           git push || echo "nothing to push"
