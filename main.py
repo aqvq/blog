@@ -318,9 +318,9 @@ def main(token, repo_name, issue_number=None, dir_name=BACKUP_DIR):
     pinned_issues_section = bundle_pinned_issues_section()
     new_created_section = bundle_new_created_section()
     list_by_labels_section = bundle_list_by_labels_section()
-    # cover_image_section = bundle_cover_image_section()
+    cover_image_section = bundle_cover_image_section()
     projects_section = bundle_projects_section()
-    contents = [summary_section, header_section, pinned_issues_section, new_created_section,
+    contents = [summary_section, header_section, cover_image_section, pinned_issues_section, new_created_section,
                 list_by_labels_section, projects_section]
     update_readme_md_file(contents)
     print('README.md updated successfully!!!')
@@ -405,12 +405,6 @@ def bundle_summary_section():
     <img src="https://badgen.net/github/release/{0}/{0}"/>
 </p>
 
-<p align='center'>
-    <a href="https://github.com/jwenjian/visitor-count-badge">
-        <img src="https://visitor-badge.glitch.me/badge?page_id=jwenjian.gitblog"/>
-    </a>
-</p>
-
 '''.format(username, total_label_count, cur_time)
 
     return summary_section
@@ -449,8 +443,8 @@ def format_issue_with_labels(issue: Issue):
     else:
         body_summary = issue.body[:150]
         # 如果前150个字符中有代码块，则在 150 个字符中重新截取代码块之前的部分作为 summary
-        if '```' in body_summary:
-            body_summary = body_summary[:body_summary.index('```')]
+    if '```' in body_summary:
+        body_summary = body_summary[:body_summary.index('```')]
 
     return '''
 #### [{0}]({1}) {2} \t {3}
