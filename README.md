@@ -7,7 +7,7 @@
 -->
 
 ### Hello World! Hello You! 😄
-![visitors](https://visitor-badge.glitch.me/badge?page_id=aqvq.aqvq)
+
 - 🔭 I’m Juzaizai
 - 📫 Email: 2505940811@qq.com
 - 🌱 I’m currently learning Embodied AI
