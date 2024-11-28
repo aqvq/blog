@@ -318,9 +318,9 @@ def main(token, repo_name, issue_number=None, dir_name=BACKUP_DIR):
     pinned_issues_section = bundle_pinned_issues_section()
     new_created_section = bundle_new_created_section()
     list_by_labels_section = bundle_list_by_labels_section()
-    cover_image_section = bundle_cover_image_section()
+    # cover_image_section = bundle_cover_image_section()
     projects_section = bundle_projects_section()
-    contents = [summary_section, header_section, cover_image_section, pinned_issues_section, new_created_section,
+    contents = [summary_section, header_section, pinned_issues_section, new_created_section,
                 list_by_labels_section, projects_section]
     update_readme_md_file(contents)
     print('README.md updated successfully!!!')
@@ -397,12 +397,12 @@ def bundle_summary_section():
 
 <p align='center'>
     <img src="https://badgen.net/badge/labels/{1}"/>
-    <img src="https://badgen.net/github/issues/{0}/gitblog"/>
+    <img src="https://badgen.net/github/issues/{0}/{0}"/>
     <img src="https://badgen.net/badge/last-commit/{2}"/>
-    <img src="https://badgen.net/github/forks/{0}/gitblog"/>
-    <img src="https://badgen.net/github/stars/{0}/gitblog"/>
-    <img src="https://badgen.net/github/watchers/{0}/gitblog"/>
-    <img src="https://badgen.net/github/release/{0}/gitblog"/>
+    <img src="https://badgen.net/github/forks/{0}/{0}"/>
+    <img src="https://badgen.net/github/stars/{0}/{0}"/>
+    <img src="https://badgen.net/github/watchers/{0}/{0}"/>
+    <img src="https://badgen.net/github/release/{0}/{0}"/>
 </p>
 
 <p align='center'>
