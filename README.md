@@ -10,10 +10,10 @@ My personal blog using issues and GitHub Actions [RSS Feed](https://raw.githubus
 
 
 ## 最近更新
-- [Obsidian使用总结](https://github.com/aqvq/aqvq/issues/2) -- 2024-11-28
-- [explore-eqa中的三个三维坐标系](https://github.com/aqvq/aqvq/issues/1) -- 2024-11-28
+- [Obsidian使用总结](https://github.com/aqvq/aqvq/issues/2) 2024-11-28
+- [explore-eqa中的三个三维坐标系](https://github.com/aqvq/aqvq/issues/1) 2024-11-28
 ## BLOG
-- [Obsidian使用总结](https://github.com/aqvq/aqvq/issues/2) -- 2024-11-28
-- [explore-eqa中的三个三维坐标系](https://github.com/aqvq/aqvq/issues/1) -- 2024-11-28
+- [Obsidian使用总结](https://github.com/aqvq/aqvq/issues/2) 2024-11-28
+- [explore-eqa中的三个三维坐标系](https://github.com/aqvq/aqvq/issues/1) 2024-11-28
 ## eqa
-- [explore-eqa中的三个三维坐标系](https://github.com/aqvq/aqvq/issues/1) -- 2024-11-28
+- [explore-eqa中的三个三维坐标系](https://github.com/aqvq/aqvq/issues/1) 2024-11-28
