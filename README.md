@@ -3,7 +3,7 @@
 <p align='center'>
     <img src="https://badgen.net/badge/labels/9"/>
     <img src="https://badgen.net/github/issues/aqvq/aqvq"/>
-    <img src="https://badgen.net/badge/last-commit/2024-11-28 15:15:02"/>
+    <img src="https://badgen.net/badge/last-commit/2024-11-29 02:38:33"/>
     <img src="https://badgen.net/github/forks/aqvq/aqvq"/>
     <img src="https://badgen.net/github/stars/aqvq/aqvq"/>
     <img src="https://badgen.net/github/watchers/aqvq/aqvq"/>
@@ -38,7 +38,7 @@ My personal blog using issues and GitHub Actions! [RSS Feed](https://raw.githubu
 ## 置顶 :thumbsup: 
 ## 最新 :new: 
 
-#### [CUB转YOLO数据集](https://github.com/aqvq/aqvq/issues/4) <sup>0 :speech_balloon:</sup> 	 2024-11-28 12:16:39
+#### [CUB转YOLO 格式数据集](https://github.com/aqvq/aqvq/issues/4) <sup>0 :speech_balloon:</sup> 	 2024-11-28 12:16:39
 
 :label: : [YOLO](https://github.com/aqvq/aqvq/labels/YOLO), [计算机视觉](https://github.com/aqvq/aqvq/labels/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89), [目标检测](https://github.com/aqvq/aqvq/labels/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B)
 
@@ -140,7 +140,7 @@ Habitat 使用右手坐标系作为世界坐标系，`X` 轴朝右，`Y` 轴朝�
 <details>
 <summary>YOLO	<sup>2:newspaper:</sup></summary>
 
-- [CUB转YOLO数据集](https://github.com/aqvq/aqvq/issues/4)  <sup>0 :speech_balloon:</sup>  	 
+- [CUB转YOLO 格式数据集](https://github.com/aqvq/aqvq/issues/4)  <sup>0 :speech_balloon:</sup>  	 
 - [YOLOv8自制数据集说明](https://github.com/aqvq/aqvq/issues/3)  <sup>0 :speech_balloon:</sup>  	 
 
 
@@ -164,7 +164,7 @@ Habitat 使用右手坐标系作为世界坐标系，`X` 轴朝右，`Y` 轴朝�
 <details>
 <summary>目标检测	<sup>2:newspaper:</sup></summary>
 
-- [CUB转YOLO数据集](https://github.com/aqvq/aqvq/issues/4)  <sup>0 :speech_balloon:</sup>  	 
+- [CUB转YOLO 格式数据集](https://github.com/aqvq/aqvq/issues/4)  <sup>0 :speech_balloon:</sup>  	 
 - [YOLOv8自制数据集说明](https://github.com/aqvq/aqvq/issues/3)  <sup>0 :speech_balloon:</sup>  	 
 
 
@@ -173,7 +173,7 @@ Habitat 使用右手坐标系作为世界坐标系，`X` 轴朝右，`Y` 轴朝�
 <details>
 <summary>计算机视觉	<sup>2:newspaper:</sup></summary>
 
-- [CUB转YOLO数据集](https://github.com/aqvq/aqvq/issues/4)  <sup>0 :speech_balloon:</sup>  	 
+- [CUB转YOLO 格式数据集](https://github.com/aqvq/aqvq/issues/4)  <sup>0 :speech_balloon:</sup>  	 
 - [YOLOv8自制数据集说明](https://github.com/aqvq/aqvq/issues/3)  <sup>0 :speech_balloon:</sup>  	 
 
 
