@@ -142,7 +142,7 @@ def format_issue(issue: Issue):
     return "- [%s](%s)  %s  \t \n" % (
         issue.title,
         issue.html_url,
-        sup("%s:speech_balloon: %s📆" % (issue.comments, issue.created_at)),
+        sup("%s💬 %s📆" % (issue.comments, issue.created_at)),
     )
 
 
@@ -259,7 +259,7 @@ def format_issue_with_labels(issue: Issue):
 """.format(
         issue.title,
         issue.html_url,
-        sup("%s:speech_balloon:" % issue.comments),
+        sup("%s💬" % issue.comments),
         sup("%s📆" % issue.created_at),
         " ".join(labels_str),
         body_summary,
