@@ -40,6 +40,19 @@ My personal blog using issues and GitHub Actions! [RSS Feed](https://raw.githubu
 ## 置顶 :thumbsup: 
 ## 最新 :new: 
 
+### [常用Linux操作](https://github.com/aqvq/aqvq/issues/7) <sup>0💬</sup> <sup>2024-11-29 08:06:34📆</sup>
+
+
+
+# 定时任务
+
+
+
+[更多>>>](https://github.com/aqvq/aqvq/issues/7)
+
+---
+
+
 ### [电脑直连网络摄像头](https://github.com/aqvq/aqvq/issues/6) <sup>0💬</sup> <sup>2024-11-29 07:51:02📆</sup>
 
 :label:[计算机视觉](https://github.com/aqvq/aqvq/labels/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89)
@@ -94,19 +107,6 @@ Ultralytics YOLO格式是一种数据集配置格式，允许您定义数据集�
 [Johnny学的公开课 第一集 将近3小时的Obsidian小白入门课，都是基础知识，学会了就能上手OB，一个社区插件都没讲_哔哩哔哩_bilibili](https://www.bilibili.c
 
 [更多>>>](https://github.com/aqvq/aqvq/issues/2)
-
----
-
-
-### [explore-eqa中的三个三维坐标系区别](https://github.com/aqvq/aqvq/issues/1) <sup>0💬</sup> <sup>2024-11-28 08:20:30📆</sup>
-
-:label:[EQA](https://github.com/aqvq/aqvq/labels/EQA)
-
-在 Habitat 项目中，坐标系的转换涉及多个代码模块，主要包括相机坐标系、体素坐标系和世界坐标系之间的转换。为了帮助理解，下面用字符画绘制三个坐标系的轴向关系，并结合 Habitat 项目的代码说明它们的用法。
-
-### 1. 世界坐标系 (World Coordinate System)
-
-[更多>>>](https://github.com/aqvq/aqvq/issues/1)
 
 ---
 
