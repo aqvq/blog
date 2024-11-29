@@ -2,12 +2,12 @@
 
 <p align='center'>
     <img src="https://badgen.net/badge/labels/8"/>
-    <img src="https://badgen.net/github/issues/aqvq//aqvq"/>
+    <img src="https://badgen.net/github/issues/aqvq/aqvq"/>
     <img src="https://badgen.net/badge/last-commit/2024-11-29"/>
-    <img src="https://badgen.net/github/forks/aqvq//aqvq"/>
-    <img src="https://badgen.net/github/stars/aqvq//aqvq"/>
-    <img src="https://badgen.net/github/watchers/aqvq//aqvq"/>
-    <img src="https://badgen.net/github/release/aqvq//aqvq"/>
+    <img src="https://badgen.net/github/forks/aqvq/aqvq"/>
+    <img src="https://badgen.net/github/stars/aqvq/aqvq"/>
+    <img src="https://badgen.net/github/watchers/aqvq/aqvq"/>
+    <img src="https://badgen.net/github/release/aqvq/aqvq"/>
 </p>
 
 
@@ -24,9 +24,9 @@
 </p>
 
 
-## [Juzaizai's BLOG](https://github.com/aqvq//aqvq)
+## [Juzaizai's BLOG](https://github.com/aqvq/aqvq)
 
-My personal blog using issues and GitHub Actions! [RSS Feed](https://raw.githubusercontent.com/aqvq//aqvq/main/feed.xml) 
+My personal blog using issues and GitHub Actions! [RSS Feed](https://raw.githubusercontent.com/aqvq/aqvq/main/feed.xml) 
 
 ### Hello World! Hello You! 😄  <image align="right" src="https://github-readme-stats.vercel.app/api?username=aqvq&show_icons=true&hide_title=true&theme=gradient" />
 
