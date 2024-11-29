@@ -101,7 +101,7 @@ def get_username():
 
 def get_repo_name():
     github_repo_env = os.environ.get("GITHUB_REPOSITORY")
-    repo_name = github_repo_env[github_repo_env.index("/") :]
+    repo_name = github_repo_env[github_repo_env.index("/") + 1 :]
     return repo_name
 
 
@@ -263,9 +263,15 @@ def format_issue_with_labels(issue: Issue):
 
 
 def bundle_new_created_section(repo: Repository, nums: int = 5):
-    filtered_labels = [label for label in repo.get_labels() if label.name not in (LABEL_COVER, LABEL_TOP)]
+    filtered_labels = [
+        label
+        for label in repo.get_labels()
+        if label.name not in (LABEL_COVER, LABEL_TOP)
+    ]
     all_new_created_issues = repo.get_issues(labels=filtered_labels)
-    new_created_issues = all_new_created_issues[:min(all_new_created_issues.totalCount, nums)]
+    new_created_issues = all_new_created_issues[
+        : min(all_new_created_issues.totalCount, nums)
+    ]
     new_created_section = "## 最新 :new: \n"
 
     for issue in new_created_issues:
