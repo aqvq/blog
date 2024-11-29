@@ -273,6 +273,7 @@ def bundle_new_created_section(repo: Repository, nums: int = 5):
     new_created_section = "## 最新 :new: \n"
 
     for issue in new_created_issues:
+        print("new created issue: " + issue.title)
         new_created_section += format_issue_with_labels(issue)
         nums -= 1
         if nums == 0:
