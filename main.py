@@ -114,7 +114,7 @@ def main(token, repo_name, issue_number=None):
     print("login successfully!!!")
 
     # generate readme.md
-    header_section = bundle_header_section(gitblog)
+    header_section = bundle_header_section()
     summary_section = bundle_summary_section(gitblog)
     pinned_issues_section = bundle_pinned_issues_section(gitblog)
     new_created_section = bundle_new_created_section(gitblog, MAX_NEW_CREATES_NUM)
