@@ -1,6 +1,6 @@
 name: Generate BLOG README
 
-on: [issues, issue_comment]
+on: [issues, issue_comment, push]
 
 jobs:
   sync:
