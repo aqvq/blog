@@ -1,7 +1,7 @@
 
 
 <p align='center'>
-    <img src="https://badgen.net/badge/labels/8"/>
+    <img src="https://badgen.net/badge/labels/9"/>
     <img src="https://badgen.net/github/issues/aqvq/aqvq"/>
     <img src="https://badgen.net/badge/last-commit/2024-11-29"/>
     <img src="https://badgen.net/github/forks/aqvq/aqvq"/>
@@ -39,6 +39,17 @@ My personal blog using issues and GitHub Actions! [RSS Feed](https://raw.githubu
 
 ## 置顶 :thumbsup: 
 ## 最新 :new: 
+
+### [服务器维护经历 - 网络连接不上](https://github.com/aqvq/aqvq/issues/8) <sup>0💬</sup> <sup>2024-11-29 13:02:23📆</sup>
+
+:label:[服务器](https://github.com/aqvq/aqvq/labels/%E6%9C%8D%E5%8A%A1%E5%99%A8)
+
+ping baidu.com出现[Temporary failure in name resolution](https://www.cnblogs.com/hanframe/p/17095506.html)，以为是dns的问题，修改文件`/etc/resolv.conf`，发现运行`sudo sy
+
+[更多>>>](https://github.com/aqvq/aqvq/issues/8)
+
+---
+
 
 ### [常用Linux操作](https://github.com/aqvq/aqvq/issues/7) <sup>0💬</sup> <sup>2024-11-29 08:06:34📆</sup>
 
@@ -95,22 +106,6 @@ Ultralytics YOLO格式是一种数据集配置格式，允许您定义数据集�
 ---
 
 
-### [Obsidian使用总结](https://github.com/aqvq/aqvq/issues/2) <sup>0💬</sup> <sup>2024-11-28 10:51:31📆</sup>
-
-:label:[实用工具](https://github.com/aqvq/aqvq/labels/%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7)
-
-
-## 基本使用
-
-> CSDN、知乎、B站都有很多系统的教程，这里简单列举一些资源
-
-[Johnny学的公开课 第一集 将近3小时的Obsidian小白入门课，都是基础知识，学会了就能上手OB，一个社区插件都没讲_哔哩哔哩_bilibili](https://www.bilibili.c
-
-[更多>>>](https://github.com/aqvq/aqvq/issues/2)
-
----
-
-
 ## 分类  :card_file_box: 
 <details>
     <summary>
@@ -147,6 +142,14 @@ Ultralytics YOLO格式是一种数据集配置格式，允许您定义数据集�
 <summary>实用工具	<sup>1📰</sup></summary>
 
 - [Obsidian使用总结](https://github.com/aqvq/aqvq/issues/2)  <sup>0💬</sup>  	 
+
+
+</details>
+
+<details>
+<summary>服务器	<sup>1📰</sup></summary>
+
+- [服务器维护经历 - 网络连接不上](https://github.com/aqvq/aqvq/issues/8)  <sup>0💬</sup>  	 
 
 
 </details>
