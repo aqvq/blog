@@ -44,7 +44,7 @@ My personal blog using issues and GitHub Actions! [RSS Feed](https://raw.githubu
 
 :label:[服务器](https://github.com/aqvq/aqvq/labels/%E6%9C%8D%E5%8A%A1%E5%99%A8)
 
-ping baidu.com出现[Temporary failure in name resolution](https://www.cnblogs.com/hanframe/p/17095506.html)，以为是dns的问题，修改文件`/etc/resolv.conf`，发现运行`sudo sy
+`ping baidu.com`出现[Temporary failure in name resolution](https://www.cnblogs.com/hanframe/p/17095506.html)，以为是dns的问题，修改文件`/etc/resolv.conf`，发现运行`sudo 
 
 [更多>>>](https://github.com/aqvq/aqvq/issues/8)
 
