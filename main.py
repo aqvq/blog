@@ -267,7 +267,14 @@ def format_issue_with_labels(issue: Issue):
 
 
 def bundle_new_created_section(repo: Repository, nums: int = 5):
-    new_created_issues = repo.get_issues(state="open")[:nums]
+    new_created_issues = []
+    for issue in repo.get_issues(state="open"):
+        if LABEL_TOP in issue.get_labels() or LABEL_COVER in issue.get_labels():
+            continue
+        new_created_issues.append(issue)
+        if len(new_created_issues) >= nums:
+            break
+        
     new_created_section = "## 最新 :new: \n"
 
     for issue in new_created_issues:
