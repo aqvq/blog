@@ -268,6 +268,7 @@ def bundle_new_created_section(repo: Repository, nums: int = 5):
         for label in repo.get_labels()
         if label.name not in (LABEL_COVER, LABEL_TOP)
     ]
+    print("labels: " + ", ".join(label.name for label in filtered_labels))
     new_created_issues = repo.get_issues(labels=filtered_labels, state="open")
     new_created_section = "## 最新 :new: \n"
 
@@ -306,7 +307,7 @@ def bundle_list_by_labels_section(repo):
 
         list_by_labels_section += """
 <details>
-<summary>%s\t<sup>%s :page_facing_up: </sup></summary>
+<summary>%s\t<sup>%s :newspaper: </sup></summary>
 
 %s
 
