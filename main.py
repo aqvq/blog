@@ -15,7 +15,7 @@ from lxml.etree import CDATA
 from marko.ext.gfm import gfm as marko
 import time
 
-MAX_PREVIEW_WORDS = 100  # 最大预览字数
+MAX_PREVIEW_WORDS = 150  # 最大预览字数
 MAX_NEW_CREATES_NUM = 5  # 最大文章数
 NAME = "Juzaizai"  #  博客名
 EMAIL = "2505940811@qq.com"  # 邮箱
@@ -142,7 +142,7 @@ def format_issue(issue: Issue):
     return "- [%s](%s)  %s  \t \n" % (
         issue.title,
         issue.html_url,
-        sup("%s💬 %s📆" % (issue.comments, issue.created_at)),
+        sup("%s💬" % issue.comments),
     )
 
 
@@ -246,7 +246,7 @@ def format_issue_with_labels(issue: Issue):
         body_summary = body_summary[: body_summary.index("```")]
 
     return """
-#### [{0}]({1}) {2} {3}
+### [{0}]({1}) {2} {3}
 
 {4}
 
@@ -291,6 +291,8 @@ def bundle_list_by_labels_section(repo):
     all_labels = repo.get_labels()
 
     for label in all_labels:
+        if label.name in (LABEL_COVER, LABEL_TOP):
+            continue
         temp = ""
         # TODO 这里的count是用来计算该label下有多少issue的, 按理说应该是取issues_in_label的totalCount, 但是不知道为什么取出来的一直都是
         # 所有的issue数量, 之后再优化.
