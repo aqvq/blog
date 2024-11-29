@@ -109,6 +109,7 @@ def main(token, repo_name, issue_number=None):
     user = login(token)
     me = get_me(user)
     gitblog = get_repo(user, repo_name)
+
     print(f"user name: {get_username()}")
     print(f"repo name: {get_repo_name()}")
     print("login successfully!!!")
@@ -261,10 +262,8 @@ def format_issue_with_labels(issue: Issue):
     )
 
 
-def bundle_new_created_section(repo, nums: int = 5):
-    filtered_labels = list(repo.get_labels())
-    filtered_labels.remove(LABEL_COVER)
-    filtered_labels.remove(LABEL_TOP)
+def bundle_new_created_section(repo: Repository, nums: int = 5):
+    filtered_labels = [label for label in repo.get_labels() if label.name not in (LABEL_COVER, LABEL_TOP)]
     new_created_issues = repo.get_issues(labels=filtered_labels)[:nums]
     new_created_section = "## 最新 :new: \n"
 
