@@ -48,14 +48,14 @@ My personal blog using issues and GitHub Actions! [RSS Feed](https://raw.githubu
 
 
 <details>
-<summary>:+1:置顶	<sup>0:page_facing_up:</sup></summary>
+<summary>:+1:置顶	<sup>0 :page_facing_up: </sup></summary>
 
 
 
 </details>
 
 <details>
-<summary>:framed_picture:封面	<sup>1:page_facing_up:</sup></summary>
+<summary>:framed_picture:封面	<sup>1 :page_facing_up: </sup></summary>
 
 - [封面管理](https://github.com/aqvq/aqvq/issues/5)  <sup>1 :speech_balloon:</sup>  	 
 
@@ -63,7 +63,7 @@ My personal blog using issues and GitHub Actions! [RSS Feed](https://raw.githubu
 </details>
 
 <details>
-<summary>BLOG	<sup>1:page_facing_up:</sup></summary>
+<summary>BLOG	<sup>1 :page_facing_up: </sup></summary>
 
 - [explore-eqa中的三个三维坐标系区别](https://github.com/aqvq/aqvq/issues/1)  <sup>0 :speech_balloon:</sup>  	 
 
@@ -71,7 +71,7 @@ My personal blog using issues and GitHub Actions! [RSS Feed](https://raw.githubu
 </details>
 
 <details>
-<summary>EQA	<sup>1:page_facing_up:</sup></summary>
+<summary>EQA	<sup>1 :page_facing_up: </sup></summary>
 
 - [explore-eqa中的三个三维坐标系区别](https://github.com/aqvq/aqvq/issues/1)  <sup>0 :speech_balloon:</sup>  	 
 
@@ -79,7 +79,7 @@ My personal blog using issues and GitHub Actions! [RSS Feed](https://raw.githubu
 </details>
 
 <details>
-<summary>YOLO	<sup>2:page_facing_up:</sup></summary>
+<summary>YOLO	<sup>2 :page_facing_up: </sup></summary>
 
 - [CUB转YOLO格式数据集](https://github.com/aqvq/aqvq/issues/4)  <sup>0 :speech_balloon:</sup>  	 
 - [YOLOv8自制数据集说明](https://github.com/aqvq/aqvq/issues/3)  <sup>0 :speech_balloon:</sup>  	 
@@ -88,7 +88,7 @@ My personal blog using issues and GitHub Actions! [RSS Feed](https://raw.githubu
 </details>
 
 <details>
-<summary>实用工具	<sup>1:page_facing_up:</sup></summary>
+<summary>实用工具	<sup>1 :page_facing_up: </sup></summary>
 
 - [Obsidian使用总结](https://github.com/aqvq/aqvq/issues/2)  <sup>0 :speech_balloon:</sup>  	 
 
@@ -96,7 +96,7 @@ My personal blog using issues and GitHub Actions! [RSS Feed](https://raw.githubu
 </details>
 
 <details>
-<summary>目标检测	<sup>2:page_facing_up:</sup></summary>
+<summary>目标检测	<sup>2 :page_facing_up: </sup></summary>
 
 - [CUB转YOLO格式数据集](https://github.com/aqvq/aqvq/issues/4)  <sup>0 :speech_balloon:</sup>  	 
 - [YOLOv8自制数据集说明](https://github.com/aqvq/aqvq/issues/3)  <sup>0 :speech_balloon:</sup>  	 
@@ -105,7 +105,7 @@ My personal blog using issues and GitHub Actions! [RSS Feed](https://raw.githubu
 </details>
 
 <details>
-<summary>计算机视觉	<sup>2:page_facing_up:</sup></summary>
+<summary>计算机视觉	<sup>2 :page_facing_up: </sup></summary>
 
 - [CUB转YOLO格式数据集](https://github.com/aqvq/aqvq/issues/4)  <sup>0 :speech_balloon:</sup>  	 
 - [YOLOv8自制数据集说明](https://github.com/aqvq/aqvq/issues/3)  <sup>0 :speech_balloon:</sup>  	 
