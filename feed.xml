@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<feed xmlns="http://www.w3.org/2005/Atom"><id>https://github.com/aqvq/aqvq</id><title>RSS feed of aqvq's aqvq</title><updated>2024-11-29T07:35:11.391096+00:00</updated><link href="https://github.com/aqvq/aqvq"/><link href="https://raw.githubusercontent.com/aqvq/aqvq/main/feed.xml" rel="self"/><generator uri="https://lkiesow.github.io/python-feedgen" version="1.0.0">python-feedgen</generator><entry><id>https://github.com/aqvq/aqvq/issues/4</id><title>CUB转YOLO格式数据集</title><updated>2024-11-29T07:35:11.834232+00:00</updated><content type="html"><![CDATA[<p>参考文章：
+<feed xmlns="http://www.w3.org/2005/Atom"><id>https://github.com/aqvq/aqvq</id><title>RSS feed of aqvq's aqvq</title><updated>2024-11-29T07:40:54.212655+00:00</updated><link href="https://github.com/aqvq/aqvq"/><link href="https://raw.githubusercontent.com/aqvq/aqvq/main/feed.xml" rel="self"/><generator uri="https://lkiesow.github.io/python-feedgen" version="1.0.0">python-feedgen</generator><entry><id>https://github.com/aqvq/aqvq/issues/4</id><title>CUB转YOLO格式数据集</title><updated>2024-11-29T07:40:54.462669+00:00</updated><content type="html"><![CDATA[<p>参考文章：
 <a href="https://www.bilibili.com/read/cv21940047/#:~:text=%E6%89%80%E4%BB%A5CUB%E6%95%B0%E6%8D%AE%E9%9B%86,%EF%BC%8C%E8%AF%B7%E5%9C%A8__get">CUB_200_2011数据集转Yolo格式 - 哔哩哔哩 (bilibili.com)</a></p>
 <p>CUB数据集下载：
 <a href="https://data.caltech.edu/records/65de6-vp158/files/CUB_200_2011.tgz">https://data.caltech.edu/records/65de6-vp158/files/CUB_200_2011.tgz</a></p>
@@ -144,7 +144,7 @@ if __name__ == &quot;__main__&quot;:
     print(&#x27;Finished!&#x27;)
 </code></pre>
 <p>数据集说明参考文章： #3 </p>
-]]></content><link href="https://github.com/aqvq/aqvq/issues/4"/><category term="YOLO"/><category term="计算机视觉"/><category term="目标检测"/><published>2024-11-28T12:16:39+00:00</published></entry><entry><id>https://github.com/aqvq/aqvq/issues/3</id><title>YOLOv8自制数据集说明</title><updated>2024-11-29T07:35:12.034120+00:00</updated><content type="html"><![CDATA[<h3>格式</h3>
+]]></content><link href="https://github.com/aqvq/aqvq/issues/4"/><category term="YOLO"/><category term="计算机视觉"/><category term="目标检测"/><published>2024-11-28T12:16:39+00:00</published></entry><entry><id>https://github.com/aqvq/aqvq/issues/3</id><title>YOLOv8自制数据集说明</title><updated>2024-11-29T07:40:54.597685+00:00</updated><content type="html"><![CDATA[<h3>格式</h3>
 <p>Ultralytics YOLO格式是一种数据集配置格式，允许您定义数据集根目录、训练/验证/测试图像目录或包含图像路径的*.txt文件的相对路径，以及类名字典。下面是一个例子：</p>
 <pre><code class="language-yaml"># Train/val/test sets as 1) dir: path/to/imgs, 2) file: path/to/imgs.txt, or 3) list: [path/to/imgs1, path/to/imgs2, ..]
 path: ../datasets/coco8  # dataset root dir
@@ -183,7 +183,7 @@ results = model.train(data=&#x27;coco8.yaml&#x27;, epochs=100, imgsz=640)
 <pre><code class="language-bash"># Start training from a pretrained *.pt model
 yolo detect train data=coco8.yaml model=yolov8n.pt epochs=100 imgsz=640
 </code></pre>
-]]></content><link href="https://github.com/aqvq/aqvq/issues/3"/><category term="YOLO"/><category term="计算机视觉"/><category term="目标检测"/><published>2024-11-28T12:16:00+00:00</published></entry><entry><id>https://github.com/aqvq/aqvq/issues/2</id><title>Obsidian使用总结</title><updated>2024-11-29T07:35:12.360221+00:00</updated><content type="html"><![CDATA[<h2>基本使用</h2>
+]]></content><link href="https://github.com/aqvq/aqvq/issues/3"/><category term="YOLO"/><category term="计算机视觉"/><category term="目标检测"/><published>2024-11-28T12:16:00+00:00</published></entry><entry><id>https://github.com/aqvq/aqvq/issues/2</id><title>Obsidian使用总结</title><updated>2024-11-29T07:40:54.733477+00:00</updated><content type="html"><![CDATA[<h2>基本使用</h2>
 <blockquote>
 <p>CSDN、知乎、B站都有很多系统的教程，这里简单列举一些资源</p>
 </blockquote>
@@ -278,7 +278,7 @@ git config credential.helper store
 <p>解决了同步问题，剩下的就是功能性的问题，Obsidian最基本的文本处理做的很不错，不需要担心有什么BUG。</p>
 <p>再者做笔记不太需要花里胡哨的功能，以后有什么需求了，百度一下就行，就比如微信读书同步，这个插件挺不错的。</p>
 <p>千万不要刻意去搜寻大量插件，给自己创造虚假的需求，记录笔记才是我们的初衷。</p>
-]]></content><link href="https://github.com/aqvq/aqvq/issues/2"/><category term="实用工具"/><published>2024-11-28T10:51:31+00:00</published></entry><entry><id>https://github.com/aqvq/aqvq/issues/1</id><title>explore-eqa中的三个三维坐标系区别</title><updated>2024-11-29T07:35:12.569857+00:00</updated><content type="html"><![CDATA[<p>在 Habitat 项目中，坐标系的转换涉及多个代码模块，主要包括相机坐标系、体素坐标系和世界坐标系之间的转换。为了帮助理解，下面用字符画绘制三个坐标系的轴向关系，并结合 Habitat 项目的代码说明它们的用法。</p>
+]]></content><link href="https://github.com/aqvq/aqvq/issues/2"/><category term="实用工具"/><published>2024-11-28T10:51:31+00:00</published></entry><entry><id>https://github.com/aqvq/aqvq/issues/1</id><title>explore-eqa中的三个三维坐标系区别</title><updated>2024-11-29T07:40:54.860130+00:00</updated><content type="html"><![CDATA[<p>在 Habitat 项目中，坐标系的转换涉及多个代码模块，主要包括相机坐标系、体素坐标系和世界坐标系之间的转换。为了帮助理解，下面用字符画绘制三个坐标系的轴向关系，并结合 Habitat 项目的代码说明它们的用法。</p>
 <h3>1. 世界坐标系 (World Coordinate System)</h3>
 <p>Habitat 使用右手坐标系作为世界坐标系，<code>X</code> 轴朝右，<code>Y</code> 轴朝上，<code>Z</code> 轴指向外（朝观察者）。在世界坐标系中，物体的位置和方向都是全局的。Habitat 中的坐标转换，例如 <code>pos_habitat_to_normal()</code> 和 <code>pos_normal_to_habitat()</code>，会涉及此坐标系的使用。</p>
 <p>字符画表示：</p>

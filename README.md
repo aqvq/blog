@@ -38,36 +38,38 @@ My personal blog using issues and GitHub Actions! [RSS Feed](https://raw.githubu
 
 
 ## 置顶 :thumbsup: 
-- [explore-eqa中的三个三维坐标系区别](https://github.com/aqvq/aqvq/issues/1)  <sup>0💬 2024-11-28 08:20:30📆</sup>  	 
+- [explore-eqa中的三个三维坐标系区别](https://github.com/aqvq/aqvq/issues/1)  <sup>0💬</sup>  	 
 ## 最新 :new: 
 
-#### [CUB转YOLO格式数据集](https://github.com/aqvq/aqvq/issues/4) <sup>0💬</sup> <sup>2024-11-28 12:16:39📆</sup>
+### [CUB转YOLO格式数据集](https://github.com/aqvq/aqvq/issues/4) <sup>0💬</sup> <sup>2024-11-28 12:16:39📆</sup>
 
 :label:[YOLO](https://github.com/aqvq/aqvq/labels/YOLO) :label:[计算机视觉](https://github.com/aqvq/aqvq/labels/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89) :label:[目标检测](https://github.com/aqvq/aqvq/labels/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B)
 
 参考文章：
-[CUB_200_2011数据集转Yolo格式 - 哔哩哔哩 (bilibili.com)](https://www.bilibili.com/read/cv21940047/#:~:t
+[CUB_200_2011数据集转Yolo格式 - 哔哩哔哩 (bilibili.com)](https://www.bilibili.com/read/cv21940047/#:~:text=%E6%89%80%E4%BB%A5CUB%E6%95%B0%E6%8D%AE%E9%9B%
 
 [更多>>>](https://github.com/aqvq/aqvq/issues/4)
 
 ---
 
 
-#### [YOLOv8自制数据集说明](https://github.com/aqvq/aqvq/issues/3) <sup>0💬</sup> <sup>2024-11-28 12:16:00📆</sup>
+### [YOLOv8自制数据集说明](https://github.com/aqvq/aqvq/issues/3) <sup>0💬</sup> <sup>2024-11-28 12:16:00📆</sup>
 
 :label:[YOLO](https://github.com/aqvq/aqvq/labels/YOLO) :label:[计算机视觉](https://github.com/aqvq/aqvq/labels/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89) :label:[目标检测](https://github.com/aqvq/aqvq/labels/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B)
 
 
 ### 格式
 
-Ultralytics YOLO格式是一种数据集配置格式，允许您定义数据集根目录、训练/验证/测试图像目录或包含图像路径的*.txt文件的相对路径，以及类名字典。下面是一个例子
+Ultralytics YOLO格式是一种数据集配置格式，允许您定义数据集根目录、训练/验证/测试图像目录或包含图像路径的*.txt文件的相对路径，以及类名字典。下面是一个例子：
+
+
 
 [更多>>>](https://github.com/aqvq/aqvq/issues/3)
 
 ---
 
 
-#### [Obsidian使用总结](https://github.com/aqvq/aqvq/issues/2) <sup>0💬</sup> <sup>2024-11-28 10:51:31📆</sup>
+### [Obsidian使用总结](https://github.com/aqvq/aqvq/issues/2) <sup>0💬</sup> <sup>2024-11-28 10:51:31📆</sup>
 
 :label:[实用工具](https://github.com/aqvq/aqvq/labels/%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7)
 
@@ -76,18 +78,20 @@ Ultralytics YOLO格式是一种数据集配置格式，允许您定义数据集�
 
 > CSDN、知乎、B站都有很多系统的教程，这里简单列举一些资源
 
-[Johnny学的公开课 第一集 将近3小时的Obsidian小白入门课，都是基础知识，学会了就能上手
+[Johnny学的公开课 第一集 将近3小时的Obsidian小白入门课，都是基础知识，学会了就能上手OB，一个社区插件都没讲_哔哩哔哩_bilibili](https://www.bilibili.c
 
 [更多>>>](https://github.com/aqvq/aqvq/issues/2)
 
 ---
 
 
-#### [explore-eqa中的三个三维坐标系区别](https://github.com/aqvq/aqvq/issues/1) <sup>0💬</sup> <sup>2024-11-28 08:20:30📆</sup>
+### [explore-eqa中的三个三维坐标系区别](https://github.com/aqvq/aqvq/issues/1) <sup>0💬</sup> <sup>2024-11-28 08:20:30📆</sup>
 
 :label:[EQA](https://github.com/aqvq/aqvq/labels/EQA) :label:[:+1:置顶](https://github.com/aqvq/aqvq/labels/%3A%2B1%3A%E7%BD%AE%E9%A1%B6)
 
-在 Habitat 项目中，坐标系的转换涉及多个代码模块，主要包括相机坐标系、体素坐标系和世界坐标系之间的转换。为了帮助理解，下面用字符画绘制三个坐标系的轴向关系，并结合 Habitat 项目的代码说
+在 Habitat 项目中，坐标系的转换涉及多个代码模块，主要包括相机坐标系、体素坐标系和世界坐标系之间的转换。为了帮助理解，下面用字符画绘制三个坐标系的轴向关系，并结合 Habitat 项目的代码说明它们的用法。
+
+### 1. 世界坐标系 (World Coordinate System)
 
 [更多>>>](https://github.com/aqvq/aqvq/issues/1)
 
@@ -102,22 +106,6 @@ Ultralytics YOLO格式是一种数据集配置格式，允许您定义数据集�
 
 
 <details>
-<summary>:+1:置顶	<sup>1📰</sup></summary>
-
-- [explore-eqa中的三个三维坐标系区别](https://github.com/aqvq/aqvq/issues/1)  <sup>0💬 2024-11-28 08:20:30📆</sup>  	 
-
-
-</details>
-
-<details>
-<summary>:framed_picture:封面	<sup>1📰</sup></summary>
-
-- [封面管理](https://github.com/aqvq/aqvq/issues/5)  <sup>1💬 2024-11-28 13:30:43📆</sup>  	 
-
-
-</details>
-
-<details>
 <summary>BLOG	<sup>0📰</sup></summary>
 
 
@@ -127,7 +115,7 @@ Ultralytics YOLO格式是一种数据集配置格式，允许您定义数据集�
 <details>
 <summary>EQA	<sup>1📰</sup></summary>
 
-- [explore-eqa中的三个三维坐标系区别](https://github.com/aqvq/aqvq/issues/1)  <sup>0💬 2024-11-28 08:20:30📆</sup>  	 
+- [explore-eqa中的三个三维坐标系区别](https://github.com/aqvq/aqvq/issues/1)  <sup>0💬</sup>  	 
 
 
 </details>
@@ -135,8 +123,8 @@ Ultralytics YOLO格式是一种数据集配置格式，允许您定义数据集�
 <details>
 <summary>YOLO	<sup>2📰</sup></summary>
 
-- [CUB转YOLO格式数据集](https://github.com/aqvq/aqvq/issues/4)  <sup>0💬 2024-11-28 12:16:39📆</sup>  	 
-- [YOLOv8自制数据集说明](https://github.com/aqvq/aqvq/issues/3)  <sup>0💬 2024-11-28 12:16:00📆</sup>  	 
+- [CUB转YOLO格式数据集](https://github.com/aqvq/aqvq/issues/4)  <sup>0💬</sup>  	 
+- [YOLOv8自制数据集说明](https://github.com/aqvq/aqvq/issues/3)  <sup>0💬</sup>  	 
 
 
 </details>
@@ -144,7 +132,7 @@ Ultralytics YOLO格式是一种数据集配置格式，允许您定义数据集�
 <details>
 <summary>实用工具	<sup>1📰</sup></summary>
 
-- [Obsidian使用总结](https://github.com/aqvq/aqvq/issues/2)  <sup>0💬 2024-11-28 10:51:31📆</sup>  	 
+- [Obsidian使用总结](https://github.com/aqvq/aqvq/issues/2)  <sup>0💬</sup>  	 
 
 
 </details>
@@ -152,8 +140,8 @@ Ultralytics YOLO格式是一种数据集配置格式，允许您定义数据集�
 <details>
 <summary>目标检测	<sup>2📰</sup></summary>
 
-- [CUB转YOLO格式数据集](https://github.com/aqvq/aqvq/issues/4)  <sup>0💬 2024-11-28 12:16:39📆</sup>  	 
-- [YOLOv8自制数据集说明](https://github.com/aqvq/aqvq/issues/3)  <sup>0💬 2024-11-28 12:16:00📆</sup>  	 
+- [CUB转YOLO格式数据集](https://github.com/aqvq/aqvq/issues/4)  <sup>0💬</sup>  	 
+- [YOLOv8自制数据集说明](https://github.com/aqvq/aqvq/issues/3)  <sup>0💬</sup>  	 
 
 
 </details>
@@ -161,8 +149,8 @@ Ultralytics YOLO格式是一种数据集配置格式，允许您定义数据集�
 <details>
 <summary>计算机视觉	<sup>2📰</sup></summary>
 
-- [CUB转YOLO格式数据集](https://github.com/aqvq/aqvq/issues/4)  <sup>0💬 2024-11-28 12:16:39📆</sup>  	 
-- [YOLOv8自制数据集说明](https://github.com/aqvq/aqvq/issues/3)  <sup>0💬 2024-11-28 12:16:00📆</sup>  	 
+- [CUB转YOLO格式数据集](https://github.com/aqvq/aqvq/issues/4)  <sup>0💬</sup>  	 
+- [YOLOv8自制数据集说明](https://github.com/aqvq/aqvq/issues/3)  <sup>0💬</sup>  	 
 
 
 </details>
