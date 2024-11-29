@@ -221,23 +221,27 @@ def bundle_pinned_issues_section(repo):
 
 def format_issue_with_labels(issue: Issue):
     labels = issue.get_labels()
-    labels_str = ""
+    labels_str = []
 
     for label in labels:
-        labels_str += "[%s](https://github.com/%s/%s/labels/%s), " % (
-            label.name,
-            get_username(),
-            get_repo_name(),
-            urllib.parse.quote(label.name),
+        labels_str.append(
+            ":label: [%s](https://github.com/%s/%s/labels/%s)"
+            % (
+                label.name,
+                get_username(),
+                get_repo_name(),
+                urllib.parse.quote(label.name),
+            )
         )
 
     if not issue.body:
         return ""
-    if "---" in issue.body:
-        body_summary = issue.body[: issue.body.index("---")]
-    else:
-        body_summary = issue.body[:MAX_PREVIEW_WORDS]
-        # 如果前150个字符中有代码块，则在 150 个字符中重新截取代码块之前的部分作为 summary
+    # if "---" in issue.body:
+    #     body_summary = issue.body[: issue.body.index("---")]
+    # else:
+    # body_summary = issue.body[:MAX_PREVIEW_WORDS]
+    body_summary = issue.body[:MAX_PREVIEW_WORDS]
+    # 如果前150个字符中有代码块，则在 150 个字符中重新截取代码块之前的部分作为 summary
     if "```" in body_summary:
         body_summary = body_summary[: body_summary.index("```")]
 
@@ -255,9 +259,9 @@ def format_issue_with_labels(issue: Issue):
 """.format(
         issue.title,
         issue.html_url,
-        sup("%s :speech_balloon:" % issue.comments),
-        sup("%s :calendar:" % issue.created_at),
-        ":label:".join(labels_str[:-2]),
+        sup("%s :speech_balloon: " % issue.comments),
+        sup("%s :calendar: " % issue.created_at),
+        " ".join(labels_str),
         body_summary,
     )
 
