@@ -1,7 +1,7 @@
 
 
 <p align='center'>
-    <img src="https://badgen.net/badge/labels/7"/>
+    <img src="https://badgen.net/badge/labels/8"/>
     <img src="https://badgen.net/github/issues/aqvq/aqvq"/>
     <img src="https://badgen.net/badge/last-commit/2024-11-29"/>
     <img src="https://badgen.net/github/forks/aqvq/aqvq"/>
@@ -42,7 +42,7 @@ My personal blog using issues and GitHub Actions! [RSS Feed](https://raw.githubu
 
 ### [常用Linux操作](https://github.com/aqvq/aqvq/issues/7) <sup>0💬</sup> <sup>2024-11-29 08:06:34📆</sup>
 
-
+:label:[Linux](https://github.com/aqvq/aqvq/labels/Linux)
 
 # 定时任务
 
@@ -122,6 +122,14 @@ Ultralytics YOLO格式是一种数据集配置格式，允许您定义数据集�
 <summary>EQA	<sup>1📰</sup></summary>
 
 - [explore-eqa中的三个三维坐标系区别](https://github.com/aqvq/aqvq/issues/1)  <sup>0💬</sup>  	 
+
+
+</details>
+
+<details>
+<summary>Linux	<sup>1📰</sup></summary>
+
+- [常用Linux操作](https://github.com/aqvq/aqvq/issues/7)  <sup>0💬</sup>  	 
 
 
 </details>
