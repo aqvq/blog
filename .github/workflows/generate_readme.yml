@@ -33,6 +33,5 @@ jobs:
         run: |
           git config --local user.email "2505940811@qq.com"
           git config --local user.name "Juzaizai"
-          git add BACKUP/*.md
           git commit -a -m 'update new blog' || echo "nothing to commit"
           git push || echo "nothing to push"
