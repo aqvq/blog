@@ -38,6 +38,7 @@ My personal blog using issues and GitHub Actions! [RSS Feed](https://raw.githubu
 
 
 ## 置顶 :thumbsup: 
+- [explore-eqa中的三个三维坐标系区别](https://github.com/aqvq/aqvq/issues/1)  <sup>0 :speech_balloon:</sup>  	 
 ## 最新 :new: 
 
 ## 分类  :card_file_box: 
@@ -48,8 +49,9 @@ My personal blog using issues and GitHub Actions! [RSS Feed](https://raw.githubu
 
 
 <details>
-<summary>:+1:置顶	<sup>0 :page_facing_up: </sup></summary>
+<summary>:+1:置顶	<sup>1 :page_facing_up: </sup></summary>
 
+- [explore-eqa中的三个三维坐标系区别](https://github.com/aqvq/aqvq/issues/1)  <sup>0 :speech_balloon:</sup>  	 
 
 
 </details>
@@ -63,9 +65,8 @@ My personal blog using issues and GitHub Actions! [RSS Feed](https://raw.githubu
 </details>
 
 <details>
-<summary>BLOG	<sup>1 :page_facing_up: </sup></summary>
+<summary>BLOG	<sup>0 :page_facing_up: </sup></summary>
 
-- [explore-eqa中的三个三维坐标系区别](https://github.com/aqvq/aqvq/issues/1)  <sup>0 :speech_balloon:</sup>  	 
 
 
 </details>
