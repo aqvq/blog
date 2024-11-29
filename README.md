@@ -38,12 +38,11 @@ My personal blog using issues and GitHub Actions! [RSS Feed](https://raw.githubu
 
 
 ## 置顶 :thumbsup: 
-- [explore-eqa中的三个三维坐标系区别](https://github.com/aqvq/aqvq/issues/1)  <sup>0💬</sup>  	 
 ## 最新 :new: 
 
 ### [电脑直连网络摄像头](https://github.com/aqvq/aqvq/issues/6) <sup>0💬</sup> <sup>2024-11-29 07:51:02📆</sup>
 
-
+:label:[计算机视觉](https://github.com/aqvq/aqvq/labels/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89)
 
 型号：DH-IPC-HFW54ZYZF1Y-ABC
 下载工具：[全部-浙江大华技术股份有限公司 (dahuatech.com)](https://support.dahuatech.com/tools/software)
@@ -101,7 +100,7 @@ Ultralytics YOLO格式是一种数据集配置格式，允许您定义数据集�
 
 ### [explore-eqa中的三个三维坐标系区别](https://github.com/aqvq/aqvq/issues/1) <sup>0💬</sup> <sup>2024-11-28 08:20:30📆</sup>
 
-:label:[EQA](https://github.com/aqvq/aqvq/labels/EQA) :label:[:+1:置顶](https://github.com/aqvq/aqvq/labels/%3A%2B1%3A%E7%BD%AE%E9%A1%B6)
+:label:[EQA](https://github.com/aqvq/aqvq/labels/EQA)
 
 在 Habitat 项目中，坐标系的转换涉及多个代码模块，主要包括相机坐标系、体素坐标系和世界坐标系之间的转换。为了帮助理解，下面用字符画绘制三个坐标系的轴向关系，并结合 Habitat 项目的代码说明它们的用法。
 
@@ -154,8 +153,9 @@ Ultralytics YOLO格式是一种数据集配置格式，允许您定义数据集�
 </details>
 
 <details>
-<summary>计算机视觉	<sup>2📰</sup></summary>
+<summary>计算机视觉	<sup>3📰</sup></summary>
 
+- [电脑直连网络摄像头](https://github.com/aqvq/aqvq/issues/6)  <sup>0💬</sup>  	 
 - [CUB转YOLO格式数据集](https://github.com/aqvq/aqvq/issues/4)  <sup>0💬</sup>  	 
 - [YOLOv8自制数据集说明](https://github.com/aqvq/aqvq/issues/3)  <sup>0💬</sup>  	 
 
