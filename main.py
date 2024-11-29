@@ -15,13 +15,12 @@ from lxml.etree import CDATA
 from marko.ext.gfm import gfm as marko
 import time
 
-BACKUP_DIR = "BACKUP"
-MAX_PREVIEW_WORDS = 100
-MAX_NEW_CREATES_NUM = 5
-NAME = "Juzaizai"
-EMAIL = "2505940811@qq.com"
-LABEL_TOP = ":+1:置顶"
-LABEL_COVER = ":framed_picture:封面"
+MAX_PREVIEW_WORDS = 100  # 最大预览字数
+MAX_NEW_CREATES_NUM = 5  # 最大文章数
+NAME = "Juzaizai"  #  博客名
+EMAIL = "2505940811@qq.com"  # 邮箱
+LABEL_TOP = ":+1:置顶"  # 置顶标签
+LABEL_COVER = ":framed_picture:封面"  # 封面标签
 
 
 def get_me(user):
@@ -46,6 +45,7 @@ def _valid_xml_char_ordinal(c):
 
 def login(token):
     return Github(token)
+
 
 def get_repo(user: Github, repo: str):
     return user.get_repo(repo)
@@ -105,7 +105,7 @@ def get_repo_name():
     return repo_name
 
 
-def main(token, repo_name, issue_number=None, dir_name=BACKUP_DIR):
+def main(token, repo_name, issue_number=None):
     user = login(token)
     me = get_me(user)
     gitblog = get_repo(user, repo_name)
@@ -357,8 +357,6 @@ def bundle_cover_image_section(repo) -> str:
 
 
 if __name__ == "__main__":
-    if not os.path.exists(BACKUP_DIR):
-        os.mkdir(BACKUP_DIR)
     parser = argparse.ArgumentParser()
     parser.add_argument("github_token", help="github_token")
     parser.add_argument("repo_name", help="repo_name")

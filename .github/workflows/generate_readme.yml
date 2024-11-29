@@ -27,7 +27,7 @@ jobs:
       - name: Generate new markdown
         run: |
           source venv/bin/activate
-          python main.py ${{ secrets.ACCESS_TOKEN }} ${{ github.repository }}'
+          python main.py ${{ secrets.ACCESS_TOKEN }} ${{ github.repository }}
 
       - name: Push README
         run: |
