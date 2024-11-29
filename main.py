@@ -9,41 +9,19 @@ from github import Github
 from github.Issue import Issue
 from github.Repository import Repository
 import codecs
-from nasa_client import NasaClient
 
 import urllib
 from lxml.etree import CDATA
 from marko.ext.gfm import gfm as marko
 import time
 
-MD_HEAD = ""
-try:
-    with open("header.md") as f:
-        MD_HEAD = f.read()
-except FileNotFoundError:
-    print("Warning: 'header.md' not found. Using empty header.")
-
 BACKUP_DIR = "BACKUP"
-ANCHOR_NUMBER = 5
-TOP_ISSUES_LABELS = ["Top"]
-TODO_ISSUES_LABELS = ["TODO"]
-FRIENDS_LABELS = ["Friends"]
-ABOUT_LABELS = ["About"]
-IGNORE_LABELS = FRIENDS_LABELS + TOP_ISSUES_LABELS + TODO_ISSUES_LABELS + ABOUT_LABELS
-
-cur_time: str
-gitblog = None
-user = None
-username = "Juzaizai"
-email = "2505940811@qq.com"
-
-FRIENDS_TABLE_HEAD = "| Name | Link | Desc | \n | ---- | ---- | ---- |\n"
-FRIENDS_TABLE_TEMPLATE = "| {name} | {link} | {desc} |\n"
-FRIENDS_INFO_DICT = {
-    "名字": "",
-    "链接": "",
-    "描述": "",
-}
+MAX_PREVIEW_WORDS = 100
+MAX_NEW_CREATES_NUM = 5
+NAME = "Juzaizai"
+EMAIL = "2505940811@qq.com"
+LABEL_TOP = ":+1:置顶"
+LABEL_COVER = ":framed_picture:封面"
 
 
 def get_me(user):
@@ -52,33 +30,6 @@ def get_me(user):
 
 def is_me(issue, me):
     return issue.user.login == me
-
-
-def is_hearted_by_me(comment, me):
-    reactions = list(comment.get_reactions())
-    for r in reactions:
-        if r.content == "heart" and r.user.login == me:
-            return True
-    return False
-
-
-def _make_friend_table_string(s):
-    info_dict = FRIENDS_INFO_DICT.copy()
-    try:
-        string_list = s.splitlines()
-        # drop empty line
-        string_list = [l for l in string_list if l and not l.isspace()]
-        for l in string_list:
-            string_info_list = re.split("：", l)
-            if len(string_info_list) < 2:
-                continue
-            info_dict[string_info_list[0]] = string_info_list[1]
-        return FRIENDS_TABLE_TEMPLATE.format(
-            name=info_dict["名字"], link=info_dict["链接"], desc=info_dict["描述"]
-        )
-    except Exception as e:
-        print(str(e))
-        return
 
 
 # help to covert xml vaild string
@@ -93,180 +44,11 @@ def _valid_xml_char_ordinal(c):
     )
 
 
-def format_time(time):
-    return str(time)[:10]
-
-
 def login(token):
     return Github(token)
 
-
 def get_repo(user: Github, repo: str):
     return user.get_repo(repo)
-
-
-def parse_TODO(issue):
-    body = issue.body.splitlines()
-    todo_undone = [l for l in body if l.startswith("- [ ] ")]
-    todo_done = [l for l in body if l.startswith("- [x] ")]
-    # just add info all done
-    if not todo_undone:
-        return f"[{issue.title}]({issue.html_url}) all done", []
-    return (
-        f"[{issue.title}]({issue.html_url}) -- {len(todo_undone)} job(s) to do, {len(todo_done)} job(s) done",
-        todo_done + todo_undone,
-    )
-
-
-def get_top_issues(repo):
-    return repo.get_issues(labels=TOP_ISSUES_LABELS)
-
-
-def get_todo_issues(repo):
-    return repo.get_issues(labels=TODO_ISSUES_LABELS)
-
-
-def get_repo_labels(repo):
-    return [l for l in repo.get_labels()]
-
-
-def get_issues_from_label(repo, label):
-    return repo.get_issues(labels=(label,))
-
-
-def add_issue_info(issue, md):
-    time = format_time(issue.created_at)
-    md.write(f"- {time} | [{issue.title}]({issue.html_url})\n")
-
-
-def add_md_todo(repo, md, me):
-    todo_issues = list(get_todo_issues(repo))
-    if not TODO_ISSUES_LABELS or not todo_issues:
-        return
-    with open(md, "a+", encoding="utf-8") as md:
-        md.write("## TODO\n")
-        for issue in todo_issues:
-            if is_me(issue, me):
-                todo_title, todo_list = parse_TODO(issue)
-                md.write("TODO list from " + todo_title + "\n")
-                for t in todo_list:
-                    md.write(t + "\n")
-                # new line
-                md.write("\n")
-
-
-def add_md_top(repo, md, me):
-    top_issues = list(get_top_issues(repo))
-    if not TOP_ISSUES_LABELS or not top_issues:
-        return
-    with open(md, "a+", encoding="utf-8") as md:
-        md.write("## 置顶文章\n")
-        for issue in top_issues:
-            if is_me(issue, me):
-                add_issue_info(issue, md)
-
-
-def add_md_firends(repo, md, me):
-
-    s = FRIENDS_TABLE_HEAD
-    friends_issues = list(repo.get_issues(labels=FRIENDS_LABELS))
-    if not FRIENDS_LABELS or not friends_issues:
-        return
-    friends_issue_number = friends_issues[0].number
-    for issue in friends_issues:
-        for comment in issue.get_comments():
-            if is_hearted_by_me(comment, me):
-                try:
-                    s += _make_friend_table_string(comment.body or "")
-                except Exception as e:
-                    print(str(e))
-                    pass
-    s = markdown.markdown(s, output_format="html", extensions=["extra"])
-    with open(md, "a+", encoding="utf-8") as md:
-        md.write(
-            f"## [友情链接](https://github.com/{str(me)}/{str(me)}/issues/{friends_issue_number})\n"
-        )
-        md.write("<details><summary>显示</summary>\n")
-        md.write(s)
-        md.write("</details>\n")
-        md.write("\n\n")
-
-
-def add_md_recent(repo, md, me, limit=5):
-    count = 0
-    with open(md, "a+", encoding="utf-8") as md:
-        # one the issue that only one issue and delete (pyGitHub raise an exception)
-        try:
-            md.write("## 最近更新\n")
-            for issue in repo.get_issues():
-                if is_me(issue, me):
-                    add_issue_info(issue, md)
-                    count += 1
-                    if count >= limit:
-                        break
-        except Exception as e:
-            print(str(e))
-
-
-def add_md_header(md, repo_name):
-    with open(md, "w", encoding="utf-8") as md:
-        md.write(MD_HEAD.format(repo_name=repo_name))
-        md.write("\n")
-
-
-def add_md_label(repo, md, me):
-    labels = get_repo_labels(repo)
-
-    # sort lables by description info if it exists, otherwise sort by name,
-    # for example, we can let the description start with a number (1#Java, 2#Docker, 3#K8s, etc.)
-    labels = sorted(
-        labels,
-        key=lambda x: (
-            x.description is None,
-            x.description == "",
-            x.description,
-            x.name,
-        ),
-    )
-
-    with open(md, "a+", encoding="utf-8") as md:
-        for label in labels:
-            # we don't need add top label again
-            if label.name in IGNORE_LABELS:
-                continue
-
-            issues = get_issues_from_label(repo, label)
-            if issues.totalCount:
-                md.write("## " + label.name + "\n")
-                issues = sorted(issues, key=lambda x: x.created_at, reverse=True)
-            i = 0
-            for issue in issues:
-                if not issue:
-                    continue
-                if is_me(issue, me):
-                    if i == ANCHOR_NUMBER:
-                        md.write("<details><summary>显示更多</summary>\n")
-                        md.write("\n")
-                    add_issue_info(issue, md)
-                    i += 1
-            if i > ANCHOR_NUMBER:
-                md.write("</details>\n")
-                md.write("\n")
-
-
-def get_to_generate_issues(repo, dir_name, issue_number=None):
-    md_files = os.listdir(dir_name)
-    generated_issues_numbers = [
-        int(i.split("_")[0]) for i in md_files if i.split("_")[0].isdigit()
-    ]
-    to_generate_issues = [
-        i
-        for i in list(repo.get_issues())
-        if int(i.number) not in generated_issues_numbers
-    ]
-    if issue_number:
-        to_generate_issues.append(repo.get_issue(int(issue_number)))
-    return to_generate_issues
 
 
 def generate_rss_feed(repo, filename, me):
@@ -278,7 +60,7 @@ def generate_rss_feed(repo, filename, me):
     )
     generator.link(href=repo.html_url)
     generator.link(
-        href=f"https://raw.githubusercontent.com/{username}/{repo.name}/main/{filename}",
+        href=f"https://raw.githubusercontent.com/{get_username()}/{get_repo_name()}/main/{filename}",
         rel="self",
     )
     for issue in repo.get_issues():
@@ -296,28 +78,49 @@ def generate_rss_feed(repo, filename, me):
     generator.atom_file(filename)
 
 
+def get_time(only_date: bool = True):
+    import pytz, datetime
+
+    # 获取东八区的时间
+    cst_timezone = pytz.timezone("Asia/Shanghai")
+    curr_time = datetime.datetime.now(cst_timezone)  # 2024-11-26 11:39:19.871490+08:00
+    curr_time = curr_time.replace(microsecond=0)
+    curr_time = curr_time.replace(tzinfo=None)
+
+    if only_date:
+        return curr_time.strftime("%Y-%m-%d")
+    else:
+        return curr_time.strftime("%Y-%m-%d %H:%M:%S")  # 2024-11-26 11:39:19
+
+
+def get_username():
+    github_repo_env = os.environ.get("GITHUB_REPOSITORY")
+    username = github_repo_env[0 : github_repo_env.index("/")]
+    return username
+
+
+def get_repo_name():
+    github_repo_env = os.environ.get("GITHUB_REPOSITORY")
+    repo_name = github_repo_env[github_repo_env.index("/") :]
+    return repo_name
+
+
 def main(token, repo_name, issue_number=None, dir_name=BACKUP_DIR):
-    global gitblog, user, username
     user = login(token)
     me = get_me(user)
     gitblog = get_repo(user, repo_name)
-    github_repo_env = os.environ.get("GITHUB_REPOSITORY")
-    username = github_repo_env[0 : github_repo_env.index("/")]
-    print(f"username: {username}")
+    print(f"user name: {get_username()}")
+    print(f"repo name: {get_repo_name()}")
     print("login successfully!!!")
 
-    global cur_time
-    # common
-    cur_time = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
-
     # generate readme.md
-    header_section = bundle_header_section()
-    summary_section = bundle_summary_section()
-    pinned_issues_section = bundle_pinned_issues_section()
-    new_created_section = bundle_new_created_section()
-    list_by_labels_section = bundle_list_by_labels_section()
-    cover_image_section = bundle_cover_image_section()
-    projects_section = bundle_projects_section()
+    header_section = bundle_header_section(gitblog)
+    summary_section = bundle_summary_section(gitblog)
+    pinned_issues_section = bundle_pinned_issues_section(gitblog)
+    new_created_section = bundle_new_created_section(gitblog, MAX_NEW_CREATES_NUM)
+    list_by_labels_section = bundle_list_by_labels_section(gitblog)
+    cover_image_section = bundle_cover_image_section(gitblog)
+    # projects_section = bundle_projects_section()
     contents = [
         summary_section,
         cover_image_section,
@@ -325,39 +128,13 @@ def main(token, repo_name, issue_number=None, dir_name=BACKUP_DIR):
         pinned_issues_section,
         new_created_section,
         list_by_labels_section,
-        projects_section,
     ]
     update_readme_md_file(contents)
     print("README.md updated successfully!!!")
 
-    # add to readme one by one, change order here
-    # add_md_header("README.md", repo_name)
-    # for func in [add_md_firends, add_md_top, add_md_recent, add_md_label, add_md_todo]:
-    #     func(repo, "README.md", me)
-
     # generate rss
     generate_rss_feed(gitblog, "feed.xml", me)
     print("rss feed updated successfully!!!")
-
-    # backup issues
-    to_generate_issues = get_to_generate_issues(gitblog, dir_name, issue_number)
-    for issue in to_generate_issues:
-        save_issue(issue, me, dir_name)
-    print("issues backup successfully!!!")
-
-
-def save_issue(issue, me, dir_name=BACKUP_DIR):
-    md_name = os.path.join(
-        dir_name, f"{issue.number}_{issue.title.replace('/', '-').replace(' ', '.')}.md"
-    )
-    with open(md_name, "w") as f:
-        f.write(f"# [{issue.title}]({issue.html_url})\n\n")
-        f.write(issue.body or "")
-        if issue.comments:
-            for c in issue.get_comments():
-                if is_me(c, me):
-                    f.write("\n\n---\n\n")
-                    f.write(c.body or "")
 
 
 def format_issue(issue: Issue):
@@ -384,57 +161,54 @@ def update_readme_md_file(contents):
 
 
 def bundle_header_section():
-    content = ""
-    try:
-        with open("header.md") as f:
-            content = f.read()
-    except FileNotFoundError:
-        print("Warning: 'header.md' not found. Using empty header.")
+    content = f"""
+## [{NAME}'s BLOG](https://github.com/{get_username()}/{get_repo_name()})
+
+My personal blog using issues and GitHub Actions! [RSS Feed](https://raw.githubusercontent.com/{get_username()}/{get_repo_name()}/main/feed.xml) 
+
+### Hello World! Hello You! 😄  <image align="right" src="https://github-readme-stats.vercel.app/api?username={get_username()}&show_icons=true&hide_title=true&theme=gradient" />
+
+🔭 I’m {NAME}
+
+📫 Email: {EMAIL}
+
+🌱 I’m currently learning Embodied AI
+
+"""
     return content
 
 
-def bundle_summary_section():
-    global gitblog
-    global cur_time
-    global user
-    global username
-
-    total_label_count = gitblog.get_labels().totalCount
-    total_issue_count = gitblog.get_issues().totalCount
-
-    pic_of_the_day = NasaClient().get_picture_of_the_day()
-
+def bundle_summary_section(repo):
+    total_label_count = repo.get_labels().totalCount
     summary_section = """
 
 <p align='center'>
-    <img src="https://badgen.net/badge/labels/{1}"/>
-    <img src="https://badgen.net/github/issues/{0}/{0}"/>
-    <img src="https://badgen.net/badge/last-commit/{2}"/>
-    <img src="https://badgen.net/github/forks/{0}/{0}"/>
-    <img src="https://badgen.net/github/stars/{0}/{0}"/>
-    <img src="https://badgen.net/github/watchers/{0}/{0}"/>
-    <img src="https://badgen.net/github/release/{0}/{0}"/>
+    <img src="https://badgen.net/badge/labels/{2}"/>
+    <img src="https://badgen.net/github/issues/{0}/{1}"/>
+    <img src="https://badgen.net/badge/last-commit/{3}"/>
+    <img src="https://badgen.net/github/forks/{0}/{1}"/>
+    <img src="https://badgen.net/github/stars/{0}/{1}"/>
+    <img src="https://badgen.net/github/watchers/{0}/{1}"/>
+    <img src="https://badgen.net/github/release/{0}/{1}"/>
 </p>
 
 """.format(
-        username, total_label_count, cur_time
+        get_username(), get_repo_name(), total_label_count, get_time()
     )
 
     return summary_section
 
 
-import random
-
-
 def generate_random_color():
     # 生成随机颜色的十六进制表示
+    import random
+
     return "#{:06x}".format(random.randint(0, 0xFFFFFF))
 
 
-def bundle_pinned_issues_section():
-    global gitblog
-    pinned_label = gitblog.get_label(":+1:置顶")
-    pinned_issues = gitblog.get_issues(labels=(pinned_label,))
+def bundle_pinned_issues_section(repo):
+    pinned_label = repo.get_label(LABEL_TOP)
+    pinned_issues = repo.get_issues(labels=(pinned_label,))
 
     pinned_issues_section = "\n## 置顶 :thumbsup: \n"
 
@@ -445,16 +219,14 @@ def bundle_pinned_issues_section():
 
 
 def format_issue_with_labels(issue: Issue):
-    global user, username
-
     labels = issue.get_labels()
     labels_str = ""
 
     for label in labels:
         labels_str += "[%s](https://github.com/%s/%s/labels/%s), " % (
             label.name,
-            username,
-            username,
+            get_username(),
+            get_repo_name(),
             urllib.parse.quote(label.name),
         )
 
@@ -463,15 +235,15 @@ def format_issue_with_labels(issue: Issue):
     if "---" in issue.body:
         body_summary = issue.body[: issue.body.index("---")]
     else:
-        body_summary = issue.body[:150]
+        body_summary = issue.body[:MAX_PREVIEW_WORDS]
         # 如果前150个字符中有代码块，则在 150 个字符中重新截取代码块之前的部分作为 summary
     if "```" in body_summary:
         body_summary = body_summary[: body_summary.index("```")]
 
     return """
-#### [{0}]({1}) {2} \t {3}
+#### [{0}]({1}) {2} {3}
 
-:label: : {4}
+{4}
 
 {5}
 
@@ -483,29 +255,26 @@ def format_issue_with_labels(issue: Issue):
         issue.title,
         issue.html_url,
         sup("%s :speech_balloon:" % issue.comments),
-        issue.created_at,
-        labels_str[:-2],
+        sup("%s :calendar:" % issue.created_at),
+        ":label:".join(labels_str[:-2]),
         body_summary,
     )
 
 
-def bundle_new_created_section():
-    global gitblog
-
-    new_5_created_issues = gitblog.get_issues()[:5]
-
+def bundle_new_created_section(repo, nums: int = 5):
+    filtered_labels = list(repo.get_labels())
+    filtered_labels.remove(LABEL_COVER)
+    filtered_labels.remove(LABEL_TOP)
+    new_created_issues = repo.get_issues(labels=filtered_labels)[:nums]
     new_created_section = "## 最新 :new: \n"
 
-    for issue in new_5_created_issues:
+    for issue in new_created_issues:
         new_created_section += format_issue_with_labels(issue)
 
     return new_created_section
 
 
-def bundle_list_by_labels_section():
-    global gitblog
-    global user
-
+def bundle_list_by_labels_section(repo):
     # word cloud
 
     list_by_labels_section = """
@@ -517,21 +286,21 @@ def bundle_list_by_labels_section():
 
 """
 
-    all_labels = gitblog.get_labels()
+    all_labels = repo.get_labels()
 
     for label in all_labels:
         temp = ""
-        # 这里的count是用来计算该label下有多少issue的, 按理说应该是取issues_in_label的totalCount, 但是不知道为什么取出来的一直都是
+        # TODO 这里的count是用来计算该label下有多少issue的, 按理说应该是取issues_in_label的totalCount, 但是不知道为什么取出来的一直都是
         # 所有的issue数量, 之后再优化.
         count = 0
-        issues_in_label = gitblog.get_issues(labels=(label,))
+        issues_in_label = repo.get_issues(labels=(label,))
         for issue in issues_in_label:
             temp += format_issue(issue)
             count += 1
 
         list_by_labels_section += """
 <details>
-<summary>%s\t<sup>%s:newspaper:</sup></summary>
+<summary>%s\t<sup>%s:page_facing_up:</sup></summary>
 
 %s
 
@@ -549,12 +318,11 @@ def bundle_list_by_labels_section():
     return list_by_labels_section
 
 
-def bundle_cover_image_section() -> str:
-    global gitblog
-    cover_label = gitblog.get_label(":framed_picture:封面")
+def bundle_cover_image_section(repo) -> str:
+    cover_label = repo.get_label(LABEL_COVER)
     if cover_label is None:
         return ""
-    cover_issues = gitblog.get_issues(labels=(cover_label,))
+    cover_issues = repo.get_issues(labels=(cover_label,))
     if cover_issues is None or cover_issues.totalCount == 0:
         return ""
     comments = cover_issues[0].get_comments()
@@ -588,44 +356,11 @@ def bundle_cover_image_section() -> str:
     )
 
 
-def bundle_projects_section() -> str:
-    global gitblog, username
-    project_label = gitblog.get_label("开源")
-    if not project_label:
-        return ""
-    issues = gitblog.get_issues(labels=(project_label,))
-    if not issues or issues.totalCount == 0:
-        return ""
-    content = ""
-    for idx, i in enumerate(issues):
-        content += """
-| [{1}](https://github.com/{0}/{1}) | {2} | ![](https://badgen.net/github/stars/{0}/{1}) ![](https://badgen.net/github/forks/{0}/{1}) ![](https://badgen.net/github/watchers/{0}/{1}) |""".format(
-            username, i.title, i.body
-        )
-        if idx == 0:
-            content += "\n| --- | --- | --- |"
-    return """
-# 开源项目
-
-{}
-
-""".format(
-        content
-    )
-
-
-def execute():
-    pass
-
-
 if __name__ == "__main__":
     if not os.path.exists(BACKUP_DIR):
         os.mkdir(BACKUP_DIR)
     parser = argparse.ArgumentParser()
     parser.add_argument("github_token", help="github_token")
     parser.add_argument("repo_name", help="repo_name")
-    parser.add_argument(
-        "--issue_number", help="issue_number", default=None, required=False
-    )
     options = parser.parse_args()
-    main(options.github_token, options.repo_name, options.issue_number)
+    main(options.github_token)
