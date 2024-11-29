@@ -260,7 +260,7 @@ def format_issue_with_labels(issue: Issue):
         issue.title,
         issue.html_url,
         sup("%s💬" % issue.comments),
-        sup("%s📆" % issue.created_at),
+        sup("%s📆" % issue.created_at.strftime("%Y-%m-%d")),
         " ".join(labels_str),
         body_summary,
     )
