@@ -268,14 +268,14 @@ def bundle_new_created_section(repo: Repository, nums: int = 5):
         for label in repo.get_labels()
         if label.name not in (LABEL_COVER, LABEL_TOP)
     ]
-    all_new_created_issues = repo.get_issues(labels=filtered_labels)
-    new_created_issues = all_new_created_issues[
-        : min(all_new_created_issues.totalCount, nums)
-    ]
+    new_created_issues = repo.get_issues(labels=filtered_labels, state="open")
     new_created_section = "## 最新 :new: \n"
 
     for issue in new_created_issues:
         new_created_section += format_issue_with_labels(issue)
+        nums -= 1
+        if nums == 0:
+            break
 
     return new_created_section
 
@@ -306,7 +306,7 @@ def bundle_list_by_labels_section(repo):
 
         list_by_labels_section += """
 <details>
-<summary>%s\t<sup>%s:page_facing_up:</sup></summary>
+<summary>%s\t<sup>%s :page_facing_up: </sup></summary>
 
 %s
 
