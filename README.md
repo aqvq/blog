@@ -40,6 +40,17 @@ My personal blog using issues and GitHub Actions! [RSS Feed](https://raw.githubu
 ## 置顶 :thumbsup: 
 ## 最新 :new: 
 
+### [EQA项目问题检索](https://github.com/aqvq/aqvq/issues/9) <sup>0💬</sup> <sup>2024-12-02📆</sup>
+
+
+
+此issue用于记录在EQA项目遇到的各种问题及解决方案。
+
+[更多>>>](https://github.com/aqvq/aqvq/issues/9)
+
+---
+
+
 ### [服务器维护经历 - 网络连接不上](https://github.com/aqvq/aqvq/issues/8) <sup>0💬</sup> <sup>2024-11-29📆</sup>
 
 :label:[Linux](https://github.com/aqvq/aqvq/labels/Linux) :label:[服务器](https://github.com/aqvq/aqvq/labels/%E6%9C%8D%E5%8A%A1%E5%99%A8)
@@ -86,22 +97,6 @@ IP地址：192.168.1.108
 [CUB_200_2011数据集转Yolo格式 - 哔哩哔哩 (bilibili.com)](https://www.bilibili.com/read/cv21940047/#:~:text=%E6%89%80%E4%BB%A5CUB%E6%95%B0%E6%8D%AE%E9%9B%
 
 [更多>>>](https://github.com/aqvq/aqvq/issues/4)
-
----
-
-
-### [YOLOv8自制数据集说明](https://github.com/aqvq/aqvq/issues/3) <sup>0💬</sup> <sup>2024-11-28📆</sup>
-
-:label:[YOLO](https://github.com/aqvq/aqvq/labels/YOLO) :label:[计算机视觉](https://github.com/aqvq/aqvq/labels/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89) :label:[目标检测](https://github.com/aqvq/aqvq/labels/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B)
-
-
-### 格式
-
-Ultralytics YOLO格式是一种数据集配置格式，允许您定义数据集根目录、训练/验证/测试图像目录或包含图像路径的*.txt文件的相对路径，以及类名字典。下面是一个例子：
-
-
-
-[更多>>>](https://github.com/aqvq/aqvq/issues/3)
 
 ---
 
