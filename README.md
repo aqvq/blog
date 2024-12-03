@@ -3,7 +3,7 @@
 <p align='center'>
     <img src="https://badgen.net/badge/labels/9"/>
     <img src="https://badgen.net/github/issues/aqvq/aqvq"/>
-    <img src="https://badgen.net/badge/last-commit/2024-12-02"/>
+    <img src="https://badgen.net/badge/last-commit/2024-12-03"/>
     <img src="https://badgen.net/github/forks/aqvq/aqvq"/>
     <img src="https://badgen.net/github/stars/aqvq/aqvq"/>
     <img src="https://badgen.net/github/watchers/aqvq/aqvq"/>
@@ -62,7 +62,7 @@ My personal blog using issues and GitHub Actions! [RSS Feed](https://raw.githubu
 ---
 
 
-### [常用Linux操作](https://github.com/aqvq/aqvq/issues/7) <sup>3💬</sup> <sup>2024-11-29📆</sup>
+### [常用Linux操作](https://github.com/aqvq/aqvq/issues/7) <sup>4💬</sup> <sup>2024-11-29📆</sup>
 
 :label:[Linux](https://github.com/aqvq/aqvq/labels/Linux) :label:[服务器](https://github.com/aqvq/aqvq/labels/%E6%9C%8D%E5%8A%A1%E5%99%A8)
 
@@ -120,7 +120,7 @@ IP地址：192.168.1.108
 <summary>Linux	<sup>2📰</sup></summary>
 
 - [服务器维护经历 - 网络连接不上](https://github.com/aqvq/aqvq/issues/8)  <sup>0💬</sup>  	 
-- [常用Linux操作](https://github.com/aqvq/aqvq/issues/7)  <sup>3💬</sup>  	 
+- [常用Linux操作](https://github.com/aqvq/aqvq/issues/7)  <sup>4💬</sup>  	 
 
 
 </details>
@@ -146,7 +146,7 @@ IP地址：192.168.1.108
 <summary>服务器	<sup>2📰</sup></summary>
 
 - [服务器维护经历 - 网络连接不上](https://github.com/aqvq/aqvq/issues/8)  <sup>0💬</sup>  	 
-- [常用Linux操作](https://github.com/aqvq/aqvq/issues/7)  <sup>3💬</sup>  	 
+- [常用Linux操作](https://github.com/aqvq/aqvq/issues/7)  <sup>4💬</sup>  	 
 
 
 </details>
