@@ -109,9 +109,8 @@ IP地址：192.168.1.108
 
 
 <details>
-<summary>EQA	<sup>1📰</sup></summary>
+<summary>EQA	<sup>0📰</sup></summary>
 
-- [explore-eqa中的三个三维坐标系区别](https://github.com/aqvq/aqvq/issues/1)  <sup>0💬</sup>  	 
 
 
 </details>
@@ -126,18 +125,16 @@ IP地址：192.168.1.108
 </details>
 
 <details>
-<summary>YOLO	<sup>2📰</sup></summary>
+<summary>YOLO	<sup>1📰</sup></summary>
 
 - [CUB转YOLO格式数据集](https://github.com/aqvq/aqvq/issues/4)  <sup>0💬</sup>  	 
-- [YOLOv8自制数据集说明](https://github.com/aqvq/aqvq/issues/3)  <sup>0💬</sup>  	 
 
 
 </details>
 
 <details>
-<summary>实用工具	<sup>1📰</sup></summary>
+<summary>实用工具	<sup>0📰</sup></summary>
 
-- [Obsidian使用总结](https://github.com/aqvq/aqvq/issues/2)  <sup>0💬</sup>  	 
 
 
 </details>
@@ -152,20 +149,18 @@ IP地址：192.168.1.108
 </details>
 
 <details>
-<summary>目标检测	<sup>2📰</sup></summary>
+<summary>目标检测	<sup>1📰</sup></summary>
 
 - [CUB转YOLO格式数据集](https://github.com/aqvq/aqvq/issues/4)  <sup>0💬</sup>  	 
-- [YOLOv8自制数据集说明](https://github.com/aqvq/aqvq/issues/3)  <sup>0💬</sup>  	 
 
 
 </details>
 
 <details>
-<summary>计算机视觉	<sup>3📰</sup></summary>
+<summary>计算机视觉	<sup>2📰</sup></summary>
 
 - [电脑直连网络摄像头](https://github.com/aqvq/aqvq/issues/6)  <sup>0💬</sup>  	 
 - [CUB转YOLO格式数据集](https://github.com/aqvq/aqvq/issues/4)  <sup>0💬</sup>  	 
-- [YOLOv8自制数据集说明](https://github.com/aqvq/aqvq/issues/3)  <sup>0💬</sup>  	 
 
 
 </details>
