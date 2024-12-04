@@ -89,18 +89,6 @@ IP地址：192.168.1.108
 ---
 
 
-### [CUB转YOLO格式数据集](https://github.com/aqvq/aqvq/issues/4) <sup>0💬</sup> <sup>2024-11-28📆</sup>
-
-:label:[YOLO](https://github.com/aqvq/aqvq/labels/YOLO) :label:[计算机视觉](https://github.com/aqvq/aqvq/labels/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89) :label:[目标检测](https://github.com/aqvq/aqvq/labels/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B)
-
-参考文章：
-[CUB_200_2011数据集转Yolo格式 - 哔哩哔哩 (bilibili.com)](https://www.bilibili.com/read/cv21940047/#:~:text=%E6%89%80%E4%BB%A5CUB%E6%95%B0%E6%8D%AE%E9%9B%
-
-[更多>>>](https://github.com/aqvq/aqvq/issues/4)
-
----
-
-
 ## 分类  :card_file_box: 
 <details>
     <summary>
@@ -125,9 +113,8 @@ IP地址：192.168.1.108
 </details>
 
 <details>
-<summary>YOLO	<sup>1📰</sup></summary>
+<summary>YOLO	<sup>0📰</sup></summary>
 
-- [CUB转YOLO格式数据集](https://github.com/aqvq/aqvq/issues/4)  <sup>0💬</sup>  	 
 
 
 </details>
@@ -149,18 +136,16 @@ IP地址：192.168.1.108
 </details>
 
 <details>
-<summary>目标检测	<sup>1📰</sup></summary>
+<summary>目标检测	<sup>0📰</sup></summary>
 
-- [CUB转YOLO格式数据集](https://github.com/aqvq/aqvq/issues/4)  <sup>0💬</sup>  	 
 
 
 </details>
 
 <details>
-<summary>计算机视觉	<sup>2📰</sup></summary>
+<summary>计算机视觉	<sup>1📰</sup></summary>
 
 - [电脑直连网络摄像头](https://github.com/aqvq/aqvq/issues/6)  <sup>0💬</sup>  	 
-- [CUB转YOLO格式数据集](https://github.com/aqvq/aqvq/issues/4)  <sup>0💬</sup>  	 
 
 
 </details>
