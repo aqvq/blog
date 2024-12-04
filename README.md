@@ -3,7 +3,7 @@
 <p align='center'>
     <img src="https://badgen.net/badge/labels/9"/>
     <img src="https://badgen.net/github/issues/aqvq/aqvq"/>
-    <img src="https://badgen.net/badge/last-commit/2024-12-03"/>
+    <img src="https://badgen.net/badge/last-commit/2024-12-04"/>
     <img src="https://badgen.net/github/forks/aqvq/aqvq"/>
     <img src="https://badgen.net/github/stars/aqvq/aqvq"/>
     <img src="https://badgen.net/github/watchers/aqvq/aqvq"/>
@@ -40,7 +40,7 @@ My personal blog using issues and GitHub Actions! [RSS Feed](https://raw.githubu
 ## 置顶 :thumbsup: 
 ## 最新 :new: 
 
-### [EQA项目问题检索](https://github.com/aqvq/aqvq/issues/9) <sup>5💬</sup> <sup>2024-12-02📆</sup>
+### [EQA项目问题检索](https://github.com/aqvq/aqvq/issues/9) <sup>6💬</sup> <sup>2024-12-02📆</sup>
 
 
 
