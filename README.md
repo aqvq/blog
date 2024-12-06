@@ -42,7 +42,7 @@ My personal blog using issues and GitHub Actions! [RSS Feed](https://raw.githubu
 
 ### [EQA项目问题检索](https://github.com/aqvq/aqvq/issues/9) <sup>8💬</sup> <sup>2024-12-02📆</sup>
 
-
+:label:[EQA](https://github.com/aqvq/aqvq/labels/EQA)
 
 此issue用于记录在EQA项目遇到的各种问题及解决方案。
 
@@ -97,8 +97,9 @@ IP地址：192.168.1.108
 
 
 <details>
-<summary>EQA	<sup>0📰</sup></summary>
+<summary>EQA	<sup>1📰</sup></summary>
 
+- [EQA项目问题检索](https://github.com/aqvq/aqvq/issues/9)  <sup>8💬</sup>  	 
 
 
 </details>
