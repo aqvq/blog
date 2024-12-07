@@ -40,6 +40,19 @@ My personal blog using issues and GitHub Actions! [RSS Feed](https://raw.githubu
 ## 置顶 :thumbsup: 
 ## 最新 :new: 
 
+### [服务器维护经历](https://github.com/aqvq/aqvq/issues/8) <sup>0💬</sup> <sup>2024-12-07📆</sup>
+
+:label:[Linux](https://github.com/aqvq/aqvq/labels/Linux) :label:[服务器](https://github.com/aqvq/aqvq/labels/%E6%9C%8D%E5%8A%A1%E5%99%A8)
+
+### 网络连接不上
+
+`ping baidu.com`出现[Temporary failure in name resolution](https://www.cnblogs.com/hanframe/p/17095506.html)，以为是dns的问题，修改文件`/etc/resolv.co
+
+[更多>>>](https://github.com/aqvq/aqvq/issues/8)
+
+---
+
+
 ### [常用Linux操作](https://github.com/aqvq/aqvq/issues/7) <sup>4💬</sup> <sup>2024-12-07📆</sup>
 
 :label:[Linux](https://github.com/aqvq/aqvq/labels/Linux) :label:[服务器](https://github.com/aqvq/aqvq/labels/%E6%9C%8D%E5%8A%A1%E5%99%A8)
@@ -60,17 +73,6 @@ My personal blog using issues and GitHub Actions! [RSS Feed](https://raw.githubu
 此issue用于记录在EQA项目遇到的各种问题及解决方案。
 
 [更多>>>](https://github.com/aqvq/aqvq/issues/9)
-
----
-
-
-### [服务器维护经历 - 网络连接不上](https://github.com/aqvq/aqvq/issues/8) <sup>0💬</sup> <sup>2024-11-29📆</sup>
-
-:label:[Linux](https://github.com/aqvq/aqvq/labels/Linux) :label:[服务器](https://github.com/aqvq/aqvq/labels/%E6%9C%8D%E5%8A%A1%E5%99%A8)
-
-`ping baidu.com`出现[Temporary failure in name resolution](https://www.cnblogs.com/hanframe/p/17095506.html)，以为是dns的问题，修改文件`/etc/resolv.conf`，发现运行`sudo 
-
-[更多>>>](https://github.com/aqvq/aqvq/issues/8)
 
 ---
 
@@ -107,7 +109,7 @@ IP地址：192.168.1.108
 <details>
 <summary>Linux	<sup>2📰</sup></summary>
 
-- [服务器维护经历 - 网络连接不上](https://github.com/aqvq/aqvq/issues/8)  <sup>0💬</sup> <sup>2024-11-29📆</sup>  	 
+- [服务器维护经历](https://github.com/aqvq/aqvq/issues/8)  <sup>0💬</sup> <sup>2024-12-07📆</sup>  	 
 - [常用Linux操作](https://github.com/aqvq/aqvq/issues/7)  <sup>4💬</sup> <sup>2024-12-07📆</sup>  	 
 
 
@@ -130,7 +132,7 @@ IP地址：192.168.1.108
 <details>
 <summary>服务器	<sup>2📰</sup></summary>
 
-- [服务器维护经历 - 网络连接不上](https://github.com/aqvq/aqvq/issues/8)  <sup>0💬</sup> <sup>2024-11-29📆</sup>  	 
+- [服务器维护经历](https://github.com/aqvq/aqvq/issues/8)  <sup>0💬</sup> <sup>2024-12-07📆</sup>  	 
 - [常用Linux操作](https://github.com/aqvq/aqvq/issues/7)  <sup>4💬</sup> <sup>2024-12-07📆</sup>  	 
 
 
