@@ -105,10 +105,12 @@ def get_repo_name():
     return repo_name
 
 def get_issue_time(issue: Issue):
-    if issue.last_modified is None:
-        return issue.created_at.strftime("%Y-%m-%d")
-    else:
-        return issue.last_modified.strftime("%Y-%m-%d")
+    # if issue.comments != 0:
+    #     return issue.updated_at
+    # if issue.last_modified is None:
+    #     return issue.created_at.strftime("%Y-%m-%d")
+    # else:
+    return issue.updated_at.strftime("%Y-%m-%d")
 
 def main(token, repo_name, issue_number=None):
     user = login(token)
