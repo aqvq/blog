@@ -139,10 +139,11 @@ def main(token, repo_name, issue_number=None):
 
 
 def format_issue(issue: Issue):
-    return "- [%s](%s)  %s  \t \n" % (
+    return "- [%s](%s)  %s %s  \t \n" % (
         issue.title,
         issue.html_url,
         sup("%s💬" % issue.comments),
+        sup("%s📆" % issue.last_modified)
     )
 
 
@@ -260,7 +261,7 @@ def format_issue_with_labels(issue: Issue):
         issue.title,
         issue.html_url,
         sup("%s💬" % issue.comments),
-        sup("%s📆" % issue.created_at),
+        sup("%s📆" % issue.last_modified),
         " ".join(labels_str),
         body_summary,
     )
@@ -268,13 +269,14 @@ def format_issue_with_labels(issue: Issue):
 
 def bundle_new_created_section(repo: Repository, nums: int = 5):
     new_created_issues = []
-    for issue in repo.get_issues(state="open"):
+    for issue in repo.get_issues(state="open", sort="updated"):
+        issue_labels = issue.get_labels()
         if (
-            LABEL_TOP in issue.get_labels()
-            or LABEL_COVER in issue.get_labels()
+            LABEL_TOP in issue_labels
+            or LABEL_COVER in issue_labels
             or not issue.body
         ):
-            continue
+            continue # 跳过非博客内容的issue
         new_created_issues.append(issue)
         if len(new_created_issues) >= nums:
             break
