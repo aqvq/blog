@@ -40,6 +40,17 @@ My personal blog using issues and GitHub Actions! [RSS Feed](https://raw.githubu
 ## 置顶 :thumbsup: 
 ## 最新 :new: 
 
+### [EQA项目问题检索](https://github.com/aqvq/aqvq/issues/9) <sup>9💬</sup> <sup>2024-12-07📆</sup>
+
+:label:[EQA](https://github.com/aqvq/aqvq/labels/EQA)
+
+此issue用于记录在EQA项目遇到的各种问题及解决方案。
+
+[更多>>>](https://github.com/aqvq/aqvq/issues/9)
+
+---
+
+
 ### [常用Linux操作](https://github.com/aqvq/aqvq/issues/7) <sup>4💬</sup> <sup>2024-12-07📆</sup>
 
 :label:[Linux](https://github.com/aqvq/aqvq/labels/Linux) :label:[服务器](https://github.com/aqvq/aqvq/labels/%E6%9C%8D%E5%8A%A1%E5%99%A8)
@@ -49,17 +60,6 @@ My personal blog using issues and GitHub Actions! [RSS Feed](https://raw.githubu
 
 
 [更多>>>](https://github.com/aqvq/aqvq/issues/7)
-
----
-
-
-### [EQA项目问题检索](https://github.com/aqvq/aqvq/issues/9) <sup>8💬</sup> <sup>2024-12-07📆</sup>
-
-:label:[EQA](https://github.com/aqvq/aqvq/labels/EQA)
-
-此issue用于记录在EQA项目遇到的各种问题及解决方案。
-
-[更多>>>](https://github.com/aqvq/aqvq/issues/9)
 
 ---
 
@@ -99,7 +99,7 @@ IP地址：192.168.1.108
 <details>
 <summary>EQA	<sup>1📰</sup></summary>
 
-- [EQA项目问题检索](https://github.com/aqvq/aqvq/issues/9)  <sup>8💬</sup> <sup>2024-12-07📆</sup>  	 
+- [EQA项目问题检索](https://github.com/aqvq/aqvq/issues/9)  <sup>9💬</sup> <sup>2024-12-07📆</sup>  	 
 
 
 </details>
