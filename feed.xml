@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<feed xmlns="http://www.w3.org/2005/Atom"><id>https://github.com/aqvq/aqvq</id><title>RSS feed of aqvq's aqvq</title><updated>2024-12-07T05:09:34.935009+00:00</updated><link href="https://github.com/aqvq/aqvq"/><link href="https://raw.githubusercontent.com/aqvq/aqvq/main/feed.xml" rel="self"/><generator uri="https://lkiesow.github.io/python-feedgen" version="1.0.0">python-feedgen</generator><entry><id>https://github.com/aqvq/aqvq/issues/9</id><title>EQA项目问题检索</title><updated>2024-12-07T05:09:35.193506+00:00</updated><content type="html"><![CDATA[<p>此issue用于记录在EQA项目遇到的各种问题及解决方案。</p>
-]]></content><link href="https://github.com/aqvq/aqvq/issues/9"/><category term="EQA"/><published>2024-12-02T11:43:23+00:00</published></entry><entry><id>https://github.com/aqvq/aqvq/issues/8</id><title>服务器维护经历 - 网络连接不上</title><updated>2024-12-07T05:09:35.307772+00:00</updated><content type="html"><![CDATA[<p><code>ping baidu.com</code>出现<a href="https://www.cnblogs.com/hanframe/p/17095506.html">Temporary failure in name resolution</a>，以为是dns的问题，修改文件<code>/etc/resolv.conf</code>，发现运行<code>sudo systemctl restart systemd-resolved.service</code>发现又变回了原来的样子，修改无效。</p>
+<feed xmlns="http://www.w3.org/2005/Atom"><id>https://github.com/aqvq/aqvq</id><title>RSS feed of aqvq's aqvq</title><updated>2024-12-07T05:13:11.807639+00:00</updated><link href="https://github.com/aqvq/aqvq"/><link href="https://raw.githubusercontent.com/aqvq/aqvq/main/feed.xml" rel="self"/><generator uri="https://lkiesow.github.io/python-feedgen" version="1.0.0">python-feedgen</generator><entry><id>https://github.com/aqvq/aqvq/issues/9</id><title>EQA项目问题检索</title><updated>2024-12-07T05:13:12.099532+00:00</updated><content type="html"><![CDATA[<p>此issue用于记录在EQA项目遇到的各种问题及解决方案。</p>
+]]></content><link href="https://github.com/aqvq/aqvq/issues/9"/><category term="EQA"/><published>2024-12-02T11:43:23+00:00</published></entry><entry><id>https://github.com/aqvq/aqvq/issues/8</id><title>服务器维护经历 - 网络连接不上</title><updated>2024-12-07T05:13:12.227998+00:00</updated><content type="html"><![CDATA[<p><code>ping baidu.com</code>出现<a href="https://www.cnblogs.com/hanframe/p/17095506.html">Temporary failure in name resolution</a>，以为是dns的问题，修改文件<code>/etc/resolv.conf</code>，发现运行<code>sudo systemctl restart systemd-resolved.service</code>发现又变回了原来的样子，修改无效。</p>
 <p>后来发现是网卡被禁用了，通过<code>ifconfig</code>命令启用恢复正常。参考这篇文章：<a href="https://www.cnblogs.com/zh-dream/p/13405799.html">Ubuntu 18.04网络不通，netplan命令不存在</a></p>
-]]></content><link href="https://github.com/aqvq/aqvq/issues/8"/><category term="Linux"/><category term="服务器"/><published>2024-11-29T13:02:23+00:00</published></entry><entry><id>https://github.com/aqvq/aqvq/issues/7</id><title>常用Linux操作</title><updated>2024-12-07T05:09:35.416500+00:00</updated><content type="html"><![CDATA[<h1>定时任务</h1>
+]]></content><link href="https://github.com/aqvq/aqvq/issues/8"/><category term="Linux"/><category term="服务器"/><published>2024-11-29T13:02:23+00:00</published></entry><entry><id>https://github.com/aqvq/aqvq/issues/7</id><title>常用Linux操作</title><updated>2024-12-07T05:13:12.360432+00:00</updated><content type="html"><![CDATA[<h3>定时任务</h3>
 <pre><code class="language-Bash"># 编辑
 crontab -u user -e
 # * * * * * command_to_execute
@@ -19,7 +19,7 @@ crontab -u user -l
 # 查看日志
 grep CRON /var/log/syslog
 </code></pre>
-<h1>不同机器传输文件</h1>
+<h3>不同机器传输文件</h3>
 <pre><code class="language-TypeScript"># scp [-1246BCpqrv] [-c cipher] [-F ssh_config] [-i identity_file] [-l limit] [-o ssh_option] [-P port] [-S program] [[user@]host1:]file1 ... [[user@]host2:]file2
 # 示例
 scp -r -P 10004 user@xxx.tpddns.cn:/data1/home/user/data ~/data
@@ -29,7 +29,7 @@ scp -r -P 10003 Matterport3DSimulator user@xxx.tpddns.cn:/data1/home/user/Matter
 # 上传 scp -P ssh端口 文件路径 用户名@IP地址:目的地址
 # 文件夹使用-r
 </code></pre>
-<h3>支持断点续传</h3>
+<h4>支持断点续传</h4>
 <pre><code class="language-Bash"># 参数说明：
 # -a 可以递归同步，并同步元信息
 # rsync -a source destination 将source同步到destination/source中
@@ -41,8 +41,8 @@ scp -r -P 10003 Matterport3DSimulator user@xxx.tpddns.cn:/data1/home/user/Matter
 # 参考链接：https://www.ruanyifeng.com/blog/2020/08/rsync.html
 rsync -avP -e &quot;ssh -p 10002&quot; /data1/home/user/code/pglite/data/train/upper user@www.tpddns.cn:/data2/home/user/code/data
 </code></pre>
-<h1>后台运行程序</h1>
-<h2>方法一</h2>
+<h3>后台运行程序</h3>
+<h4>方法一</h4>
 <ol>
 <li>
 <p>新建会话<code>tmux new -s &lt;session-name&gt;</code></p>
@@ -57,14 +57,14 @@ rsync -avP -e &quot;ssh -p 10002&quot; /data1/home/user/code/pglite/data/train/u
 <p>下次使用时，重新连接到会话<code>tmux attach -t &lt;session-name&gt;</code></p>
 </li>
 </ol>
-<h2>方法二</h2>
+<h4>方法二</h4>
 <p>带日志：</p>
 <pre><code class="language-Bash">nohup python my.py &gt;&gt; ~/my.log 2&gt;&amp;1 &amp;
 </code></pre>
 <p>不带日志：</p>
 <pre><code class="language-Bash">nohup python my.py &gt; /dev/null 2&gt;&amp;1 &amp;
 </code></pre>
-<h1>Linux命令行设置代理</h1>
+<h3>Linux命令行设置代理</h3>
 <p>Clash下载地址: <a href="https://github.com/Kuingsmile/clash-core/releases">https://github.com/Kuingsmile/clash-core/releases</a></p>
 <p>建议下载版本<code>clash-linux-amd64-v``3</code>，解压到集群个人目录中，添加可执行权限。</p>
 <pre><code class="language-Bash">chmod +x clash
@@ -228,7 +228,7 @@ esac
 <p>.是source命令的缩写，on/off如果使用bash命令不会生效，必须使用source。</p>
 <p>命令后可跟端口号参数，但必须与配置文件的端口号一致。</p>
 </blockquote>
-]]></content><link href="https://github.com/aqvq/aqvq/issues/7"/><category term="Linux"/><category term="服务器"/><published>2024-11-29T08:06:34+00:00</published></entry><entry><id>https://github.com/aqvq/aqvq/issues/6</id><title>电脑直连网络摄像头</title><updated>2024-12-07T05:09:35.548051+00:00</updated><content type="html"><![CDATA[<p>型号：DH-IPC-HFW54ZYZF1Y-ABC
+]]></content><link href="https://github.com/aqvq/aqvq/issues/7"/><category term="Linux"/><category term="服务器"/><published>2024-11-29T08:06:34+00:00</published></entry><entry><id>https://github.com/aqvq/aqvq/issues/6</id><title>电脑直连网络摄像头</title><updated>2024-12-07T05:13:12.489666+00:00</updated><content type="html"><![CDATA[<p>型号：DH-IPC-HFW54ZYZF1Y-ABC
 下载工具：<a href="https://support.dahuatech.com/tools/software">全部-浙江大华技术股份有限公司 (dahuatech.com)</a>
 IP地址：192.168.1.108
 掩码：255.255.255.0</p>
