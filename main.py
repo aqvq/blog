@@ -104,6 +104,11 @@ def get_repo_name():
     repo_name = github_repo_env[github_repo_env.index("/") + 1 :]
     return repo_name
 
+def get_issue_time(issue: Issue):
+    if issue.last_modified is None:
+        return issue.created_at.strftime("%Y-%m-%d")
+    else:
+        return issue.last_modified.strftime("%Y-%m-%d")
 
 def main(token, repo_name, issue_number=None):
     user = login(token)
@@ -143,7 +148,7 @@ def format_issue(issue: Issue):
         issue.title,
         issue.html_url,
         sup("%s💬" % issue.comments),
-        sup("%s📆" % issue.last_modified.strftime("%Y-%m-%d"))
+        sup("%s📆" % get_issue_time(issue))
     )
 
 
@@ -261,7 +266,7 @@ def format_issue_with_labels(issue: Issue):
         issue.title,
         issue.html_url,
         sup("%s💬" % issue.comments),
-        sup("%s📆" % issue.last_modified.strftime("%Y-%m-%d")),
+        sup("%s📆" % get_issue_time(issue)),
         " ".join(labels_str),
         body_summary,
     )
