@@ -143,7 +143,7 @@ def format_issue(issue: Issue):
         issue.title,
         issue.html_url,
         sup("%s💬" % issue.comments),
-        sup("%s📆" % issue.last_modified)
+        sup("%s📆" % issue.last_modified.strftime("%Y-%m-%d"))
     )
 
 
@@ -261,7 +261,7 @@ def format_issue_with_labels(issue: Issue):
         issue.title,
         issue.html_url,
         sup("%s💬" % issue.comments),
-        sup("%s📆" % issue.last_modified),
+        sup("%s📆" % issue.last_modified.strftime("%Y-%m-%d")),
         " ".join(labels_str),
         body_summary,
     )

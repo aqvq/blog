@@ -1,9 +1,9 @@
 
 
 <p align='center'>
-    <img src="https://badgen.net/badge/labels/7"/>
+    <img src="https://badgen.net/badge/labels/9"/>
     <img src="https://badgen.net/github/issues/aqvq/aqvq"/>
-    <img src="https://badgen.net/badge/last-commit/2024-11-29"/>
+    <img src="https://badgen.net/badge/last-commit/2024-12-06"/>
     <img src="https://badgen.net/github/forks/aqvq/aqvq"/>
     <img src="https://badgen.net/github/stars/aqvq/aqvq"/>
     <img src="https://badgen.net/github/watchers/aqvq/aqvq"/>
@@ -38,12 +38,46 @@ My personal blog using issues and GitHub Actions! [RSS Feed](https://raw.githubu
 
 
 ## 置顶 :thumbsup: 
-- [explore-eqa中的三个三维坐标系区别](https://github.com/aqvq/aqvq/issues/1)  <sup>0💬</sup>  	 
 ## 最新 :new: 
 
-### [电脑直连网络摄像头](https://github.com/aqvq/aqvq/issues/6) <sup>0💬</sup> <sup>2024-11-29 07:51:02📆</sup>
+### [EQA项目问题检索](https://github.com/aqvq/aqvq/issues/9) <sup>8💬</sup> <sup>2024-12-02📆</sup>
+
+:label:[EQA](https://github.com/aqvq/aqvq/labels/EQA)
+
+此issue用于记录在EQA项目遇到的各种问题及解决方案。
+
+[更多>>>](https://github.com/aqvq/aqvq/issues/9)
+
+---
 
 
+### [服务器维护经历 - 网络连接不上](https://github.com/aqvq/aqvq/issues/8) <sup>0💬</sup> <sup>2024-11-29📆</sup>
+
+:label:[Linux](https://github.com/aqvq/aqvq/labels/Linux) :label:[服务器](https://github.com/aqvq/aqvq/labels/%E6%9C%8D%E5%8A%A1%E5%99%A8)
+
+`ping baidu.com`出现[Temporary failure in name resolution](https://www.cnblogs.com/hanframe/p/17095506.html)，以为是dns的问题，修改文件`/etc/resolv.conf`，发现运行`sudo 
+
+[更多>>>](https://github.com/aqvq/aqvq/issues/8)
+
+---
+
+
+### [常用Linux操作](https://github.com/aqvq/aqvq/issues/7) <sup>4💬</sup> <sup>2024-11-29📆</sup>
+
+:label:[Linux](https://github.com/aqvq/aqvq/labels/Linux) :label:[服务器](https://github.com/aqvq/aqvq/labels/%E6%9C%8D%E5%8A%A1%E5%99%A8)
+
+# 定时任务
+
+
+
+[更多>>>](https://github.com/aqvq/aqvq/issues/7)
+
+---
+
+
+### [电脑直连网络摄像头](https://github.com/aqvq/aqvq/issues/6) <sup>0💬</sup> <sup>2024-11-29📆</sup>
+
+:label:[计算机视觉](https://github.com/aqvq/aqvq/labels/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89)
 
 型号：DH-IPC-HFW54ZYZF1Y-ABC
 下载工具：[全部-浙江大华技术股份有限公司 (dahuatech.com)](https://support.dahuatech.com/tools/software)
@@ -51,50 +85,6 @@ IP地址：192.168.1.108
 掩码：255.255.255.0
 
 [更多>>>](https://github.com/aqvq/aqvq/issues/6)
-
----
-
-
-### [CUB转YOLO格式数据集](https://github.com/aqvq/aqvq/issues/4) <sup>0💬</sup> <sup>2024-11-28 12:16:39📆</sup>
-
-:label:[YOLO](https://github.com/aqvq/aqvq/labels/YOLO) :label:[计算机视觉](https://github.com/aqvq/aqvq/labels/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89) :label:[目标检测](https://github.com/aqvq/aqvq/labels/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B)
-
-参考文章：
-[CUB_200_2011数据集转Yolo格式 - 哔哩哔哩 (bilibili.com)](https://www.bilibili.com/read/cv21940047/#:~:text=%E6%89%80%E4%BB%A5CUB%E6%95%B0%E6%8D%AE%E9%9B%
-
-[更多>>>](https://github.com/aqvq/aqvq/issues/4)
-
----
-
-
-### [YOLOv8自制数据集说明](https://github.com/aqvq/aqvq/issues/3) <sup>0💬</sup> <sup>2024-11-28 12:16:00📆</sup>
-
-:label:[YOLO](https://github.com/aqvq/aqvq/labels/YOLO) :label:[计算机视觉](https://github.com/aqvq/aqvq/labels/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89) :label:[目标检测](https://github.com/aqvq/aqvq/labels/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B)
-
-
-### 格式
-
-Ultralytics YOLO格式是一种数据集配置格式，允许您定义数据集根目录、训练/验证/测试图像目录或包含图像路径的*.txt文件的相对路径，以及类名字典。下面是一个例子：
-
-
-
-[更多>>>](https://github.com/aqvq/aqvq/issues/3)
-
----
-
-
-### [Obsidian使用总结](https://github.com/aqvq/aqvq/issues/2) <sup>0💬</sup> <sup>2024-11-28 10:51:31📆</sup>
-
-:label:[实用工具](https://github.com/aqvq/aqvq/labels/%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7)
-
-
-## 基本使用
-
-> CSDN、知乎、B站都有很多系统的教程，这里简单列举一些资源
-
-[Johnny学的公开课 第一集 将近3小时的Obsidian小白入门课，都是基础知识，学会了就能上手OB，一个社区插件都没讲_哔哩哔哩_bilibili](https://www.bilibili.c
-
-[更多>>>](https://github.com/aqvq/aqvq/issues/2)
 
 ---
 
@@ -109,42 +99,54 @@ Ultralytics YOLO格式是一种数据集配置格式，允许您定义数据集�
 <details>
 <summary>EQA	<sup>1📰</sup></summary>
 
-- [explore-eqa中的三个三维坐标系区别](https://github.com/aqvq/aqvq/issues/1)  <sup>0💬</sup>  	 
+- [EQA项目问题检索](https://github.com/aqvq/aqvq/issues/9)  <sup>8💬</sup>  	 
 
 
 </details>
 
 <details>
-<summary>YOLO	<sup>2📰</sup></summary>
+<summary>Linux	<sup>2📰</sup></summary>
 
-- [CUB转YOLO格式数据集](https://github.com/aqvq/aqvq/issues/4)  <sup>0💬</sup>  	 
-- [YOLOv8自制数据集说明](https://github.com/aqvq/aqvq/issues/3)  <sup>0💬</sup>  	 
-
-
-</details>
-
-<details>
-<summary>实用工具	<sup>1📰</sup></summary>
-
-- [Obsidian使用总结](https://github.com/aqvq/aqvq/issues/2)  <sup>0💬</sup>  	 
+- [服务器维护经历 - 网络连接不上](https://github.com/aqvq/aqvq/issues/8)  <sup>0💬</sup>  	 
+- [常用Linux操作](https://github.com/aqvq/aqvq/issues/7)  <sup>4💬</sup>  	 
 
 
 </details>
 
 <details>
-<summary>目标检测	<sup>2📰</sup></summary>
+<summary>YOLO	<sup>0📰</sup></summary>
 
-- [CUB转YOLO格式数据集](https://github.com/aqvq/aqvq/issues/4)  <sup>0💬</sup>  	 
-- [YOLOv8自制数据集说明](https://github.com/aqvq/aqvq/issues/3)  <sup>0💬</sup>  	 
 
 
 </details>
 
 <details>
-<summary>计算机视觉	<sup>2📰</sup></summary>
+<summary>实用工具	<sup>0📰</sup></summary>
 
-- [CUB转YOLO格式数据集](https://github.com/aqvq/aqvq/issues/4)  <sup>0💬</sup>  	 
-- [YOLOv8自制数据集说明](https://github.com/aqvq/aqvq/issues/3)  <sup>0💬</sup>  	 
+
+
+</details>
+
+<details>
+<summary>服务器	<sup>2📰</sup></summary>
+
+- [服务器维护经历 - 网络连接不上](https://github.com/aqvq/aqvq/issues/8)  <sup>0💬</sup>  	 
+- [常用Linux操作](https://github.com/aqvq/aqvq/issues/7)  <sup>4💬</sup>  	 
+
+
+</details>
+
+<details>
+<summary>目标检测	<sup>0📰</sup></summary>
+
+
+
+</details>
+
+<details>
+<summary>计算机视觉	<sup>1📰</sup></summary>
+
+- [电脑直连网络摄像头](https://github.com/aqvq/aqvq/issues/6)  <sup>0💬</sup>  	 
 
 
 </details>

@@ -1,5 +1,234 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<feed xmlns="http://www.w3.org/2005/Atom"><id>https://github.com/aqvq/aqvq</id><title>RSS feed of aqvq's aqvq</title><updated>2024-11-29T07:58:33.002340+00:00</updated><link href="https://github.com/aqvq/aqvq"/><link href="https://raw.githubusercontent.com/aqvq/aqvq/main/feed.xml" rel="self"/><generator uri="https://lkiesow.github.io/python-feedgen" version="1.0.0">python-feedgen</generator><entry><id>https://github.com/aqvq/aqvq/issues/6</id><title>电脑直连网络摄像头</title><updated>2024-11-29T07:58:33.385793+00:00</updated><content type="html"><![CDATA[<p>型号：DH-IPC-HFW54ZYZF1Y-ABC
+<feed xmlns="http://www.w3.org/2005/Atom"><id>https://github.com/aqvq/aqvq</id><title>RSS feed of aqvq's aqvq</title><updated>2024-12-06T07:52:31.749764+00:00</updated><link href="https://github.com/aqvq/aqvq"/><link href="https://raw.githubusercontent.com/aqvq/aqvq/main/feed.xml" rel="self"/><generator uri="https://lkiesow.github.io/python-feedgen" version="1.0.0">python-feedgen</generator><entry><id>https://github.com/aqvq/aqvq/issues/9</id><title>EQA项目问题检索</title><updated>2024-12-06T07:52:31.996042+00:00</updated><content type="html"><![CDATA[<p>此issue用于记录在EQA项目遇到的各种问题及解决方案。</p>
+]]></content><link href="https://github.com/aqvq/aqvq/issues/9"/><category term="EQA"/><published>2024-12-02T11:43:23+00:00</published></entry><entry><id>https://github.com/aqvq/aqvq/issues/8</id><title>服务器维护经历 - 网络连接不上</title><updated>2024-12-06T07:52:32.116387+00:00</updated><content type="html"><![CDATA[<p><code>ping baidu.com</code>出现<a href="https://www.cnblogs.com/hanframe/p/17095506.html">Temporary failure in name resolution</a>，以为是dns的问题，修改文件<code>/etc/resolv.conf</code>，发现运行<code>sudo systemctl restart systemd-resolved.service</code>发现又变回了原来的样子，修改无效。</p>
+<p>后来发现是网卡被禁用了，通过<code>ifconfig</code>命令启用恢复正常。参考这篇文章：<a href="https://www.cnblogs.com/zh-dream/p/13405799.html">Ubuntu 18.04网络不通，netplan命令不存在</a></p>
+]]></content><link href="https://github.com/aqvq/aqvq/issues/8"/><category term="Linux"/><category term="服务器"/><published>2024-11-29T13:02:23+00:00</published></entry><entry><id>https://github.com/aqvq/aqvq/issues/7</id><title>常用Linux操作</title><updated>2024-12-06T07:52:32.243268+00:00</updated><content type="html"><![CDATA[<h1>定时任务</h1>
+<pre><code class="language-Bash"># 编辑
+crontab -u user -e
+# * * * * * command_to_execute
+# - - - - -
+# | | | | |
+# | | | | +---- 星期几 (0 - 7) (周日是0和7)
+# | | | +------ 月 (1 - 12)
+# | | +-------- 日期 (1 - 31)
+# | +---------- 小时 (0 - 23)
+# +------------ 分钟 (0 - 59)
+# 样例（每分钟执行一次）：* * * * * /path/to/test_script.sh
+5 0 * * * /usr/bin/python3 /home/user/toInternet.py # 每天00:05执行一次
+crontab -u user -l
+# 查看日志
+grep CRON /var/log/syslog
+</code></pre>
+<h1>不同机器传输文件</h1>
+<pre><code class="language-TypeScript"># scp [-1246BCpqrv] [-c cipher] [-F ssh_config] [-i identity_file] [-l limit] [-o ssh_option] [-P port] [-S program] [[user@]host1:]file1 ... [[user@]host2:]file2
+# 示例
+scp -r -P 10004 user@xxx.tpddns.cn:/data1/home/user/data ~/data
+scp -r -P 10003 Matterport3DSimulator user@xxx.tpddns.cn:/data1/home/user/Matterport3DSimulator
+# 命令解析：
+# 下载 scp -P ssh端口 用户名@IP地址:文件路径 本地保存路径
+# 上传 scp -P ssh端口 文件路径 用户名@IP地址:目的地址
+# 文件夹使用-r
+</code></pre>
+<h3>支持断点续传</h3>
+<pre><code class="language-Bash"># 参数说明：
+# -a 可以递归同步，并同步元信息
+# rsync -a source destination 将source同步到destination/source中
+# rsync -a source/ destination 将source同步到destination中
+# -n 模拟命令执行的结果，并不真的执行命令，可以用来看哪些内容会被同步
+# rsync -av --delete source/ destination 镜像同步，source删除文件，destination同步删除
+# rsync -av --exclude=&#x27;*.txt&#x27; source/ destination 排除文件
+# rsync -av --exclude &#x27;file1.txt&#x27; --exclude &#x27;dir1/*&#x27; source/ destination 排除多个文件
+# 参考链接：https://www.ruanyifeng.com/blog/2020/08/rsync.html
+rsync -avP -e &quot;ssh -p 10002&quot; /data1/home/user/code/pglite/data/train/upper user@www.tpddns.cn:/data2/home/user/code/data
+</code></pre>
+<h1>后台运行程序</h1>
+<h2>方法一</h2>
+<ol>
+<li>
+<p>新建会话<code>tmux new -s &lt;session-name&gt;</code></p>
+</li>
+<li>
+<p>在 Tmux 窗口运行所需的程序。</p>
+</li>
+<li>
+<p>按下快捷键<code>Ctrl+b d</code>将会话分离。</p>
+</li>
+<li>
+<p>下次使用时，重新连接到会话<code>tmux attach -t &lt;session-name&gt;</code></p>
+</li>
+</ol>
+<h2>方法二</h2>
+<p>带日志：</p>
+<pre><code class="language-Bash">nohup python my.py &gt;&gt; ~/my.log 2&gt;&amp;1 &amp;
+</code></pre>
+<p>不带日志：</p>
+<pre><code class="language-Bash">nohup python my.py &gt; /dev/null 2&gt;&amp;1 &amp;
+</code></pre>
+<h1>Linux命令行设置代理</h1>
+<p>Clash下载地址: <a href="https://github.com/Kuingsmile/clash-core/releases">https://github.com/Kuingsmile/clash-core/releases</a></p>
+<p>建议下载版本<code>clash-linux-amd64-v``3</code>，解压到集群个人目录中，添加可执行权限。</p>
+<pre><code class="language-Bash">chmod +x clash
+</code></pre>
+<p>按下图所示，从PC端<code>C:\Users\xxx\.config\clash</code>复制配置文件到集群<code>~/.config/clash/</code>上:</p>
+<p><img src="https://kjyq8je1lf.feishu.cn/space/api/box/stream/download/asynccode/?code=N2IwYjk3OTg4MTRjMDUxMzY3ZTExNGEwNzU1NzQwNTJfU0hsMGN6cjNQbDZLZ3BydkNMMUk3Qms1YlVHeG1DdmZfVG9rZW46SEdmTWJTcE13b29FcTl4NVhwOGNiQzNRbm1jXzE3MzI4Njc0OTM6MTczMjg3MTA5M19WNA" alt="" /></p>
+<p>将<code>profiles</code>文件夹中的<code>yml配置文件</code>复制到linux<code>~/.config/clash/</code>中并改名为<code>config.yml</code>。linux配置文件夹中共有三个文件</p>
+<p><img src="https://kjyq8je1lf.feishu.cn/space/api/box/stream/download/asynccode/?code=MTYxMGI3YTZkZTc4ZjJkYWJlZmRiMjVhM2QxYTcwOWZfaWVzYVBIZ044elBuTHNnRGo1YkVWcWJ3TlM5Z1JGbFlfVG9rZW46WWpnVWI3Nzd1b3c0b0p4RGlKWmNmVzhSbkxiXzE3MzI4Njc0OTM6MTczMjg3MTA5M19WNA" alt="" /></p>
+<p>打开<code>config.yml</code>文件，修改为未占用的端口号:</p>
+<p><img src="https://kjyq8je1lf.feishu.cn/space/api/box/stream/download/asynccode/?code=NmI5YTUxNTk0NjUxZjY2ZDVjZWNiZDQ0ZGU5MjAzZTNfN0M1MEpJTG9QVWo5Vm11RlMwOHFUcGFPSWEwT1hGRUpfVG9rZW46WHR1Z2IzOXVab29XdXB4cUhlT2NGU1gzbjljXzE3MzI4Njc0OTM6MTczMjg3MTA5M19WNA" alt="" /></p>
+<p>一个简单的快速操作clash启动、停止、重启、查询状态的shell脚本：</p>
+<pre><code class="language-Bash">#!/bin/bash
+
+LOG_FILE=&quot;$HOME/clash_service.log&quot;  # 日志文件路径
+DEFAULT_PORT=7890  # 默认端口
+
+log_message() {
+    echo &quot;$(date +&quot;%Y-%m-%d %H:%M:%S&quot;) - $1&quot; &gt;&gt; &quot;$LOG_FILE&quot;
+}
+
+# 检查指定端口是否被占用
+check_port() {
+    pInfo=$(lsof -i :$1 | grep -v &quot;PID&quot; | awk &#x27;{print $2, $1}&#x27; | uniq)
+    pid=$(echo $pInfo | awk &#x27;{print $1}&#x27;)  # 获取 PID
+    pname=$(echo $pInfo | awk &#x27;{print $2}&#x27;)  # 获取进程名称
+}
+
+# 启动 Clash 服务，允许指定端口
+start_clash() {
+    port=$1
+    if [ -z &quot;$port&quot; ]; then
+        port=$DEFAULT_PORT  # 如果未指定端口，则使用默认端口
+    fi
+
+    check_port $port
+    if [ &quot;$pname&quot; = &quot;clash&quot; ]; then
+        echo &quot;Clash 服务已经在运行 (端口: $port, PID: $pid)。&quot;
+        log_message &quot;Attempted to start Clash on port $port, but it is already running (PID: $pid).&quot;
+    else
+        nohup clash -f ~/.config/clash/config.yml &gt; /dev/null 2&gt;&amp;1 &amp;  # 指定端口启动 Clash，并将输出重定向
+        sleep 2  # 等待服务启动
+        check_port $port
+        if [ &quot;$pname&quot; = &quot;clash&quot; ]; then
+            echo &quot;Clash 服务启动成功 (端口: $port, PID: $pid)。&quot;
+            log_message &quot;Clash service started successfully on port $port (PID: $pid).&quot;
+        else
+            echo &quot;Clash 服务启动失败，请检查配置或日志。&quot;
+            log_message &quot;Failed to start Clash service on port $port.&quot;
+        fi
+    fi
+}
+
+# 停止 Clash 服务
+stop_clash() {
+    port=$1
+    if [ -z &quot;$port&quot; ]; then
+        port=$DEFAULT_PORT  # 如果未指定端口，则使用默认端口
+    fi
+
+    check_port $port
+    if [ &quot;$pname&quot; = &quot;clash&quot; ]; then
+        echo &quot;正在停止 Clash 服务 (端口: $port, PID: $pid)...&quot;
+        kill -9 &quot;$pid&quot;
+        echo &quot;Clash 服务已停止。&quot;
+        log_message &quot;Clash service stopped (PID: $pid).&quot;
+    else
+        echo &quot;Clash 服务未运行在端口 $port。&quot;
+        log_message &quot;Attempted to stop Clash on port $port, but it was not running.&quot;
+    fi
+}
+
+# 重启 Clash 服务
+restart_clash() {
+    port=$1
+    echo &quot;正在重启 Clash 服务 (端口: $port)...&quot;
+    stop_clash $port
+    start_clash $port
+}
+
+# 打开代理环境变量
+proxy_on() {
+    port=$1
+    if [ -z &quot;$port&quot; ]; then
+        port=$DEFAULT_PORT  # 如果未指定端口，则使用默认端口
+    fi
+    export http_proxy=&quot;http://127.0.0.1:$port&quot;
+    export https_proxy=&quot;http://127.0.0.1:$port&quot;
+    # export all_proxy=&quot;http://127.0.0.1:$port&quot;
+    echo &quot;代理已开启，端口: $port&quot;
+    log_message &quot;Proxy environment variables enabled on port $port.&quot;
+}
+
+# 关闭代理环境变量
+proxy_off() {
+    unset http_proxy
+    unset https_proxy
+    unset all_proxy
+    echo &quot;代理已关闭。&quot;
+    log_message &quot;Proxy environment variables disabled.&quot;
+}
+
+# 主程序逻辑
+case &quot;$1&quot; in
+    start)
+        start_clash $2  # 第二个参数为端口号
+        ;;
+    stop)
+        stop_clash $2  # 第二个参数为端口号
+        ;;
+    restart)
+        restart_clash $2  # 第二个参数为端口号
+        ;;
+    status)
+        port=$2
+        if [ -z &quot;$port&quot; ]; then
+            port=$DEFAULT_PORT  # 使用默认端口
+        fi
+        check_port $port
+        if echo &quot;$pname&quot; | grep -qi &quot;clash&quot;; then
+            echo &quot;Clash 正在运行 (端口: $port, PID: $pid)。&quot;
+        else
+            echo &quot;Clash 未运行在端口 $port。&quot;
+        fi
+        ;;
+    on)
+        port=$2
+        if [ -z &quot;$port&quot; ]; then
+            port=$DEFAULT_PORT
+        fi
+        start_clash $port  # 启动 Clash 服务
+        proxy_on $port # 启用代理
+        ;;
+    off)
+        port=$2
+        if [ -z &quot;$port&quot; ]; then
+            port=$DEFAULT_PORT
+        fi
+        stop_clash $port  # 停止 Clash 服务
+        proxy_off $port # 关闭代理
+        ;;
+    *)
+        echo &quot;使用方法: $0 {start|stop|restart|status|on|off} [端口号]&quot;
+        ;;
+esac
+</code></pre>
+<p>使用方法（如果启动失败可能是端口号的问题）：</p>
+<pre><code class="language-Bash"># 开启代理
+. ~/clash.sh on
+# 关闭代理
+. ~/clash.sh off
+# 重启
+. ~/clash.sh restart
+# 查询状态
+. ~/clash.sh status
+# 仅启动clash服务
+. ~/clash.sh start
+# 仅停止clash服务
+. ~/clash.sh stop
+</code></pre>
+<blockquote>
+<p>.是source命令的缩写，on/off如果使用bash命令不会生效，必须使用source。</p>
+<p>命令后可跟端口号参数，但必须与配置文件的端口号一致。</p>
+</blockquote>
+]]></content><link href="https://github.com/aqvq/aqvq/issues/7"/><category term="Linux"/><category term="服务器"/><published>2024-11-29T08:06:34+00:00</published></entry><entry><id>https://github.com/aqvq/aqvq/issues/6</id><title>电脑直连网络摄像头</title><updated>2024-12-06T07:52:32.375390+00:00</updated><content type="html"><![CDATA[<p>型号：DH-IPC-HFW54ZYZF1Y-ABC
 下载工具：<a href="https://support.dahuatech.com/tools/software">全部-浙江大华技术股份有限公司 (dahuatech.com)</a>
 IP地址：192.168.1.108
 掩码：255.255.255.0</p>
@@ -12,353 +241,4 @@ IP地址：192.168.1.108
 </blockquote>
 <p>设置完之后即可进入网页进行设置。</p>
 <p><a href="https://blog.csdn.net/xiejiashu/article/details/38523437">海康、大华IpCamera RTSP地址和格式-CSDN博客</a></p>
-]]></content><link href="https://github.com/aqvq/aqvq/issues/6"/><published>2024-11-29T07:51:02+00:00</published></entry><entry><id>https://github.com/aqvq/aqvq/issues/4</id><title>CUB转YOLO格式数据集</title><updated>2024-11-29T07:58:33.596563+00:00</updated><content type="html"><![CDATA[<p>参考文章：
-<a href="https://www.bilibili.com/read/cv21940047/#:~:text=%E6%89%80%E4%BB%A5CUB%E6%95%B0%E6%8D%AE%E9%9B%86,%EF%BC%8C%E8%AF%B7%E5%9C%A8__get">CUB_200_2011数据集转Yolo格式 - 哔哩哔哩 (bilibili.com)</a></p>
-<p>CUB数据集下载：
-<a href="https://data.caltech.edu/records/65de6-vp158/files/CUB_200_2011.tgz">https://data.caltech.edu/records/65de6-vp158/files/CUB_200_2011.tgz</a></p>
-<p>在此基础上添加细粒度类别，自动生成数据集yaml配置文件，具体源码如下：</p>
-<pre><code class="language-python">import os  
-import cv2  
-  
-  
-class Manager:  
-    def __init__(self, path, target, train=True):  
-        self.class_names = None  
-        self.root = path  
-        self.target = target  
-        self.is_train = train  
-        self.images_path = {}  
-        self.phase_name = &#x27;train&#x27; if train else &#x27;val&#x27;  
-        with open(os.path.join(self.root, &#x27;images.txt&#x27;)) as f:  
-            for line in f:  
-                image_id, path = line.split()  
-                self.images_path[image_id] = path  
-  
-        # 获取类别标签dict  
-        self.class_ids = {}  
-        with open(os.path.join(self.root, &#x27;image_class_labels.txt&#x27;)) as f:  
-            for line in f:  
-                image_id, class_id = line.split()  
-                self.class_ids[image_id] = class_id  
-  
-        # 获取标注框  
-        self.bondingbox = {}  
-        with open(os.path.join(self.root, &#x27;bounding_boxes.txt&#x27;)) as f:  
-            for line in f:  
-                image_id, x, y, w, h = line.split()  
-                x, y, w, h = float(x), float(y), float(w), float(h)  
-                self.bondingbox[image_id] = (x, y, w, h)  
-  
-        # 获取train/test数据id列表  
-        self.data_id = []  
-        if self.is_train:  
-            with open(os.path.join(self.root, &#x27;train_test_split.txt&#x27;)) as f:  
-                for line in f:  
-                    image_id, is_train = line.split()  
-                    if int(is_train):  
-                        self.data_id.append(image_id)  
-        if not self.is_train:  
-            with open(os.path.join(self.root, &#x27;train_test_split.txt&#x27;)) as f:  
-                for line in f:  
-                    image_id, is_train = line.split()  
-                    if not int(is_train):  
-                        self.data_id.append(image_id)  
-  
-    def transfer(self):  
-        # 清空 train.txt / val.txt        path_file_clear = open(os.path.join(self.target, (self.phase_name + &#x27;.txt&#x27;)), &#x27;w&#x27;)  
-        path_file_clear.close()  
-        for i in range(self.__len__()):  
-            image, file_name, x, y, w, h, label = self.__getitem__(i)  
-            file_path = os.path.join(self.target, &#x27;images&#x27;, self.phase_name, file_name)  
-            cv2.imwrite(file_path, image)  
-            print(f&quot;Write image {file_path}&quot;)  
-            label_file = open(os.path.join(self.target, &#x27;labels&#x27;, self.phase_name, (os.path.splitext(file_name)[0] +  
-                                                                                    &#x27;.txt&#x27;)), &#x27;w&#x27;)  
-            label_file.write(&#x27;{} {} {} {} {}&#x27;.format(label, x, y, w, h))  
-            label_file.close()  
-            path_file = open(os.path.join(self.target, (self.phase_name + &#x27;.txt&#x27;)), &#x27;a&#x27;)  
-            path_file.write(&#x27;{}{}&#x27;.format((&#x27;\n&#x27; if i != 0 else &#x27;&#x27;), file_path))  
-            path_file.close()  
-  
-    def write_yaml(self):  
-        self.class_names = {}  
-        with open(os.path.join(self.root, &#x27;classes.txt&#x27;)) as f:  
-            for line in f:  
-                class_id, class_name = line.split()  
-                class_name = class_name.split(&#x27;.&#x27;)[-1]  
-                self.class_names[class_id] = class_name  
-  
-        with open(os.path.join(self.target, &#x27;data.yaml&#x27;), &#x27;w&#x27;) as f:  
-            f.write(&#x27;path: {}\n&#x27;.format(self.target))  
-            f.write(&#x27;train: images/train\n&#x27;)  
-            f.write(&#x27;val: images/val\n&#x27;)  
-            f.write(&#x27;test: \n&#x27;)  
-            f.write(&#x27;names:\n&#x27;)  
-            for k, v in self.class_names.items():  
-                f.write(&#x27;  {}: {}\n&#x27;.format(int(k) - 1, v))  
-        print(&quot;Write yaml file successfully!&quot;)  
-  
-    def __len__(self):  
-        return len(self.data_id)  
-  
-    def __getitem__(self, index):  
-        image_id = self.data_id[index]  
-        label = int(self._get_class_by_id(image_id)) - 1  
-        path = self._get_path_by_id(image_id)  
-        file_name = os.path.basename(path)  
-        image = cv2.imread(os.path.join(self.root, &#x27;images&#x27;, path))  
-        width = image.shape[1]  
-        height = image.shape[0]  
-        x, y, w, h = self.bondingbox[image_id]  
-        x = (x + (w / 2)) / width  
-        w /= width  
-        y = (y + (h / 2)) / height  
-        h /= height  
-  
-        return image, file_name, x, y, w, h, label  
-  
-    def _get_path_by_id(self, image_id):  
-  
-        return self.images_path[image_id]  
-  
-    def _get_class_by_id(self, image_id):  
-  
-        return self.class_ids[image_id]  
-  
-    def _get_bbox_by_id(self, image_id):  
-  
-        return self.bondingbox[image_id]  
-  
-  
-def mkdirs(path):  
-    if not os.path.exists(path):  
-        os.makedirs(path)  
-    for phase in [&#x27;train&#x27;, &#x27;val&#x27;]:  
-        images_path = os.path.join(path, &#x27;images&#x27;, phase)  
-        labels_path = os.path.join(path, &#x27;labels&#x27;, phase)  
-        if not os.path.exists(images_path):  
-            os.makedirs(images_path)  
-        if not os.path.exists(labels_path):  
-            os.makedirs(labels_path)  
-  
-  
-if __name__ == &quot;__main__&quot;:  
-    # 原数据集根目录  
-    root = r&#x27;E:\Datasets\CUB_200_2011\CUB_200_2011&#x27;  
-    # 目标yolo格式数据集根目录 - 须是完整绝对路径  
-    des = r&#x27;E:\Datasets\CUB_YOLO&#x27;  
-    # 创建目标路径下的文件夹  
-    mkdirs(des)  
-    manager_train = Manager(root, des, train=True)  
-    manager_train.transfer()  
-    manager_val = Manager(root, des, train=False)  
-    manager_val.transfer()  
-    manager_val.write_yaml()  
-    print(&#x27;Finished!&#x27;)
-</code></pre>
-<p>数据集说明参考文章： #3 </p>
-]]></content><link href="https://github.com/aqvq/aqvq/issues/4"/><category term="YOLO"/><category term="计算机视觉"/><category term="目标检测"/><published>2024-11-28T12:16:39+00:00</published></entry><entry><id>https://github.com/aqvq/aqvq/issues/3</id><title>YOLOv8自制数据集说明</title><updated>2024-11-29T07:58:33.828598+00:00</updated><content type="html"><![CDATA[<h3>格式</h3>
-<p>Ultralytics YOLO格式是一种数据集配置格式，允许您定义数据集根目录、训练/验证/测试图像目录或包含图像路径的*.txt文件的相对路径，以及类名字典。下面是一个例子：</p>
-<pre><code class="language-yaml"># Train/val/test sets as 1) dir: path/to/imgs, 2) file: path/to/imgs.txt, or 3) list: [path/to/imgs1, path/to/imgs2, ..]
-path: ../datasets/coco8  # dataset root dir
-train: images/train  # train images (relative to &#x27;path&#x27;) 4 images
-val: images/val  # val images (relative to &#x27;path&#x27;) 4 images
-test:  # test images (optional)
-
-# Classes (80 COCO classes)
-names:
-  0: person
-  1: bicycle
-  2: car
-  # ...
-  77: teddy bear
-  78: hair drier
-  79: toothbrush
-</code></pre>
-<ul>
-<li>此格式的标签应导出为YOLO格式，每张图片一个<code>*.txt</code>文件。如果镜像中没有对象，则不需要<code>*.txt</code>文件。</li>
-<li><code>*.txt</code>文件的格式应为每个对象一行，格式为<code>class x_center y_Center Width Height</code>。</li>
-<li>框坐标必须采用<strong>标准化的xywh</strong>格式(从0到1)。如果您的box是以像素为单位的，则应将<code>x_center</code>和<code>width</code>除以图片宽度，并将<code>y_center</code>和<code>height</code>除以图片高度。</li>
-<li>类号应为零索引(从0开始)。</li>
-</ul>
-<h2>用法</h2>
-<p>Python</p>
-<pre><code class="language-python">from ultralytics import YOLO
-
-# Load a model
-model = YOLO(&#x27;yolov8n.pt&#x27;)  # load a pretrained model (recommended for training)
-
-# Train the model
-results = model.train(data=&#x27;coco8.yaml&#x27;, epochs=100, imgsz=640)
-
-</code></pre>
-<p>CLI</p>
-<pre><code class="language-bash"># Start training from a pretrained *.pt model
-yolo detect train data=coco8.yaml model=yolov8n.pt epochs=100 imgsz=640
-</code></pre>
-]]></content><link href="https://github.com/aqvq/aqvq/issues/3"/><category term="YOLO"/><category term="计算机视觉"/><category term="目标检测"/><published>2024-11-28T12:16:00+00:00</published></entry><entry><id>https://github.com/aqvq/aqvq/issues/2</id><title>Obsidian使用总结</title><updated>2024-11-29T07:58:34.000955+00:00</updated><content type="html"><![CDATA[<h2>基本使用</h2>
-<blockquote>
-<p>CSDN、知乎、B站都有很多系统的教程，这里简单列举一些资源</p>
-</blockquote>
-<p><a href="https://www.bilibili.com/video/BV1i3411k7TQ/?spm_id_from=333.337.search-card.all.click">Johnny学的公开课 第一集 将近3小时的Obsidian小白入门课，都是基础知识，学会了就能上手OB，一个社区插件都没讲_哔哩哔哩_bilibili</a></p>
-<p><a href="https://publish.obsidian.md/chinesehelp">Obsidian中文教程 - Obsidian Publish</a></p>
-<p><a href="https://zhuanlan.zhihu.com/p/409095645">一个大学生与Obsidian。【玩转Obsidian的保姆级教程】 - 知乎 (zhihu.com)</a></p>
-<p><a href="https://zhuanlan.zhihu.com/p/398625612">Obsidian知识体系搭建：小白入门篇 - 知乎 (zhihu.com)</a></p>
-<p>Obsidian最突出的功能是双链和白板，最基本的功能是使用Markdown记录笔记，最大的优势是可定制性高、可扩展性强。另外，Obsidian的文件管理也做得不错。以此为基础Obsidian还衍生出了其他很多功能……</p>
-<p>抓住了每个软件的优点，加以充分利用，才是使用工具最佳方式，而不是让自己的需求去适配软件，刻意追求<code>All in One</code>是不理智的。</p>
-<h2>插件使用</h2>
-<blockquote>
-<p>[!注意]
-下载插件的过程可能需要魔法上网，在其他正常使用软件的时候并不需要</p>
-</blockquote>
-<p>打开插件 -&gt; 第三方插件 -&gt; 插件市场就可以下载插件了。在下载插件之前，注意先把安全模式关闭。</p>
-<p>目前我主要使用以下插件：</p>
-<h4>Advanced Tables</h4>
-<p>增强了Markdown表格的编辑体验，经常用Markdown写表格的必装</p>
-<h4>Annotator</h4>
-<p>PDF批注软件，可能会破坏原Markdown语法。</p>
-<p>关于PDF批注笔记的解决方案/工作流有很多，这里不展开说。列举些我知道的：</p>
-<p><a href="https://www.bilibili.com/video/BV1R44y137ci/?vd_source=653c32e1b9068b6dc916bedc5c6c2c7d">香，Zotero和Obsidian双向联动实时更新方法，利用bibnotes和zotero-obsidian-citations实现_哔哩哔哩_bilibili</a></p>
-<p><a href="https://www.bilibili.com/read/cv19990701?spm_id_from=333.999.0.0">BookNote v0.3.2 更新 - 哔哩哔哩 (bilibili.com)</a></p>
-<h4>Dataview</h4>
-<p>通过SQL语法对文章数据进行筛选展示，功能强大，用好了可以很方便地整理展示数据</p>
-<h4>Obsidian Git</h4>
-<p>Git同步插件，后面详述同步方案</p>
-<h4>Templater</h4>
-<p>模板增强插件，如果你觉得你经常进行重复的记录劳动，可能需要创建一个模板？</p>
-<h4>Weread Plugin</h4>
-<p>微信读书同步插件。安装插件后，只要扫码登陆，就可以同步所有书籍笔记了，真的很方便</p>
-<p><a href="https://www.bilibili.com/video/BV1f34y1h7jk/?spm_id_from=333.999.0.0">学了3天typescript写了一个微信读书的Obsidian插件_哔哩哔哩_bilibili</a></p>
-<h2>同步方案</h2>
-<p>在这段时间里，我使用过如下同步方案：</p>
-<h3>不同的同步方案</h3>
-<h4>WPS 云盘同步</h4>
-<p>最开始用的方法，同步频次过低，不符合个人使用习惯</p>
-<p>我之所以之前使用这个方法，是因为我已经有了WPS会员，想试试云盘同步效果怎么样。类似的还有百度网盘同步，但它们都有一个缺陷，手机同步不方便。</p>
-<h4>Git 同步</h4>
-<p>Git同步最大问题是，两台设备同时编辑容易冲突</p>
-<p>这个方案比较适合备份场景，只有一个人使用，不要求实时性</p>
-<p>但其有点也很明显，免费，如果附件不多的话，完全够用</p>
-<h4>对象存储 (S3) 同步</h4>
-<p>同步比较费流量，S3 主要是外网下行流量，不走 CDN 流量，而外网下行流量又是比较贵的，腾讯云 COS 是 0.5 元/GB，七牛云是 0.22 元/GB，其他费用差不多，不过七牛云有免费额度。</p>
-<p>所以，如果要使用对象存储，推荐使用七牛云，价格比较实惠。</p>
-<p>另外，<code>Remotely Save</code>插件在多设备同步的时候还是有些小问题，谨慎使用</p>
-<blockquote>
-<p>[!注意]
-以上这三种同步方案，都不建议同步<code>.obsidian</code>文件夹，否则会出现文件冲突、配置异常等问题</p>
-</blockquote>
-<p>这几种同步方案各有优劣，还是要看具体情况。</p>
-<p>我目前使用的是Git方案，我后期如果需要在文章中引用大量PDF的话，仓库容量会大幅上涨，可能需要换S3同步，当然也可以把PDF换成截图，来折中一下。或者将附件上传到图床，然后引用链接。</p>
-<h3>Git同步方案详解</h3>
-<h4>Git电脑端的配置</h4>
-<p>要想手机端Git正常工作，需要提前在电脑端配置好Git信息：</p>
-<blockquote>
-<p>[!注意]
-这里不要加<code>--global</code></p>
-</blockquote>
-<pre><code class="language-shell">git config user.name &quot;输入你的名字&quot;
-git config user.email &quot;输入你的邮箱&quot;
-git config http.postBuffer 524288000
-git config credential.helper store
-</code></pre>
-<p>前两行配置用户基本信息</p>
-<p>第三行配置上传最大文件限制大小，如果你要上传<code>.obsidian</code>文件夹，可能会出现上传不了的问题，这时需要改这个配置，但我不建议你这么做</p>
-<p>最后一行配置保存密码，不用每次提交都输入密码</p>
-<h4>手机上的同步</h4>
-<p>在手机上安装Obsidian，首先先把电脑上的笔记文件夹完整的粘贴到手机上（通过数据线连接电脑，不然可能很慢）</p>
-<p>然后用手机端的Obsidian打开。</p>
-<p>初始化后，Git插件会要求输入您的Git账户密码，输入完成后即可正常同步。</p>
-<p>手机端的Git同步似乎时间有点长（当然用S3速度很快，但是消耗流量比较大），建议在手机端只拉取，查阅笔记。编辑笔记的主要工作还是用电脑端。</p>
-<h3>软件同步</h3>
-<p>软件同步延迟低，在一台设备上编辑，另一台设备马上就能看到修改结果。但是两个设备同时修改同一个文件会引发冲突。如果同步的两台设备有一台不在线同步就无法进行，最好是有一台设备持续在线同步给其他设备，适合NAS场景。对象存储可以实现离线同步，这个是和S3同步最大的不同点，需要根据应用场景选择合适的同步方式，当然也可以全部使用，但两种同步方式会不会起冲突不得而知。</p>
-<h4>syncthing</h4>
-<p>该软件为开源软件，安全性有保障，p2p同步。缺点是两台设备需要在同一局域网内，跨局域网基本不能用，需要自建中继服务器。</p>
-<h4>微力同步</h4>
-<p>该软件基于syncthing改写，但是不开源，自带打洞，安装好后就可以跨局域网同步，可以通过二维码一键共享文件，比较方便，不想折腾的小白直接用这个软件就好了。</p>
-<h2>图床搭建</h2>
-<p>一般自用图床，使用云服务商的对象存储就行了，而且七牛云还有免费额度，每月的费用可以忽略不计。</p>
-<p>自动化上传图片到图床，需要用到一个开源软件<code>PicGo</code>。此外，Obsidian需要一个插件<code>Image auto upload plugin</code>。</p>
-<p>具体教程可参见网上：</p>
-<p><a href="https://zhuanlan.zhihu.com/p/141610018">picgo使用七牛云图床 - 知乎 (zhihu.com)</a></p>
-<h2>博客发布</h2>
-<p>目前我使用<a href="https://www.cnblogs.com/juzaizai/">博客园</a>，感觉传Markdown博客基本够用，而且广告基本没有，有人说博客园界面太简陋，我这里有一个不错的主题推荐一下：<a href="https://esofar.github.io/cnblogs-theme-silence/#/">Silence - 专注于阅读的博客园主题 (esofar.github.io)</a></p>
-<h3>Obsidian发布</h3>
-<p>obsidian能实现零成本的原生发布：[[Obsidian部署Digital Garden]]</p>
-<h2>总结</h2>
-<p>这段时间花了一些时间探索Obsidian的用法，主要是在解决Obsidian的同步问题。</p>
-<p>目前还是决定采用Git同步，Gitee有单个仓库5G的容量限制，可以通过附件传云上或者换一个没有容量限制的Git仓库（这个是有的，比如阿里的?）来解决。</p>
-<p>如果使用S3同步方案会消耗很大流量，对单纯同步笔记来说没有必要。</p>
-<p>解决了同步问题，剩下的就是功能性的问题，Obsidian最基本的文本处理做的很不错，不需要担心有什么BUG。</p>
-<p>再者做笔记不太需要花里胡哨的功能，以后有什么需求了，百度一下就行，就比如微信读书同步，这个插件挺不错的。</p>
-<p>千万不要刻意去搜寻大量插件，给自己创造虚假的需求，记录笔记才是我们的初衷。</p>
-]]></content><link href="https://github.com/aqvq/aqvq/issues/2"/><category term="实用工具"/><published>2024-11-28T10:51:31+00:00</published></entry><entry><id>https://github.com/aqvq/aqvq/issues/1</id><title>explore-eqa中的三个三维坐标系区别</title><updated>2024-11-29T07:58:34.227061+00:00</updated><content type="html"><![CDATA[<p>在 Habitat 项目中，坐标系的转换涉及多个代码模块，主要包括相机坐标系、体素坐标系和世界坐标系之间的转换。为了帮助理解，下面用字符画绘制三个坐标系的轴向关系，并结合 Habitat 项目的代码说明它们的用法。</p>
-<h3>1. 世界坐标系 (World Coordinate System)</h3>
-<p>Habitat 使用右手坐标系作为世界坐标系，<code>X</code> 轴朝右，<code>Y</code> 轴朝上，<code>Z</code> 轴指向外（朝观察者）。在世界坐标系中，物体的位置和方向都是全局的。Habitat 中的坐标转换，例如 <code>pos_habitat_to_normal()</code> 和 <code>pos_normal_to_habitat()</code>，会涉及此坐标系的使用。</p>
-<p>字符画表示：</p>
-<pre><code>       Y (向上)
-       |
-       |
-       |
-       +-------- X (向右)
-      /
-     /
-    Z (指向外，朝观察者)
-</code></pre>
-<p>代码示例：</p>
-<pre><code class="language-python">def pos_habitat_to_normal(pts):
-    # -90 度绕 X 轴旋转，将 Habitat 坐标系转换到标准右手坐标系
-    return np.dot(pts, np.array([[1, 0, 0], [0, 0, 1], [0, -1, 0]]))
-</code></pre>
-<p>这段代码表示：Habitat 的世界坐标系在默认情况下，<code>Y</code> 轴朝上，<code>Z</code> 轴指向观察者；而这里 <code>pos_habitat_to_normal()</code> 函数进行坐标系转换，使其符合标准的右手坐标系表示。</p>
-<h3>2. 相机坐标系 (Camera Coordinate System)</h3>
-<p>相机坐标系的惯例是，<code>X</code> 轴向右，<code>Y</code> 轴向下，<code>Z</code> 轴指向前方（即相机视线方向）。在 Habitat 中，摄像头的位置和方向被用于生成深度图和彩色图，并且涉及相机坐标系和世界坐标系之间的转换。</p>
-<p>字符画表示：</p>
-<pre><code>       Z (指向前方，视线方向)
-       |
-       |
-       |
-       +-------- X (向右)
-      /
-     /
-    Y (向下)
-</code></pre>
-<p>代码示例：</p>
-<pre><code class="language-python">def get_current_view_mask(self, cam_intr, cam_pose, im_w, im_h):
-    cam_pts = rigid_transform(self.cam_pts_pre, np.linalg.inv(cam_pose))
-    # 代码中进行了相机坐标到世界坐标的转换
-</code></pre>
-<p>在这段代码中，通过 <code>rigid_transform</code> 函数，<code>cam_pose</code> 的逆矩阵将相机坐标转换到世界坐标系。这是因为在 Habitat 中，相机的观察点首先是根据世界坐标系确定的，然后进行转换以生成深度图等数据。</p>
-<h3>3. 体素坐标系 (Voxel Coordinate System)</h3>
-<p>体素坐标系用于表示 3D 空间中的离散网格。体素原点通常放置在网格的某个角，<code>X</code> 轴、<code>Y</code> 轴、<code>Z</code> 轴沿着体素网格的三个维度方向。在 Habitat 中，体素坐标系主要用于 TSDF（截断符号距离函数）体积融合中，以更新 3D 地图。</p>
-<p>字符画表示：</p>
-<pre><code>       Y (向上)
-       |
-       |
-       |
-       +-------- X (向右)
-      /
-     /
-    Z (指向深度方向)
-</code></pre>
-<p>代码示例：</p>
-<pre><code class="language-python">def world2vox(self, pts):
-    pts = pts - self._vol_origin
-    coords = np.round(pts / self._voxel_size).astype(int)
-    coords = np.clip(coords, 0, self._vol_dim - 1)
-    return coords
-</code></pre>
-<p>在这段代码中，<code>world2vox()</code> 函数将世界坐标转换为体素坐标。首先，它将输入点减去体素体积的原点，然后根据体素大小缩放到离散的体素网格中。</p>
-<h3>结合示意图与代码关系</h3>
-<ol>
-<li><strong>世界坐标系</strong>：表示场景中物体的全局位置，通过 <code>pos_habitat_to_normal()</code> 和 <code>pos_normal_to_habitat()</code> 函数进行转换。</li>
-<li><strong>相机坐标系</strong>：相机坐标系与世界坐标系之间的转换主要通过相机的姿态矩阵 <code>cam_pose</code>，以及像 <code>get_current_view_mask()</code> 这样的函数来实现。</li>
-<li><strong>体素坐标系</strong>：用于构建 3D 地图，<code>world2vox()</code> 函数负责将世界坐标转换到体素坐标系，以便在 TSDF 融合中进行更新。</li>
-</ol>
-<h3>总结</h3>
-<ul>
-<li>世界坐标系描述了物体在全局场景中的位置和方向。</li>
-<li>相机坐标系用于相机的观察，通常是右手系，但 <code>Y</code> 轴朝下，<code>Z</code> 轴指向前方。</li>
-<li>体素坐标系是一个离散的网格坐标系，用于 3D 重建和地图更新。</li>
-</ul>
-<p>Habitat 项目中，不同坐标系之间的转换是核心部分，比如 TSDF 体积融合过程中涉及相机坐标系和体素坐标系之间的转换。</p>
-]]></content><link href="https://github.com/aqvq/aqvq/issues/1"/><category term="EQA"/><category term=":+1:置顶"/><published>2024-11-28T08:20:30+00:00</published></entry></feed>
+]]></content><link href="https://github.com/aqvq/aqvq/issues/6"/><category term="计算机视觉"/><published>2024-11-29T07:51:02+00:00</published></entry></feed>
