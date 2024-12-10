@@ -40,7 +40,7 @@ My personal blog using issues and GitHub Actions! [RSS Feed](https://raw.githubu
 ## 置顶 :thumbsup: 
 ## 最新 :new: 
 
-### [大模型笔记](https://github.com/aqvq/aqvq/issues/10) <sup>1💬</sup> <sup>2024-12-10📆</sup>
+### [大模型笔记](https://github.com/aqvq/aqvq/issues/10) <sup>2💬</sup> <sup>2024-12-10📆</sup>
 
 :label:[大模型](https://github.com/aqvq/aqvq/labels/%E5%A4%A7%E6%A8%A1%E5%9E%8B)
 
@@ -122,7 +122,7 @@ My personal blog using issues and GitHub Actions! [RSS Feed](https://raw.githubu
 <details>
 <summary>大模型	<sup>1📰</sup></summary>
 
-- [大模型笔记](https://github.com/aqvq/aqvq/issues/10)  <sup>1💬</sup> <sup>2024-12-10📆</sup>  	 
+- [大模型笔记](https://github.com/aqvq/aqvq/issues/10)  <sup>2💬</sup> <sup>2024-12-10📆</sup>  	 
 
 
 </details>
