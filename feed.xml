@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<feed xmlns="http://www.w3.org/2005/Atom"><id>https://github.com/aqvq/aqvq</id><title>RSS feed of aqvq's aqvq</title><updated>2024-12-07T05:23:05.951656+00:00</updated><link href="https://github.com/aqvq/aqvq"/><link href="https://raw.githubusercontent.com/aqvq/aqvq/main/feed.xml" rel="self"/><generator uri="https://lkiesow.github.io/python-feedgen" version="1.0.0">python-feedgen</generator><entry><id>https://github.com/aqvq/aqvq/issues/9</id><title>EQA项目问题检索</title><updated>2024-12-07T05:23:06.236680+00:00</updated><content type="html"><![CDATA[<p>此issue用于记录在EQA项目遇到的各种问题及解决方案。</p>
-]]></content><link href="https://github.com/aqvq/aqvq/issues/9"/><category term="EQA"/><published>2024-12-02T11:43:23+00:00</published></entry><entry><id>https://github.com/aqvq/aqvq/issues/8</id><title>服务器维护经历</title><updated>2024-12-07T05:23:06.370958+00:00</updated><content type="html"><![CDATA[<h3>网络连接不上</h3>
+<feed xmlns="http://www.w3.org/2005/Atom"><id>https://github.com/aqvq/aqvq</id><title>RSS feed of aqvq's aqvq</title><updated>2024-12-10T05:13:00.971394+00:00</updated><link href="https://github.com/aqvq/aqvq"/><link href="https://raw.githubusercontent.com/aqvq/aqvq/main/feed.xml" rel="self"/><generator uri="https://lkiesow.github.io/python-feedgen" version="1.0.0">python-feedgen</generator><entry><id>https://github.com/aqvq/aqvq/issues/9</id><title>EQA项目问题检索</title><updated>2024-12-10T05:13:01.239345+00:00</updated><content type="html"><![CDATA[<p>此issue用于记录在EQA项目遇到的各种问题及解决方案。</p>
+]]></content><link href="https://github.com/aqvq/aqvq/issues/9"/><category term="EQA"/><published>2024-12-02T11:43:23+00:00</published></entry><entry><id>https://github.com/aqvq/aqvq/issues/8</id><title>服务器维护经历</title><updated>2024-12-10T05:13:01.372465+00:00</updated><content type="html"><![CDATA[<h3>网络连接不上</h3>
 <p><code>ping baidu.com</code>出现<a href="https://www.cnblogs.com/hanframe/p/17095506.html">Temporary failure in name resolution</a>，以为是dns的问题，修改文件<code>/etc/resolv.conf</code>，发现运行<code>sudo systemctl restart systemd-resolved.service</code>发现又变回了原来的样子，修改无效。</p>
 <p>后来发现是网卡被禁用了，通过<code>ifconfig</code>命令启用恢复正常。参考这篇文章：<a href="https://www.cnblogs.com/zh-dream/p/13405799.html">Ubuntu 18.04网络不通，netplan命令不存在</a></p>
-]]></content><link href="https://github.com/aqvq/aqvq/issues/8"/><category term="Linux"/><category term="服务器"/><published>2024-11-29T13:02:23+00:00</published></entry><entry><id>https://github.com/aqvq/aqvq/issues/7</id><title>常用Linux操作</title><updated>2024-12-07T05:23:06.481294+00:00</updated><content type="html"><![CDATA[<h3>定时任务</h3>
+]]></content><link href="https://github.com/aqvq/aqvq/issues/8"/><category term="Linux"/><category term="服务器"/><published>2024-11-29T13:02:23+00:00</published></entry><entry><id>https://github.com/aqvq/aqvq/issues/7</id><title>常用Linux操作</title><updated>2024-12-10T05:13:01.506662+00:00</updated><content type="html"><![CDATA[<h3>定时任务</h3>
 <pre><code class="language-Bash"># 编辑
 crontab -u user -e
 # * * * * * command_to_execute
@@ -229,17 +229,4 @@ esac
 <p>.是source命令的缩写，on/off如果使用bash命令不会生效，必须使用source。</p>
 <p>命令后可跟端口号参数，但必须与配置文件的端口号一致。</p>
 </blockquote>
-]]></content><link href="https://github.com/aqvq/aqvq/issues/7"/><category term="Linux"/><category term="服务器"/><published>2024-11-29T08:06:34+00:00</published></entry><entry><id>https://github.com/aqvq/aqvq/issues/6</id><title>电脑直连网络摄像头</title><updated>2024-12-07T05:23:06.613555+00:00</updated><content type="html"><![CDATA[<p>型号：DH-IPC-HFW54ZYZF1Y-ABC
-下载工具：<a href="https://support.dahuatech.com/tools/software">全部-浙江大华技术股份有限公司 (dahuatech.com)</a>
-IP地址：192.168.1.108
-掩码：255.255.255.0</p>
-<blockquote>
-<p>网线连接电脑，可用网口转USB转接线</p>
-</blockquote>
-<p>在电脑设置中找到该网络，设置IP在同一网段，比如192.168.1.55</p>
-<blockquote>
-<p>此设置不影响网络正常联网，不要设置错了网络</p>
-</blockquote>
-<p>设置完之后即可进入网页进行设置。</p>
-<p><a href="https://blog.csdn.net/xiejiashu/article/details/38523437">海康、大华IpCamera RTSP地址和格式-CSDN博客</a></p>
-]]></content><link href="https://github.com/aqvq/aqvq/issues/6"/><category term="计算机视觉"/><published>2024-11-29T07:51:02+00:00</published></entry></feed>
+]]></content><link href="https://github.com/aqvq/aqvq/issues/7"/><category term="Linux"/><category term="服务器"/><published>2024-11-29T08:06:34+00:00</published></entry></feed>

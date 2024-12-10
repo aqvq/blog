@@ -3,7 +3,7 @@
 <p align='center'>
     <img src="https://badgen.net/badge/labels/9"/>
     <img src="https://badgen.net/github/issues/aqvq/aqvq"/>
-    <img src="https://badgen.net/badge/last-commit/2024-12-07"/>
+    <img src="https://badgen.net/badge/last-commit/2024-12-10"/>
     <img src="https://badgen.net/github/forks/aqvq/aqvq"/>
     <img src="https://badgen.net/github/stars/aqvq/aqvq"/>
     <img src="https://badgen.net/github/watchers/aqvq/aqvq"/>
@@ -77,20 +77,6 @@ My personal blog using issues and GitHub Actions! [RSS Feed](https://raw.githubu
 ---
 
 
-### [电脑直连网络摄像头](https://github.com/aqvq/aqvq/issues/6) <sup>0💬</sup> <sup>2024-11-29📆</sup>
-
-:label:[计算机视觉](https://github.com/aqvq/aqvq/labels/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89)
-
-型号：DH-IPC-HFW54ZYZF1Y-ABC
-下载工具：[全部-浙江大华技术股份有限公司 (dahuatech.com)](https://support.dahuatech.com/tools/software)
-IP地址：192.168.1.108
-掩码：255.255.255.0
-
-[更多>>>](https://github.com/aqvq/aqvq/issues/6)
-
----
-
-
 ## 分类  :card_file_box: 
 <details>
     <summary>
@@ -146,9 +132,8 @@ IP地址：192.168.1.108
 </details>
 
 <details>
-<summary>计算机视觉	<sup>1📰</sup></summary>
+<summary>计算机视觉	<sup>0📰</sup></summary>
 
-- [电脑直连网络摄像头](https://github.com/aqvq/aqvq/issues/6)  <sup>0💬</sup> <sup>2024-11-29📆</sup>  	 
 
 
 </details>
