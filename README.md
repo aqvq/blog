@@ -1,7 +1,7 @@
 
 
 <p align='center'>
-    <img src="https://badgen.net/badge/labels/9"/>
+    <img src="https://badgen.net/badge/labels/10"/>
     <img src="https://badgen.net/github/issues/aqvq/aqvq"/>
     <img src="https://badgen.net/badge/last-commit/2024-12-10"/>
     <img src="https://badgen.net/github/forks/aqvq/aqvq"/>
@@ -40,11 +40,22 @@ My personal blog using issues and GitHub Actions! [RSS Feed](https://raw.githubu
 ## 置顶 :thumbsup: 
 ## 最新 :new: 
 
-### [EQA项目问题检索](https://github.com/aqvq/aqvq/issues/9) <sup>9💬</sup> <sup>2024-12-07📆</sup>
+### [大模型笔记](https://github.com/aqvq/aqvq/issues/10) <sup>0💬</sup> <sup>2024-12-10📆</sup>
+
+:label:[大模型](https://github.com/aqvq/aqvq/labels/%E5%A4%A7%E6%A8%A1%E5%9E%8B)
+
+此blog记录学习大模型过程中记下的各种笔记
+
+[更多>>>](https://github.com/aqvq/aqvq/issues/10)
+
+---
+
+
+### [EQA项目问题检索](https://github.com/aqvq/aqvq/issues/9) <sup>9💬</sup> <sup>2024-12-10📆</sup>
 
 :label:[EQA](https://github.com/aqvq/aqvq/labels/EQA)
 
-此issue用于记录在EQA项目遇到的各种问题及解决方案。
+此issue用于记录在EQA项目中遇到的各种问题及解决方案。
 
 [更多>>>](https://github.com/aqvq/aqvq/issues/9)
 
@@ -87,7 +98,7 @@ My personal blog using issues and GitHub Actions! [RSS Feed](https://raw.githubu
 <details>
 <summary>EQA	<sup>1📰</sup></summary>
 
-- [EQA项目问题检索](https://github.com/aqvq/aqvq/issues/9)  <sup>9💬</sup> <sup>2024-12-07📆</sup>  	 
+- [EQA项目问题检索](https://github.com/aqvq/aqvq/issues/9)  <sup>9💬</sup> <sup>2024-12-10📆</sup>  	 
 
 
 </details>
@@ -104,6 +115,14 @@ My personal blog using issues and GitHub Actions! [RSS Feed](https://raw.githubu
 <details>
 <summary>YOLO	<sup>0📰</sup></summary>
 
+
+
+</details>
+
+<details>
+<summary>大模型	<sup>1📰</sup></summary>
+
+- [大模型笔记](https://github.com/aqvq/aqvq/issues/10)  <sup>0💬</sup> <sup>2024-12-10📆</sup>  	 
 
 
 </details>
