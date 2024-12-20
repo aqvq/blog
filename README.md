@@ -40,7 +40,7 @@ My personal blog using issues and GitHub Actions! [RSS Feed](https://raw.githubu
 ## 置顶 :thumbsup: 
 ## 最新 :new: 
 
-### [EQA项目问题检索](https://github.com/aqvq/aqvq/issues/9) <sup>11💬</sup> <sup>2024-12-20📆</sup>
+### [EQA项目问题检索](https://github.com/aqvq/aqvq/issues/9) <sup>12💬</sup> <sup>2024-12-20📆</sup>
 
 :label:[EQA](https://github.com/aqvq/aqvq/labels/EQA)
 
@@ -98,7 +98,7 @@ My personal blog using issues and GitHub Actions! [RSS Feed](https://raw.githubu
 <details>
 <summary>EQA	<sup>1📰</sup></summary>
 
-- [EQA项目问题检索](https://github.com/aqvq/aqvq/issues/9)  <sup>11💬</sup> <sup>2024-12-20📆</sup>  	 
+- [EQA项目问题检索](https://github.com/aqvq/aqvq/issues/9)  <sup>12💬</sup> <sup>2024-12-20📆</sup>  	 
 
 
 </details>
