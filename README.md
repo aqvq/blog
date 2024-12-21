@@ -3,7 +3,7 @@
 <p align='center'>
     <img src="https://badgen.net/badge/labels/10"/>
     <img src="https://badgen.net/github/issues/aqvq/aqvq"/>
-    <img src="https://badgen.net/badge/last-commit/2024-12-20"/>
+    <img src="https://badgen.net/badge/last-commit/2024-12-21"/>
     <img src="https://badgen.net/github/forks/aqvq/aqvq"/>
     <img src="https://badgen.net/github/stars/aqvq/aqvq"/>
     <img src="https://badgen.net/github/watchers/aqvq/aqvq"/>
@@ -40,7 +40,7 @@ My personal blog using issues and GitHub Actions! [RSS Feed](https://raw.githubu
 ## 置顶 :thumbsup: 
 ## 最新 :new: 
 
-### [EQA项目问题检索](https://github.com/aqvq/aqvq/issues/9) <sup>12💬</sup> <sup>2024-12-20📆</sup>
+### [EQA项目问题检索](https://github.com/aqvq/aqvq/issues/9) <sup>13💬</sup> <sup>2024-12-21📆</sup>
 
 :label:[EQA](https://github.com/aqvq/aqvq/labels/EQA)
 
@@ -98,7 +98,7 @@ My personal blog using issues and GitHub Actions! [RSS Feed](https://raw.githubu
 <details>
 <summary>EQA	<sup>1📰</sup></summary>
 
-- [EQA项目问题检索](https://github.com/aqvq/aqvq/issues/9)  <sup>12💬</sup> <sup>2024-12-20📆</sup>  	 
+- [EQA项目问题检索](https://github.com/aqvq/aqvq/issues/9)  <sup>13💬</sup> <sup>2024-12-21📆</sup>  	 
 
 
 </details>
